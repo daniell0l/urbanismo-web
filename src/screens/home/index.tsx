@@ -134,16 +134,21 @@ export function Home() {
             </div>
           </div>
         </section>
-      </main>
 
-      <footer id="rodape">
-        <div>
+        <section>
+          <div>
           <img src="assets/imgs/logo.png" alt="Logo" />
           <p>
             Prefeitura Municipal de Luís Eduardo Magalhães <br />
             CEP: 47.850-000 - Luís Eduardo Magalhães - Bahia <br />
             Telefone: 77 3628-9000
           </p>
+          </div>
+        </section>
+      </main>
+
+      <footer id="rodape">
+        <div>
           <p>
             © {new Date().getFullYear()} VALLE TEC LAB todos os direitos
             reservados.
