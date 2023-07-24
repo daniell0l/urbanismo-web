@@ -217,7 +217,13 @@ main {
   display: flex;
   align-items: center;
   padding: 0 20px;
+  cursor: pointer;
   margin-left: 30px;
+  transition: transform 0.2s ease;
+}
+
+.info_down_cad:hover .info_item:hover {
+  transform: scale(1.1);
 }
 
 .info_down_cad .info_item a {
