@@ -1,0 +1,49 @@
+#login-container {
+  max-width: 1000px;
+  height: 400px;
+  margin: 10% auto auto auto;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid red;
+  flex-wrap: nowrap;
+  align-items: center;
+  background: #eeeded;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+
+.logo {
+    width: 500px;
+    height: 400px;
+    background: #ccc;
+    z-index: 0;
+  }
+  
+  .logo img {
+    width: 400px;
+    margin-top: 80px;
+    margin-left: 100px;
+  }
+
+.blocoLogin {
+  background: #fff;
+  width: 500px;
+  height: 400px;
+  z-index: 1;
+  border: 1px solid rgb(0, 255, 26);
+}
+
+
+.logoLogin img{
+    width: 200px;
+    margin-top: 80px;
+    margin-left: 30%;
+}
+
+h2 {
+    text-align: center;
+    color: rgb(0, 153, 255);
+    text-transform: uppercase;
+}
+
+

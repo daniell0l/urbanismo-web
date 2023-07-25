@@ -1,6 +1,7 @@
-import "./Login.css";
+import "../login/Login.css";
+import logoLateral from "../../../assets/imgs/logoWide.png";
+import logoLogin from "../../../assets/imgs/logoWide.png";
 import React, { useState } from "react";
-
 
 const LoginPage: React.FC = () => {
   const [username, setUsername] = useState("");
@@ -21,9 +22,15 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="login-container">
-      <h2>Login</h2>
-      <form>
+    <div id="login-container">
+      <div className="logo">
+        <img src={logoLateral} alt="logo lem urbanismo" />
+      </div>
+      <form className="blocoLogin">
+      <div className="logoLogin">
+        <img src={logoLogin} alt="lem urbanismo" />
+      </div>
+        <h2>Login</h2>
         <div className="form-group">
           <label htmlFor="username">Usuário:</label>
           <input
@@ -46,7 +53,8 @@ const LoginPage: React.FC = () => {
         </div>
         <button type="button" onClick={handleLogin}>
           Entrar
-        </button><br />
+        </button>
+        <br />
         <a href="">cadastrar se</a>
       </form>
     </div>
