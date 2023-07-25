@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import logoWide from "../../assets/imgs/logoWide.png";
 import logoModel from "../../assets/imgs/logoModel.png";
+import logoprefeitura from "../../assets/imgs/logoPrefeitura.png";
 
 export function Home() {
   return (
@@ -22,7 +23,7 @@ export function Home() {
               <a href="/">home</a>
             </li>
             <li>
-              <a href="/">informativo</a>
+              <a href="#info_down_cad">informativo</a>
             </li>
             <li>
               <a href="/">downloads</a>
@@ -73,7 +74,7 @@ export function Home() {
           <div className="info_down_cad">
             <div className="info_item">
               <a href="/">
-                <FaInfoCircle color="3a28a"/>
+                <FaInfoCircle color="3a28a" />
               </a>
               <div className="info_text">
                 <h2>informativo</h2>
@@ -89,7 +90,7 @@ export function Home() {
 
             <div className="info_item">
               <a href="/">
-                <FaDownload color="3a28a"/>
+                <FaDownload color="3a28a" />
               </a>
               <div className="info_text">
                 <h2>download</h2>
@@ -105,7 +106,7 @@ export function Home() {
 
             <div className="info_item">
               <a href="/">
-                <FaUserPlus color="3a28a"/>
+                <FaUserPlus color="3a28a" />
               </a>
               <div className="info_text">
                 <h2>cadastro</h2>
@@ -136,13 +137,16 @@ export function Home() {
         </section>
 
         <section>
-          <div>
-          <img src="assets/imgs/logo.png" alt="Logo" />
-          <p>
-            Prefeitura Municipal de Luís Eduardo Magalhães <br />
-            CEP: 47.850-000 - Luís Eduardo Magalhães - Bahia <br />
-            Telefone: 77 3628-9000
-          </p>
+          <div className="prefeitura">
+            <img src={logoprefeitura} alt="logo prefeitura" />
+            <div className="conteudo-prefeitura">
+              <p>
+                Prefeitura Municipal de Luís Eduardo Magalhães <br />
+                CEP: 47.850-000 - Luís Eduardo Magalhães - Bahia <br />
+                Telefone: 77 3628-9000
+              </p>
+              <div className="quadrado"></div>
+            </div>
           </div>
         </section>
       </main>
