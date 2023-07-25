@@ -11,6 +11,9 @@ body {
 }
 
 main {
+  max-width: 1250px;
+  margin: 0 auto;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,13 +29,15 @@ main {
 
 .logo img {
   margin-top: 0px;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   display: inline-block;
   justify-content: start;
 }
 
 #navbar_lateral {
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   list-style-type: none;
   border: 2px solid #0d39b4;
   border-radius: 50px 0 0 50px;
@@ -66,7 +71,7 @@ main {
 }
 
 .search-bar input {
-  width: 200px;
+  width: 100%;
   border: none;
   background-color: transparent;
   outline: none;
@@ -86,7 +91,7 @@ main {
   font-family: 'Times New Roman', Times, serif;
   font-size: 1.5em;
   width: 200px;
-  margin-left:30px;
+  margin-left: 30px;
   border-radius: 50px 0 0 50px;
   padding: 10px 0 10px 10px;
   align-items: center;
@@ -127,12 +132,11 @@ main {
   width: 45%;
   margin-top: 50px;
   height: 300px;
-  float: left;
 }
 
 .paragrafo h1 {
   font-size: 4rem;
-  margin-left: 100PX;
+  margin-left: 100px;
 }
 
 .linha {
@@ -153,8 +157,8 @@ main {
   text-align: unset;
 }
 
- .modelo_png img {
-  position: relative;;
+.modelo_png img {
+  position: relative;
   width: 400px;
   height: 600px;
   margin: -195px -1px 0px;
@@ -178,7 +182,6 @@ main {
 }
 
 .bloco {
-  float: right;
   width: 400px;
   height: 250px;
   padding: 100px 120px;
@@ -198,7 +201,7 @@ main {
 .info_down_cad {
   display: flex;
   justify-content: space-between;
-  max-width: 1250px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -246,9 +249,8 @@ main {
   margin-top: 5px;
 }
 
-
 .area_prof_tra {
-  margin-top: 100px;
+  margin-top: 20px;
   display: flex;
   text-align: center;
 }
@@ -261,25 +263,47 @@ main {
   margin-top: 65px;
 }
 
+.circle-profissional {
+  width: 50px;
+  padding: 20px;
+  margin: -40px 20px 10px 40px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-work {
+  width: 50px;
+  padding: 20px;
+  margin: -40px 20px 10px 40px;;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .area_prof_tra a {
   background: linear-gradient(to right, rgba(51, 123, 240, 0.8), rgba(28, 175, 28, 0.8));
   margin: 20px;
-  padding-top: 55px;
+  padding-top: 50px;
   border-radius: 0 50px 50px 0;
   color: white;
-  font-size: 1.5em;
   text-decoration: none;
-  text-transform: uppercase;
   line-height: 1px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   width: 500px;
-  height: 55px;
+  height: 50px;
+  text-align: center;
+  display: flex;
 }
 
 .area_prof_tra h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: start;
-  margin-left: 200px;
+  display: flex;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -289,7 +313,7 @@ main {
 }
 
 #work-area:hover, #profissional-area:hover {
-  transform: scaleY(1.1);
+  transform: scale(1.1);
 }
 
 .statistica {
@@ -345,8 +369,89 @@ main {
 
 #rodape {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 10px;
   padding: 5px;
   background-image: linear-gradient(to right, rgba(51, 123, 240, 0.8), rgba(28, 175, 28, 0.8));
   color: #fff;
+}
+
+/* Estilos para telas menores */
+@media screen and (max-width: 768px) {
+  .paragrafo {
+    width: 100%;
+    margin-top: 20px;
+    height: auto;
+  }
+
+  .paragrafo h1 {
+    font-size: 3rem;
+    margin-left: 20px;
+  }
+
+  .linha {
+    margin: 20px;
+    width: 100%;
+  }
+
+  .paragrafo p {
+    margin: 0 20px;
+    width: auto;
+  }
+
+  .modelo_png img {
+    width: 100%;
+    height: 550px; 
+  }
+
+  .modelo_png {
+    margin-left: 0;
+  }
+
+  .circulo {
+    width: 100%;
+    height: auto;
+    margin: 20px auto;
+  }
+
+  .bloco {
+    padding: 20px;
+    border-radius: 50px;
+  }
+
+  .info_down_cad {
+    flex-direction: column;
+  }
+
+  .info_down_cad .info_item {
+    width: 90%;
+    margin: 10px;
+  }
+
+  .info_down_cad h2 {
+    text-align: start;
+  }
+
+  .area_prof_tra {
+    flex-direction: column;
+  }
+
+  .area_prof_tra a {
+    width: 100%;
+  }
+
+  #work-area, #profissional-area {
+    transform: none;
+  }
+
+  .statistica {
+    width: 100%;
+    float: none;
+    margin: 20px auto;
+  }
+
+  .prefeitura {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
 }
