@@ -18,7 +18,6 @@ const LoginPage: React.FC = () => {
   const handleLogin = () => {
     console.log("Usuário:", username);
     console.log("Senha:", password);
-    // Lógica de autenticação aqui...
   };
 
   return (
