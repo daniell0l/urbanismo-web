@@ -263,25 +263,47 @@ main {
   margin-top: 65px;
 }
 
+.circle-profissional {
+  width: 50px;
+  padding: 20px;
+  margin: -40px 20px 10px 40px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-work {
+  width: 50px;
+  padding: 20px;
+  margin: -40px 20px 10px 40px;;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .area_prof_tra a {
   background: linear-gradient(to right, rgba(51, 123, 240, 0.8), rgba(28, 175, 28, 0.8));
   margin: 20px;
-  padding-top: 55px;
+  padding-top: 50px;
   border-radius: 0 50px 50px 0;
   color: white;
-  font-size: 1.5em;
   text-decoration: none;
-  text-transform: uppercase;
   line-height: 1px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   width: 500px;
-  height: 55px;
+  height: 50px;
+  text-align: center;
+  display: flex;
 }
 
 .area_prof_tra h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: start;
-  margin-left: 200px;
+  display: flex;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -291,7 +313,7 @@ main {
 }
 
 #work-area:hover, #profissional-area:hover {
-  transform: scaleY(1.1);
+  transform: scale(1.1);
 }
 
 .statistica {

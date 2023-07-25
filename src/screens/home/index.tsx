@@ -5,6 +5,8 @@ import {
   FaUserPlus,
   FaDownload,
   FaInfoCircle,
+  FaBriefcase,
+  FaUsers,
 } from "react-icons/fa";
 import logoWide from "../../assets/imgs/logoWide.png";
 import logoModel from "../../assets/imgs/logoModel.png";
@@ -127,10 +129,18 @@ export function Home() {
             <div className="statistica"></div>
             <div className="botao-container">
               <a href="/" id="profissional-area">
-                <h2>Área Profissional</h2>
+                <div className="circle-profissional">
+                <FaBriefcase size={50} color="3a28a"/> 
+                </div>
+                <span>
+                  <h2>Área Profissional</h2>
+                </span>
               </a>
               <a href="/" id="work-area">
-                <h2>Área Trabalho</h2>
+                <div className="circle-work">
+                <FaUsers size={60} color="3a28a" />
+                </div>
+                <h2>Área do Cliente</h2>
               </a>
             </div>
           </div>
