@@ -45,7 +45,7 @@ export function Home() {
             <div className="circle">
               <FaUser size={25} color="3a28a" />
             </div>
-            <span>Login</span>
+            <span><a href="../Login">Login</a></span>
           </div>
         </nav>
       </header>
