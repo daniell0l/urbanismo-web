@@ -1,5 +1,4 @@
 import "./Login.css";
-import "./assets/imgs/logoWide.png"
 import React, { useState } from "react";
 
 
