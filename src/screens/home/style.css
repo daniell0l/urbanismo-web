@@ -97,7 +97,6 @@ main {
   align-items: center;
   background: linear-gradient(to right, #3a86ff, #28af28);
   position: relative;
-  color: #fff;
   cursor: pointer;
   display: flex;
   transition: transform 0.2s ease; 
@@ -109,6 +108,11 @@ main {
 
 #login span {
   margin-left: 15px;
+}
+
+#login a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .circle {
