@@ -39,7 +39,7 @@ const LoginPage: React.FC = () => {
             />
           </div>
           <label htmlFor="password"></label>
-          <input      
+          <input
             type="password"
             id="password"
             value={password}
@@ -51,7 +51,9 @@ const LoginPage: React.FC = () => {
           </button>
         </div>
         <div className="linkCadastro">
-          <a href="">cadastre-se</a>
+          <p>
+            Não tem uma conta? <a href="">Cadastre-se</a>
+          </p>
         </div>
       </form>
     </div>

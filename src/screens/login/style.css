@@ -2,7 +2,7 @@
   max-width: 1200px;
   width: 1000px;
   height: 500px;
-  margin: 5% auto auto auto;
+  margin: 10% auto auto 15%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -41,15 +41,16 @@
 
 .buttonLogin{
   height: 30px;
-  width: 420px;
+  width: 410px;
   background: #3a86ff;
   border: none;
-  font-size: 0.8em;
-  margin: 10px 0 0 40px;
-  text-indent: 5%;
+  font-size: 1em;
+  margin: 15px 0 0 39px;
   color: #fff;
   cursor: pointer;
   text-transform: uppercase;
+  border-radius: 5px;
+  padding: 10px 10px 30px 10px;
 }
 
 .buttonLogin:hover, .buttonLogin:active {
@@ -68,10 +69,15 @@
   margin: 0px 0px 0px 50px;
 }
 
-.linkCadastro a {
+.linkCadastro p{
+  font-size: 0.9em;
   position: relative;
+  left: 140px;
   bottom: -30px;
-  right: -200px;
+}
+
+
+.linkCadastro a {
   color: #0084ff;
   text-decoration: none;
 }
@@ -81,7 +87,7 @@
 }
 
 .linhaVerde {
-  height: 200px;
-  border: 2px solid  rgb(122, 224, 144);
-  margin: 0px 20px 0px 0px;
+  height: 250px;
+  border: 3px solid  rgb(122, 224, 144);
+  margin: 20px 20px 0px 0px;
 }
