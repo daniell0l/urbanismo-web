@@ -51,7 +51,7 @@ const LoginPage: React.FC = () => {
           </button>
         </div>
         <div className="linkCadastro">
-          <a href="">cadastre-se</a>
+          <p>não tem uma conta? <a href="">cadastre-se</a></p>
         </div>
       </form>
     </div>
