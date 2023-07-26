@@ -1,49 +1,86 @@
 #login-container {
-  max-width: 1000px;
+  max-width: 1200px;
+  width: 800px;
   height: 400px;
   margin: 10% auto auto auto;
   display: flex;
   flex-direction: row;
-  border: 1px solid red;
-  flex-wrap: nowrap;
   align-items: center;
-  background: #eeeded;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  background: #dfdfdf;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 2px;
 }
-
-
-.logo {
-    width: 500px;
-    height: 400px;
-    background: #ccc;
-    z-index: 0;
-  }
-  
-  .logo img {
-    width: 400px;
-    margin-top: 80px;
-    margin-left: 100px;
-  }
 
 .blocoLogin {
-  background: #fff;
   width: 500px;
   height: 400px;
-  z-index: 1;
-  border: 1px solid rgb(0, 255, 26);
+  background: #fff;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
-
-.logoLogin img{
-    width: 200px;
-    margin-top: 80px;
-    margin-left: 30%;
+.logoLogin img {
+  width: 200px;
+  margin-left: 25%;
+  margin-top: 20px;
 }
 
 h2 {
-    text-align: center;
-    color: rgb(0, 153, 255);
-    /* text-transform: uppercase; */
+  text-align: center;
+  color: rgb(0, 153, 255);
+  text-transform: uppercase;
 }
 
+.form-group input {
+  width: 80%;
+  height: 20px;
+  padding: 10px;
+  margin: 5px auto;
+  display: flex;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border:1px solid rgb(201, 201, 201);
+}
 
+.buttonLogin{
+  height: 30px;
+  width: 80%;
+  background: #3a86ff;
+  border: none;
+  font-size: 0.8em;
+  margin: 30px 0 0 40px;
+  text-indent: 5%;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.buttonLogin:hover, .buttonLogin:active {
+  background: #56c6fa;
+  color: #000000;
+}
+
+.logoLateral {
+  width: 500px;
+  height: 400px;
+}
+
+.logoLateral img{
+  width: 400px;
+  height: 400px;
+  margin-top: -20px;
+}
+
+.linkCadastro a {
+  position: relative;
+  bottom: -30px;
+  right: -160px;
+  color: #0084ff;
+  text-decoration: none;
+}
+
+.linkCadastro a:hover {
+  color: #000000;
+}
