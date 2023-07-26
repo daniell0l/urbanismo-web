@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Home } from '../screens/home';
-import Login from '../screens/home/login/login'
+import Login from '../screens/login/login'
 
 const AppRoutes: React.FC = () => {
   return (
