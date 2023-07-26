@@ -3,40 +3,58 @@
 * {
   margin: 0;
   padding: 0;
+  outline: 0;
 }
 
+html,
 body {
+  height: 100%;
+  max-width: 1350px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-rendering: optimizeLegibility;
   background: rgb(246, 238, 238);
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1350px;
 }
 
 main {
-  max-width: 1250px;
   margin: 0 auto;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1350px;
 }
 
 #navbar {
-  display: flex;
-  align-items: center; 
-  justify-content: center; 
   background-color: #f0f0f0;
-  margin-left: 90px;  
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1350px; 
 }
 
 .logo img {
   margin-top: 0px;
   width: 100%;
   max-width: 300px;
-  display: inline-block;
+  display: flex;
   justify-content: start;
 }
 
 #navbar_lateral {
   width: 100%;
+  height: auto;
   max-width: 500px;
   list-style-type: none;
   border: 2px solid #0d39b4;
@@ -61,13 +79,16 @@ main {
 
 .search-bar {
   position: relative;
-  margin-left: -20px;
+  height: auto;
+  margin-left: -50px;
   display: flex;
   align-items: center;
   background-color: #e4dbdb;
   border-radius: 50px;
   padding: 3px;
   margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .search-bar input {
@@ -124,8 +145,9 @@ main {
 
 .conteudo {
   display: flex;
-  justify-content: space-between;
   margin: 20px 0;
+  justify-content: space-between;
+
 }
 
 .paragrafo {
@@ -320,7 +342,6 @@ main {
   margin: 5px -30px;
   width: 600px;
   height: 400px;
-  float: right;
   box-shadow: 0 0 0 10px rgba(3, 119, 61, 0.5);
 }
 
@@ -362,12 +383,13 @@ main {
   position: absolute;
   bottom: 0; 
   right: 0;
-  width: 200px;
+  width: 150px;
   height: 78px;
   background: linear-gradient(to right, rgba(121, 167, 241, 0.8), rgba(40, 175, 40, 0.8));
 }
 
 #rodape {
+  justify-content: center;
   text-align: center;
   margin-top: 10px;
   padding: 5px;
@@ -377,24 +399,53 @@ main {
 
 /* Estilos para telas menores */
 @media screen and (max-width: 768px) {
+  .conteudo {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 90%;
+    height: auto;
+  }
+ 
+  #navbar {
+    flex-direction: column;
+    justify-content: space-between; 
+  }
+
+  #navbar_lateral {
+    border-radius: 50px;
+  }
+  .search-bar {
+    display: none;
+  }
+
+  #login {
+    margin-top: 0px;
+    align-self: flex-end; 
+  }
+
   .paragrafo {
     width: 100%;
-    margin-top: 20px;
     height: auto;
+    margin-top: 0;
   }
 
   .paragrafo h1 {
     font-size: 3rem;
-    margin-left: 20px;
+    margin: 0;
+    width: auto;
+    height: auto;
   }
 
   .linha {
-    margin: 20px;
+    margin: 20px 0 20px 0;
     width: 100%;
+    height: auto;
   }
 
   .paragrafo p {
-    margin: 0 20px;
+    margin: 0;
     width: auto;
   }
 
@@ -403,8 +454,13 @@ main {
     height: 550px; 
   }
 
-  .modelo_png {
-    margin-left: 0;
+  .modelo_png {   
+    width: 100%;
+    height: auto;
+    margin-top: 180px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
   }
 
   .circulo {
@@ -420,11 +476,15 @@ main {
 
   .info_down_cad {
     flex-direction: column;
+    margin-top: 200px;
   }
 
   .info_down_cad .info_item {
-    width: 90%;
-    margin: 10px;
+    
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
   }
 
   .info_down_cad h2 {
@@ -433,25 +493,32 @@ main {
 
   .area_prof_tra {
     flex-direction: column;
+    margin-top: 20px;
   }
 
   .area_prof_tra a {
     width: 100%;
+    border-radius: 50px;
+  }
+
+  .botao-container {
+    margin: 0;
   }
 
   #work-area, #profissional-area {
     transform: none;
+    transform-origin: top;
   }
 
   .statistica {
     width: 100%;
-    float: none;
-    margin: 20px auto;
+    margin: 150px 0 20px 0;
   }
 
-  .prefeitura {
+  section .prefeitura {
+    width: 100%;
+    height: auto;
+    margin: 0px;
     flex-direction: column;
-    align-items: center;
-    margin-left: 0;
   }
 }
