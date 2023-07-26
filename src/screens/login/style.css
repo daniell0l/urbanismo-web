@@ -1,8 +1,8 @@
 #login-container {
   max-width: 1200px;
-  width: 800px;
-  height: 400px;
-  margin: 10% auto auto auto;
+  width: 1000px;
+  height: 500px;
+  margin: 5% auto auto auto;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -41,7 +41,7 @@ h2 {
 
 .buttonLogin{
   height: 30px;
-  width: 80%;
+  width: 420px;
   background: #3a86ff;
   border: none;
   font-size: 0.8em;
@@ -65,13 +65,13 @@ h2 {
 .logoLateral img{
   width: 400px;
   height: 400px;
-  margin-top: -20px;
+  margin: 0px 0px 0px 50px;
 }
 
 .linkCadastro a {
   position: relative;
   bottom: -30px;
-  right: -160px;
+  right: -200px;
   color: #0084ff;
   text-decoration: none;
 }
@@ -83,4 +83,5 @@ h2 {
 .linhaVerde {
   height: 200px;
   border: 2px solid  rgb(122, 224, 144);
+  margin: 0px 20px 0px 0px;
 }
