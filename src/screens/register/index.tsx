@@ -1,4 +1,3 @@
-import "./Registration.css";
 import React, { useState } from "react";
 
 const RegistrationPage: React.FC = () => {

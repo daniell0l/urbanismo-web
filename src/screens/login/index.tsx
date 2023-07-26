@@ -52,7 +52,7 @@ const LoginPage: React.FC = () => {
         </div>
         <div className="linkCadastro">
           <p>
-            Não tem uma conta? <a href="">Cadastre-se</a>
+            Não tem uma conta? <a href="/register">Cadastre-se</a>
           </p>
         </div>
       </form>

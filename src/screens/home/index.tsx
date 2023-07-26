@@ -31,7 +31,7 @@ export function Home() {
               <a href="/">downloads</a>
             </li>
             <li>
-              <a href="/">cadastro</a>
+              <a href="../register">cadastro</a>
             </li>
           </ul>
           <div className="search-bar">
@@ -112,13 +112,15 @@ export function Home() {
               </a>
               <div className="info_text">
                 <h2>cadastro</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam nonummy nibh euismod tincidunt ut laoreet dolorediam
-                  nonummy nibh euismod tincidunt ut laoreet dolorediam nonummy
-                  nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-                  volutpat.
-                </p>
+                <a href="../register">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                    diam nonummy nibh euismod tincidunt ut laoreet dolorediam
+                    nonummy nibh euismod tincidunt ut laoreet dolorediam nonummy
+                    nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                    volutpat.
+                  </p>
+                </a>
               </div>
             </div>
           </div>
