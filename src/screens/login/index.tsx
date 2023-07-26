@@ -1,4 +1,4 @@
-import "../login/style.css";
+import "./style.css";
 import logoLateral from "../../assets/imgs/logoWide.png";
 import React, { useState } from "react";
 

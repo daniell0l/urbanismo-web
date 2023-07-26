@@ -20,7 +20,7 @@
   border-bottom-right-radius: 10px;
 }
 
-h2 {
+.blocoLogin h2 {
   font-size: 2em;
   text-align: center;
   color: rgb(0, 153, 255);
