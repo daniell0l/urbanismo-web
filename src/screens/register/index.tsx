@@ -82,14 +82,14 @@ const RegistrationPage: React.FC = () => {
           type="button"
           onClick={handleRegistration}
         >
-          próximo
+          Cadastrar
         </button>
         <br />
-        <div  className="cadastroLink">
-          <a href="javascript:history.go(-1)">
-            Voltar a página anterior
-          </a>
-        </div>
+          <p className="cadastroLink"> Já tem cadastro? 
+            <a href="/login">
+              Login
+            </a>
+          </p>
       </form>
     </div>
   );

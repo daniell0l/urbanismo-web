@@ -68,13 +68,15 @@
     height: 400px;
     margin: 0px 0px 0px 50px;
   }
+
+  .cadastroLink{
+    position: relative;
+    left: 170px;
+  }
   
   .cadastroLink a {
-    font-size: 1em;
     color: #0084ff;
     text-decoration: none;
-    position: relative;
-    left: 160px;
   }
   
   .cadastroLink a:hover {
