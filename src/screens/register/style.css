@@ -1,0 +1,88 @@
+#registration-container {
+    max-width: 1200px;
+    width: 1000px;
+    height: 500px;
+    margin: 10% auto auto 15%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #fff;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px #5c5b5b;
+  }
+  
+  .blocoRegistration {
+    width: 500px;
+    height: 400px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  .blocoRegistration h2 {
+    font-size: 2em;
+    text-align: center;
+    color: rgb(0, 153, 255);
+    text-transform: uppercase;
+    margin: 40px 0px 30px 0px;
+  }
+  
+  .form-group input {
+    width: 80%;
+    height: 20px;
+    padding: 10px;
+    margin: 5px auto;
+    display: flex;
+    border-radius: 5px;
+    border:1px solid rgb(201, 201, 201);
+    font-si-ze: 1em;
+  }
+  
+  .buttonRegistration{
+    height: 30px;
+    width: 410px;
+    background: #3a86ff;
+    border: none;
+    font-size: 1em;
+    margin: 15px 0px 20px 39px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding: 10px 10px 30px 10px;
+  }
+  
+  .buttonRegistration:hover, .buttonRegistration:active {
+    background: #56c6fa;
+    color: #000000;
+  }
+  
+  .logoLateral {
+    width: 500px;
+    height: 400px;
+  }
+  
+  .logoLateral img{
+    width: 400px;
+    height: 400px;
+    margin: 0px 0px 0px 50px;
+  }
+  
+  .cadastroLink a {
+    font-size: 1em;
+    color: #0084ff;
+    text-decoration: none;
+    position: relative;
+    left: 160px;
+  }
+  
+  .cadastroLink a:hover {
+    color: #000000;
+  }
+  
+  .linhaVerde {
+    height: 250px;
+    border: 3px solid  rgb(122, 224, 144);
+    margin: 20px 20px 0px 0px;
+  }
