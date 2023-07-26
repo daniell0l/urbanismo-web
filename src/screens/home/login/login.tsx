@@ -1,6 +1,6 @@
 import "../login/Login.css";
 import logoLateral from "../../../assets/imgs/logoWide.png";
-import logoLogin from "../../../assets/imgs/logoWide.png";
+import LoginLogo from "../../../assets/imgs/logoWide.png";
 import React, { useState } from "react";
 
 const LoginPage: React.FC = () => {
@@ -22,39 +22,40 @@ const LoginPage: React.FC = () => {
 
   return (
     <div id="login-container">
-      <div className="logo">
+      <div className="logoLateral">
         <img src={logoLateral} alt="logo lem urbanismo" />
       </div>
       <form className="blocoLogin">
-      <div className="logoLogin">
-        <img src={logoLogin} alt="lem urbanismo" />
-      </div>
+        <div className="logoLogin">
+          <img src={LoginLogo} alt="lem urbanismo logo" />
+        </div>
         <h2>Login</h2>
         <div className="form-group">
-          <label htmlFor="username">Usuário:</label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={handleUsernameChange}
-            placeholder="Digite seu usuário"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Senha:</label>
-          <input
+          <div className="LabelLogin">
+            <label htmlFor="username"></label>
+            <input
+              type="text"
+              id="username"
+              value={username}
+              onChange={handleUsernameChange}
+              placeholder="usuário"
+            />
+          </div>
+          <label htmlFor="password"></label>
+          <input      
             type="password"
             id="password"
             value={password}
             onChange={handlePasswordChange}
-            placeholder="Digite sua senha"
+            placeholder="senha"
           />
+          <button className="buttonLogin" type="button" onClick={handleLogin}>
+            Entrar
+          </button>
         </div>
-        <button type="button" onClick={handleLogin}>
-          Entrar
-        </button>
-        <br />
-        <a href="">cadastrar se</a>
+        <div className="linkCadastro">
+          <a href="">cadastrar-se</a>
+        </div>
       </form>
     </div>
   );
