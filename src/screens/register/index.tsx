@@ -76,6 +76,15 @@ const RegistrationPage: React.FC = () => {
             onChange={handlePasswordChange}
             placeholder="Senha"
           />
+          <div className="form-group">
+          <label htmlFor="professionalType">Tipo profissional:</label>
+          <select
+            id="professionalType"
+          >
+            <option value="Engineer">Engenheiro</option>
+            <option value="Technician">Técnico</option>
+            <option value="Architect">Arquiteto</option>
+          </select>
         </div>
         <button
           className="buttonRegistration"
@@ -90,6 +99,7 @@ const RegistrationPage: React.FC = () => {
               Login
             </a>
           </p>
+        </div>
       </form>
     </div>
   );
