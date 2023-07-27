@@ -1,135 +1,141 @@
 #registration-container {
-    max-width: 1200px;
-    width: 800px;
-    height: 800px;
-    margin: 5% auto auto 15%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background: #fff;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 1px #5c5b5b;
-  }
-  
-  .blocoRegistration {
-    width: 500px;
-    height: 400px;
-    position: relative;
-    right: 150px;
-    bottom: 30px;
-  }
-  
-  .blocoRegistration h2 {
-    font-size: 2em;
-    text-align: center;
-    color: rgb(0, 153, 255);
-    text-transform: uppercase;
-    margin: 0px 0px 30px 0px;
-  }
-  
-  .form-group input {
-    width: 80%;
-    height: 20px;
-    padding: 10px;
-    margin: 5px auto;
-    display: flex;
-    border-radius: 5px;
-    border:1px solid rgb(201, 201, 201);
-    font-size: 1em;
-  }
-  
-  .buttonRegistration{
-    height: 30px;
-    width: 345px;
-    background: #3a86ff;
-    border: none;
-    font-size: 1em;
-    color: #fff;
-    cursor: pointer;
-    text-transform: uppercase;
-    border-radius: 5px;
-    padding: 10px 0px 30px 0px;
-    top: 250px;
-    left: 28px;
-    position: relative;
-  }
-  
-  .buttonRegistration:hover, .buttonRegistration:active {
-    background: #56c6fa;
-    color: #000000;
-  }
-  
-  .logoLateral {
-    width: 500px;
-    height: 400px;
-  }
-  
-  .logoLateral img{
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    top: 20px;
-    left: 500px;
-  }
+  max-width: 1200px;
+  width: 800px;
+  height: 900px;
+  margin: 2% auto auto 25%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #fff;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 1px #5c5b5b;
+}
 
-  .cadastroLink{
-    position: relative;
-    left: 110px;
-    top: 255px;
-  }
-  
-  .cadastroLink a {
-    color: #0084ff;
-    text-decoration: none;
-  }
-  
-  .cadastroLink a:hover {
-    color: #000000;
-  }
-  
-  .greenLine {
-    height: 250px;
-    border: 3px solid  rgb(122, 224, 144);
-    margin: 20px 20px 0px 0px;
-  }
+.form-group {
+  width: 500px;
+  height: 600px;
+  margin: 0px 100px 0px 150px;
+}
 
-  .profissionalType {
-    width: 345px;
-    height: 40px;
-    left:28px;
-    position: relative;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    cursor: pointer;
-    border-radius: 5px;
-    padding: 10px;
-    color: #707070;
-    background: #fff;
-  }
+.blocoRegistration {
+  width: 500px;
+  height: 400px;
+  position: relative;
+  right: 150px;
+  bottom: 30px;
+}
 
-  .labelProfissionalType label{
-    padding: 35px;
-    color: #7a7a7a; 
-  }
+.blocoRegistration h2 {
+  font-size: 2em;
+  color: rgb(0, 153, 255);
+  text-transform: uppercase;
+  margin: -80px 0px 30px 20px;
+}
 
-  .profissionalType:hover {
-    background: #e0e0e0;
-  }
+.form-group input {
+  width: 80%;
+  height: 20px;
+  padding: 10px;
+  margin: 5px auto;
+  display: flex;
+  border-radius: 5px;
+  border: 1px solid rgb(201, 201, 201);
+  font-size: 1em;
+  left: -20px;
+  position: relative;
+}
 
-  .profissionalType:active {
-    background: #d0d0d0;
-  }
+.buttonRegistration {
+  height: 30px;
+  width: 345px;
+  background: #3a86ff;
+  border: none;
+  font-size: 1em;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 10px 0px 30px 0px;
+  top: 250px;
+  left: 10px;
+  position: relative;
+}
 
-  .profissionalType .dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    border-top: none;
-    border-radius: 0 0 4px 4px;
-    z-index: 1;
-  }
+.buttonRegistration:hover,
+.buttonRegistration:active {
+  background: #56c6fa;
+  color: #000000;
+}
+
+.logoRegister img {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: -20px;
+  left: 350px;
+}
+
+.cadastroLink {
+  position: relative;
+  left: 20px;
+  top: 255px;
+}
+
+.cadastroLink a {
+  color: #0084ff;
+  text-decoration: none;
+}
+
+.cadastroLink a:hover {
+  color: #000000;
+}
+
+.greenLine {
+  height: 250px;
+  border: 3px solid rgb(122, 224, 144);
+  margin: 20px 20px 0px 0px;
+}
+
+.profissionalType {
+  width: 422px;
+  height: 45px;
+  left: 19px;
+  bottom: -5px;
+  position: relative;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px;
+  color: #707070;
+  background: #fff;
+}
+
+.labelProfissionalType label {
+  padding: 35px;
+  color: #7a7a7a;
+  left: -15px;
+  position: relative;
+}
+
+.profissionalType:hover {
+  background: #e0e0e0;
+}
+
+.profissionalType:active {
+  background: #d0d0d0;
+}
+
+.profissionalType .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  z-index: 1;
+}

@@ -33,13 +33,13 @@ const RegistrationPage: React.FC = () => {
 
   return (
     <div id="registration-container">
-      <div className="logoLateral">
+      <div className="logoRegister">
         <img src={logoLateral} alt="logo lem urbanismo" />
       </div>
       <div className="greenLineRegister"></div>
       <form className="blocoRegistration">
-        <h2>Cadastro</h2>
         <div className="form-group">
+          <h2>Cadastro</h2>
           <label htmlFor="name"></label>
           <input
             type="text"
@@ -48,8 +48,6 @@ const RegistrationPage: React.FC = () => {
             onChange={handleNameChange}
             placeholder="Usuário"
           />
-        </div>
-        <div className="form-group">
           <label htmlFor="email"></label>
           <input
             type="email"
@@ -66,8 +64,6 @@ const RegistrationPage: React.FC = () => {
             onChange={handleCpfChange}
             placeholder="CPF"
           />
-        </div>
-        <div className="form-group">
           <label htmlFor="password"></label>
           <input
             type="password"
@@ -77,25 +73,27 @@ const RegistrationPage: React.FC = () => {
             placeholder="Senha"
           />
           <div className="labelProfissionalType">
-          <label htmlFor="professionalType">Tipo profissional:</label><br />
-          <select className="profissionalType">
-            <option value="Engineer">Engenheiro</option>
-            <option value="Technician">Técnico</option>
-            <option value="Architect">Arquiteto</option>
-          </select>
-        </div>
-        <button
-          className="buttonRegistration"
-          type="button"
-          onClick={handleRegistration}
-        >
-          Cadastrar
-        </button>
-        <br />
-          <p className="cadastroLink"> Já tem cadastro? 
-            <a href="/login">
-              Faça o login
-            </a>
+            <label htmlFor="professionalType">Tipo profissional:</label>
+            <br />
+            <select className="profissionalType">
+              <option value="Engineer">Engenheiro</option>
+              <option value="Technician">Técnico</option>
+              <option value="Architect">Arquiteto</option>
+            </select>
+          </div>
+
+          <button
+            className="buttonRegistration"
+            type="button"
+            onClick={handleRegistration}
+          >
+            Cadastrar
+          </button>
+          <br />
+          <p className="cadastroLink">
+            {" "}
+            Já tem cadastro?
+            <a href="/login">Faça o login</a>
           </p>
         </div>
       </form>
