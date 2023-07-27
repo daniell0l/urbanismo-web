@@ -24,7 +24,7 @@ const LoginPage: React.FC = () => {
       <div className="logoLateral">
         <img src={logoLateral} alt="logo lem urbanismo" />
       </div>
-      <div className="linhaVerde"></div>
+      <div className="greenLine"></div>
       <form className="blocoLogin">
         <h2>Login</h2>
         <div className="form-group">

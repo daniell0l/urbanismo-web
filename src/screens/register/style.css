@@ -1,8 +1,8 @@
 #registration-container {
     max-width: 1200px;
-    width: 1000px;
-    height: 500px;
-    margin: 10% auto auto 15%;
+    width: 800px;
+    height: 800px;
+    margin: 5% auto auto 15%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -16,8 +16,9 @@
   .blocoRegistration {
     width: 500px;
     height: 400px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    position: relative;
+    right: 150px;
+    bottom: 30px;
   }
   
   .blocoRegistration h2 {
@@ -25,7 +26,7 @@
     text-align: center;
     color: rgb(0, 153, 255);
     text-transform: uppercase;
-    margin: 40px 0px 30px 0px;
+    margin: 0px 0px 30px 0px;
   }
   
   .form-group input {
@@ -36,21 +37,23 @@
     display: flex;
     border-radius: 5px;
     border:1px solid rgb(201, 201, 201);
-    font-si-ze: 1em;
+    font-size: 1em;
   }
   
   .buttonRegistration{
     height: 30px;
-    width: 410px;
+    width: 345px;
     background: #3a86ff;
     border: none;
     font-size: 1em;
-    margin: 15px 0px 20px 39px;
     color: #fff;
     cursor: pointer;
     text-transform: uppercase;
     border-radius: 5px;
-    padding: 10px 10px 30px 10px;
+    padding: 10px 0px 30px 0px;
+    top: 250px;
+    left: 28px;
+    position: relative;
   }
   
   .buttonRegistration:hover, .buttonRegistration:active {
@@ -64,14 +67,17 @@
   }
   
   .logoLateral img{
-    width: 400px;
-    height: 400px;
-    margin: 0px 0px 0px 50px;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 20px;
+    left: 500px;
   }
 
   .cadastroLink{
     position: relative;
-    left: 170px;
+    left: 110px;
+    top: 255px;
   }
   
   .cadastroLink a {
@@ -83,8 +89,47 @@
     color: #000000;
   }
   
-  .linhaVerde {
+  .greenLine {
     height: 250px;
     border: 3px solid  rgb(122, 224, 144);
     margin: 20px 20px 0px 0px;
+  }
+
+  .profissionalType {
+    width: 345px;
+    height: 40px;
+    left:28px;
+    position: relative;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+    color: #707070;
+    background: #fff;
+  }
+
+  .labelProfissionalType label{
+    padding: 35px;
+    color: #7a7a7a; 
+  }
+
+  .profissionalType:hover {
+    background: #e0e0e0;
+  }
+
+  .profissionalType:active {
+    background: #d0d0d0;
+  }
+
+  .profissionalType .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    z-index: 1;
   }

@@ -36,7 +36,7 @@ const RegistrationPage: React.FC = () => {
       <div className="logoLateral">
         <img src={logoLateral} alt="logo lem urbanismo" />
       </div>
-      <div className="linhaVerde"></div>
+      <div className="greenLineRegister"></div>
       <form className="blocoRegistration">
         <h2>Cadastro</h2>
         <div className="form-group">
@@ -76,11 +76,9 @@ const RegistrationPage: React.FC = () => {
             onChange={handlePasswordChange}
             placeholder="Senha"
           />
-          <div className="form-group">
-          <label htmlFor="professionalType">Tipo profissional:</label>
-          <select
-            id="professionalType"
-          >
+          <div className="labelProfissionalType">
+          <label htmlFor="professionalType">Tipo profissional:</label><br />
+          <select className="profissionalType">
             <option value="Engineer">Engenheiro</option>
             <option value="Technician">Técnico</option>
             <option value="Architect">Arquiteto</option>
@@ -96,7 +94,7 @@ const RegistrationPage: React.FC = () => {
         <br />
           <p className="cadastroLink"> Já tem cadastro? 
             <a href="/login">
-              Login
+              Faça o login
             </a>
           </p>
         </div>
