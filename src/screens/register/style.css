@@ -24,7 +24,6 @@
   bottom: 30px;
   left: -25px;
   top: 100px;
-  /* border: 1px solid red; */
 }
 
 .blocoRegistration h2 {
@@ -100,27 +99,53 @@
 }
 
 .Select {
-  width: 100%;
+  width: 380px;
   height: 45px;
-  padding: 10px 20px 10px 20px;
+  margin: 10px 20px 10px 0px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
   cursor: pointer;
   color: #7a7171;
   background: #fff;
-  margin-top: 10px;
+  float: left;
+  line-height: 45px;
 }
+
+.EstadosSelect {
+  position: relative;
+  top: 25px;
+  right: 80px;
+  width: 380px;
+  height: 45px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #7a7171;
+  background: #fff;
+  float: left;
+  line-height: 45px;
+}
+
 
 .Select:hover {
   background: #ebebeb;
-  color: #000;  
+  color: #000;
 }
 
 .form-Address {
-  width: auto;
-  height: auto;
-  margin: 10px 0px 0px 0px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-Address input {
+  padding: 10px;
+  margin: 0px 10px 10px 0px;
+  border-radius: 5px;
+  border: 1px solid rgb(201, 201, 201);
+  font-size: 1em;
 }
 
 .line-with-name {
