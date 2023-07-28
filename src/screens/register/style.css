@@ -14,16 +14,15 @@
 
 .form-group-register {
   flex: 1;
-  padding: 50px;
+  padding: 20px;
 }
 
 .blocoRegistration {
-  width: auto;
-  height: auto;
+  width: 100%;
   position: relative;
   bottom: 30px;
-  left: -25px;
-  top: 100px;
+  justify-content: center;
+  margin-top: 200px;
 }
 
 .blocoRegistration h2 {
@@ -46,6 +45,7 @@
 .form-group-register label {
   color: #3f3f3f;
   font-size: 1em;
+  margin-left: 5px;
 }
 
 .buttonRegistration {
@@ -69,14 +69,12 @@
 .buttonRegistration:hover,
 .buttonRegistration:active {
   background: #56c6fa;
-  color: #000;
 }
 
-.logoRegister img {
+.logoRegister {
   width: 200px;
-  height: 200px;
-  position: relative;
-  bottom: 550px;
+  top: -550px;
+
 }
 
 .cadastroLink {
@@ -101,41 +99,37 @@
   margin-top: 20px;
 }
 
-.Select {
-  width: 380px;
-  height: 45px;
-  margin: 10px 20px 10px 0px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-  color: #7a7171;
-  background: #fff;
-  float: left;
-  line-height: 45px;
+.select-container {
+  display: inline-block;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 300px;
+  margin-right: 40px;
 }
 
-.EstadosSelect {
-  position: relative;
-  top: 28px;
-  right: 80px;
-  width: 380px;
-  height: 45px;
-  font-size: 16px;
+.Select select,
+.selectEstado select {
+  width: 300px;
+  padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  cursor: pointer;
-  color: #7a7171;
-  background: #fff;
-  float: left;
-  line-height: 45px;
+  background-color: #f9f9f9;
+  font-size: 16px;
+  color: #333;
+  margin-top: 5px;
 }
 
+.Select select option,
+.selectEstado select option {
+  font-size: 14px;
+  color: #555;
+}
 
 .Select:hover {
   background: #ebebeb;
   color: #000;
 }
+
 
 .form-Address {
   width: 100%;

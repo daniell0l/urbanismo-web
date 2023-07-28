@@ -1,6 +1,6 @@
 import "./style.css";
 import React, { useState } from "react";
-import logoLateral from "../../assets/imgs/logoWide.png";
+import logoRegister from "../../assets/imgs/logoWide.png";
 
 const RegistrationPage: React.FC = () => {
   const [name, setName] = useState("");
@@ -77,10 +77,14 @@ const RegistrationPage: React.FC = () => {
 
   return (
     <div id="registration-container">
-      <div className="logoRegister">
-        <img src={logoLateral} alt="logo lem urbanismo" />
-      </div>
       <form className="blocoRegistration">
+        <div>
+          <img
+            className="logoRegister"
+            src={logoRegister}
+            alt="logo lem urbanismo"
+          />
+        </div>
         <div className="form-group-register">
           <h2>Cadastro</h2>
           <span className="line-with-name">Dados pessoais</span>
@@ -116,87 +120,87 @@ const RegistrationPage: React.FC = () => {
             onChange={handlePasswordChange}
             placeholder="Obrigatório"
           />
-          <span className="line-with-name">Dados de Endereço/Contato</span><br />
-          <div className="form-Address">
-          <div className="labelProfissionalType">
-            <label htmlFor="professionalType">Tipo profissional:</label><br />
-            <select
-             className="Select"
-             value={professionalType}
-             onChange={handleProfessionalTypeChange}
-             >
-              <option value="Engineer">Engenheiro</option>
-              <option value="Technician">Técnico</option>
-              <option value="Architect">Arquiteto</option>
-            </select><br />
+          <span className="line-with-name">Dados de Endereço/Contato</span>
+          <div className="select-container">
+            <label htmlFor="professionalType">Tipo profissional:</label>
+            <div className="Select">
+              <select
+                value={professionalType}
+                onChange={handleProfessionalTypeChange}
+              >
+                <option value="Engineer">Engenheiro</option>
+                <option value="Technician">Técnico</option>
+                <option value="Architect">Arquiteto</option>
+              </select>
+            </div>
           </div>
-          <label htmlFor="currentState">Estado atual:</label><br />
-            <select
-              className="EstadosSelect"
-              value={currentState}
-              onChange={handleCurrentStateChange}
-            >
-              <option value="AC">Acre</option>
-              <option value="AL">Alagoas</option>
-              <option value="AP">Amapá</option>
-              <option value="AM">Amazonas</option>
-              <option value="BA">Bahia</option>
-              <option value="CE">Ceará</option>
-              <option value="DF">Distrito Federal</option>
-              <option value="ES">Espírito Santo</option>
-              <option value="GO">Goiás</option>
-              <option value="MA">Maranhão</option>
-              <option value="MT">Mato Grosso</option>
-              <option value="MS">Mato Grosso do Sul</option>
-              <option value="MG">Minas Gerais</option>
-              <option value="PA">Pará</option>
-              <option value="PB">Paraíba</option>
-              <option value="PR">Paraná</option>
-              <option value="PE">Pernambuco</option>
-              <option value="PI">Piauí</option>
-              <option value="RJ">Rio de Janeiro</option>
-              <option value="RN">Rio Grande do Norte</option>
-              <option value="RS">Rio Grande do Sul</option>
-              <option value="RO">Rondônia</option>
-              <option value="RR">Roraima</option>
-              <option value="SC">Santa Catarina</option>
-              <option value="SP">São Paulo</option>
-              <option value="SE">Sergipe</option>
-              <option value="TO">Tocantins</option>
-            </select>
-            <label htmlFor="currentCity">Cidade Atual:</label>
-            <input
-              type="text"
-              id="currentCity"
-              value={currentCity}
-              onChange={handleCurrentCityChange}
-              placeholder="Obrigatório"
-            />
-            <label htmlFor="address">Endereço:</label>
-            <input
-              type="text"
-              id="address"
-              value={address}
-              onChange={handleAddressChange}
-              placeholder="Obrigatório"
-            />
-            <label htmlFor="neighborhood">Bairro:</label>
-            <input
-              type="text"
-              id="neighborhood"
-              value={neighborhood}
-              onChange={handleNeighborhoodChange}
-              placeholder="Obrigatório"
-            />
-            <label htmlFor="Phone">Telefone:</label>
-            <input
-              type="text"
-              id="phone"
-              value={phone}
-              onChange={handlePhoneChange}
-              placeholder="Obrigatório"
-            />
-          </div>
+          <div className="select-container">
+            <label htmlFor="currentState">Estado atual:</label>
+            <div className="selectEstado">
+              <select value={currentState} onChange={handleCurrentStateChange}>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+              </select>
+            </div>
+          </div><br />
+
+          <label htmlFor="currentCity">Cidade Atual:
+          <input
+            type="text"
+            id="currentCity"
+            value={currentCity}
+            onChange={handleCurrentCityChange}
+            placeholder="Obrigatório"
+          /></label>
+          <label htmlFor="address">Endereço:</label>
+          <input
+            type="text"
+            id="address"
+            value={address}
+            onChange={handleAddressChange}
+            placeholder="Obrigatório"
+          />
+          <label htmlFor="neighborhood">Bairro:</label>
+          <input
+            type="text"
+            id="neighborhood"
+            value={neighborhood}
+            onChange={handleNeighborhoodChange}
+            placeholder="Obrigatório"
+          />
+          <label htmlFor="Phone">Telefone:</label>
+          <input
+            type="text"
+            id="phone"
+            value={phone}
+            onChange={handlePhoneChange}
+            placeholder="Obrigatório"
+          />
           <button
             className="buttonRegistration"
             type="button"
