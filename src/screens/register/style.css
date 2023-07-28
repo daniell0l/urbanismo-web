@@ -31,7 +31,7 @@
   color: rgb(0, 153, 255);
   text-transform: uppercase;
   margin-top: -100px;
-  margin-left: 360px;
+  margin-left: 350px;
 }
 
 .form-group-register input {
@@ -75,9 +75,8 @@
 .logoRegister img {
   width: 200px;
   height: 200px;
-  position: absolute;
-  top: -20px;
-  left: 200px;
+  position: relative;
+  bottom: 550px;
 }
 
 .cadastroLink {
