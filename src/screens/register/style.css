@@ -62,6 +62,8 @@
   border-radius: 5px;
   margin-top: 20px;
   margin-bottom: -10px;
+  left: 270px;
+  position: relative;
 }
 
 .buttonRegistration:hover,
@@ -80,6 +82,8 @@
 
 .cadastroLink {
   margin-top: 20px;
+  position: relative;
+  left: 340px;
 }
 
 .cadastroLink a {
@@ -114,7 +118,7 @@
 
 .EstadosSelect {
   position: relative;
-  top: 25px;
+  top: 28px;
   right: 80px;
   width: 380px;
   height: 45px;
