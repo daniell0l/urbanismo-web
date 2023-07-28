@@ -120,7 +120,11 @@ const RegistrationPage: React.FC = () => {
           <div className="form-Address">
           <div className="labelProfissionalType">
             <label htmlFor="professionalType">Tipo profissional:</label><br />
-            <select className="Select">
+            <select
+             className="Select"
+             value={professionalType}
+             onChange={handleProfessionalTypeChange}
+             >
               <option value="Engineer">Engenheiro</option>
               <option value="Technician">Técnico</option>
               <option value="Architect">Arquiteto</option>
