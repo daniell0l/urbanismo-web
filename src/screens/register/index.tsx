@@ -204,7 +204,7 @@ const RegistrationPage: React.FC = () => {
           <p className="cadastroLink">
             {" "}
             Já tem cadastro?
-            <a href="/login">Faça o login</a>
+            <a href="/login"> Faça o login</a>
           </p>
         </div>
       </form>
