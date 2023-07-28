@@ -9,7 +9,9 @@ const RegistrationPage: React.FC = () => {
   const [password, setPassword] = useState("");
   const [professionalType, setProfessionalType] = useState("Engineer");
   const [currentCity, setCurrentCity] = useState("");
-  const [address, setAddress] = useState("");
+  const [AddressNumber, setAddressNumber] = useState("");
+  const [AddressCep, setCep] = useState("");
+  const [AddressStreet, setStreet] = useState("");
   const [neighborhood, setNeighborhood] = useState("");
   const [phone, setPhone] = useState("");
   const [currentState, setCurrentState] = useState("AC");
@@ -43,7 +45,7 @@ const RegistrationPage: React.FC = () => {
   };
 
   const handleAddressChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setAddress(event.target.value);
+    setAddressNumber(event.target.value);
   };
 
   const handleNeighborhoodChange = (
@@ -61,6 +63,14 @@ const RegistrationPage: React.FC = () => {
   ) => {
     setCurrentState(event.target.value);
   };
+  
+  const handleCepChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCep(event.target.value);
+  };
+
+  const handleStreetChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setStreet(event.target.value);
+  };
 
   const handleRegistration = () => {
     console.log("Name:", name);
@@ -69,10 +79,12 @@ const RegistrationPage: React.FC = () => {
     console.log("Password:", password);
     console.log("Professional Type:", professionalType);
     console.log("Current City:", currentCity);
-    console.log("Address:", address);
+    console.log("Address:", AddressNumber);
     console.log("Neighborhood:", neighborhood);
     console.log("Phone:", phone);
     console.log("Current State:", currentState);
+    console.log("Cep:", AddressCep);
+    console.log("Street:", AddressStreet);
   };
 
   return (
@@ -92,6 +104,7 @@ const RegistrationPage: React.FC = () => {
           <input
             type="text"
             id="name"
+            required
             value={name}
             onChange={handleNameChange}
             placeholder="Obrigatório"
@@ -100,6 +113,7 @@ const RegistrationPage: React.FC = () => {
           <input
             type="email"
             id="email"
+            required
             value={email}
             onChange={handleEmailChange}
             placeholder="Obrigatório"
@@ -108,6 +122,7 @@ const RegistrationPage: React.FC = () => {
           <input
             type="text"
             id="cpf"
+            required
             value={cpf}
             onChange={handleCpfChange}
             placeholder="Obrigatório"
@@ -116,6 +131,7 @@ const RegistrationPage: React.FC = () => {
           <input
             type="password"
             id="password"
+            required
             value={password}
             onChange={handlePasswordChange}
             placeholder="Obrigatório"
@@ -167,21 +183,44 @@ const RegistrationPage: React.FC = () => {
                 <option value="TO">Tocantins</option>
               </select>
             </div>
-          </div><br />
+          </div>
+          <br />
 
-          <label htmlFor="currentCity">Cidade Atual:
-          <input
-            type="text"
-            id="currentCity"
-            value={currentCity}
-            onChange={handleCurrentCityChange}
-            placeholder="Obrigatório"
-          /></label>
-          <label htmlFor="address">Endereço:</label>
+          <label htmlFor="currentCity">
+            Cidade Atual:
+            <input
+              type="text"
+              id="currentCity"
+              required
+              value={currentCity}
+              onChange={handleCurrentCityChange}
+              placeholder="Obrigatório"
+            />
+          </label>
+          <label htmlFor="address">Número:</label>
           <input
             type="text"
             id="address"
-            value={address}
+            required
+            value={AddressNumber}
+            onChange={handleAddressChange}
+            placeholder="Obrigatório"
+          />
+          <label htmlFor="AddresCep">Cep:</label>
+          <input
+            type="text"
+            id="AddressCep"
+            required
+            value={AddressCep}
+            onChange={handleAddressChange}
+            placeholder="Obrigatório"
+          />
+          <label htmlFor="AddressStreet">Rua:</label>
+          <input
+            type="text"
+            id="AddressStreet"
+            required
+            value={AddressStreet}
             onChange={handleAddressChange}
             placeholder="Obrigatório"
           />
@@ -189,6 +228,7 @@ const RegistrationPage: React.FC = () => {
           <input
             type="text"
             id="neighborhood"
+            required
             value={neighborhood}
             onChange={handleNeighborhoodChange}
             placeholder="Obrigatório"
@@ -197,6 +237,7 @@ const RegistrationPage: React.FC = () => {
           <input
             type="text"
             id="phone"
+            required
             value={phone}
             onChange={handlePhoneChange}
             placeholder="Obrigatório"

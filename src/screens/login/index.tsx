@@ -33,6 +33,7 @@ const LoginPage: React.FC = () => {
             <input
               type="text"
               id="username"
+              required
               value={username}
               onChange={handleUsernameChange}
               placeholder="Usuário"
@@ -42,6 +43,7 @@ const LoginPage: React.FC = () => {
           <input
             type="password"
             id="password"
+            required
             value={password}
             onChange={handlePasswordChange}
             placeholder="Senha"
