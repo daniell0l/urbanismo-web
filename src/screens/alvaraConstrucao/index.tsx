@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 interface CadastroFormProps {
   onSubmit: (data: CadastroFormData) => void;
@@ -7,7 +7,7 @@ interface CadastroFormProps {
 interface CadastroFormData {
   nome: string;
   email: string;
-  tipoPessoa: 'Física' | 'Jurídica';
+  tipoPessoa: "Física" | "Jurídica";
   cpfCnpj: string;
   adicionarProprietario: boolean;
   proprietario: {
@@ -29,10 +29,10 @@ interface CadastroFormData {
   number: string;
   purposeOfWork: string;
   landArea: string;
-  landSituation: 'Meio Esquina' | 'Esquina';
+  landSituation: "Meio Esquina" | "Esquina";
   permeabilityRate: string;
   occupancyRate: string;
-  areaToBuildGroundFloor: string;
+  areaToBuildGroundFloor: boolean;
   basementToBuild: boolean;
   existingArea: boolean;
   existingBasementArea: boolean;
@@ -41,38 +41,39 @@ interface CadastroFormData {
   existingAreas: string[];
   existingBasementAreas: string[];
   deckOrPoolAreas: string[];
+  areaToBuildGroundFloors: string[];
 }
 
 const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
   const [formData, setFormData] = useState<CadastroFormData>({
-    nome: '',
-    email: '',
-    tipoPessoa: 'Física',
-    cpfCnpj: '',
+    nome: "",
+    email: "",
+    tipoPessoa: "Física",
+    cpfCnpj: "",
     adicionarProprietario: false,
     proprietario: {
-      nome: '',
-      email: '',
-      cpfCnpj: '',
+      nome: "",
+      email: "",
+      cpfCnpj: "",
     },
-    authorization: '',
-    creaCau: '',
+    authorization: "",
+    creaCau: "",
     responsibleTechnical: false,
     responsible: {
-      nome: '',
-      creaCau: '',
+      nome: "",
+      creaCau: "",
     },
-    address: '',
-    subdivision: '',
-    block: '',
-    lot: '',
-    number: '',
-    purposeOfWork: '',
-    landArea: '',
-    landSituation: 'Meio Esquina',
-    permeabilityRate: '',
-    occupancyRate: '',
-    areaToBuildGroundFloor: '',
+    address: "",
+    subdivision: "",
+    block: "",
+    lot: "",
+    number: "",
+    purposeOfWork: "",
+    landArea: "",
+    landSituation: "Meio Esquina",
+    permeabilityRate: "",
+    occupancyRate: "",
+    areaToBuildGroundFloor: false,
     basementToBuild: false,
     existingArea: false,
     existingBasementArea: false,
@@ -81,6 +82,7 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
     existingAreas: [],
     existingBasementAreas: [],
     deckOrPoolAreas: [],
+    areaToBuildGroundFloors: [],
   });
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -99,9 +101,7 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
     });
   };
 
-  const handleCheckboxChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = event.target;
     setFormData({
       ...formData,
@@ -109,11 +109,13 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
     });
   };
 
-  const handleTipoPessoaChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleTipoPessoaChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const { value } = event.target;
     setFormData({
       ...formData,
-      tipoPessoa: value as 'Física' | 'Jurídica',
+      tipoPessoa: value as "Física" | "Jurídica",
     });
   };
 
@@ -164,22 +166,27 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
   };
 
   const handlePavimentoClick = (
-    field: string,
-    pavimentos: string[],
-    setPavimentos: React.Dispatch<React.SetStateAction<string[]>>
+    field: keyof CadastroFormData,
+    pavimentos: string[]
   ) => {
     switch (field) {
-      case 'areaSubsoloConstruir':
-        setFormData({ ...formData, basementsToBuild: [...pavimentos, ''] });
+      case "basementToBuild":
+        setFormData({ ...formData, basementsToBuild: [...pavimentos, ""] });
         break;
-      case 'existingArea':
-        setFormData({ ...formData, existingAreas: [...pavimentos, ''] });
+      case "areaToBuildGroundFloor":
+        setFormData({ ...formData, areaToBuildGroundFloors: [...pavimentos, ""] });
         break;
-      case 'areaSubsoloExistente':
-        setFormData({ ...formData, existingBasementAreas: [...pavimentos, ''] });
+      case "existingArea":
+        setFormData({ ...formData, existingAreas: [...pavimentos, ""] });
         break;
-      case 'deckOrPoolArea':
-        setFormData({ ...formData, deckOrPoolAreas: [...pavimentos, ''] });
+      case "existingBasementArea":
+        setFormData({
+          ...formData,
+          existingBasementAreas: [...pavimentos, ""],
+        });
+        break;
+      case "deckOrPoolArea":
+        setFormData({ ...formData, deckOrPoolAreas: [...pavimentos, ""] });
         break;
       default:
         break;
@@ -189,12 +196,14 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
   const handlePavimentoChange = (
     index: number,
     value: string,
-    pavimentos: string[],
-    setPavimentos: React.Dispatch<React.SetStateAction<string[]>>
+    field: keyof CadastroFormData
   ) => {
-    const updatedPavimentos = [...pavimentos];
+    const updatedPavimentos = [...formData[field]];
     updatedPavimentos[index] = value;
-    setPavimentos(updatedPavimentos);
+    setFormData({
+      ...formData,
+      [field]: updatedPavimentos,
+    });
   };
 
   const handleSubmit = (event: React.FormEvent) => {
@@ -230,7 +239,7 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
             type="radio"
             name="tipoPessoa"
             value="Física"
-            checked={formData.tipoPessoa === 'Física'}
+            checked={formData.tipoPessoa === "Física"}
             onChange={handleTipoPessoaChange}
           />
           Individual
@@ -240,7 +249,7 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
             type="radio"
             name="tipoPessoa"
             value="Jurídica"
-            checked={formData.tipoPessoa === 'Jurídica'}
+            checked={formData.tipoPessoa === "Jurídica"}
             onChange={handleTipoPessoaChange}
           />
           Legal Entity
@@ -405,7 +414,9 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
           onChange={handleSelectChange}
         >
           <option value="Residential">Residential</option>
-          <option value="Residential in Condominium">Residential in Condominium</option>
+          <option value="Residential in Condominium">
+            Residential in Condominium
+          </option>
           <option value="Commercial">Commercial</option>
           <option value="Mixed">Mixed</option>
           <option value="Institutional">Institutional</option>
@@ -430,7 +441,7 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
               type="radio"
               name="landSituation"
               value="Meio Esquina"
-              checked={formData.landSituation === 'Meio Esquina'}
+              checked={formData.landSituation === "Meio Esquina"}
               onChange={handleTipoPessoaChange}
             />
             Half Corner
@@ -440,7 +451,7 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
               type="radio"
               name="landSituation"
               value="Esquina"
-              checked={formData.landSituation === 'Esquina'}
+              checked={formData.landSituation === "Esquina"}
               onChange={handleTipoPessoaChange}
             />
             Corner
@@ -468,16 +479,6 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
         />
       </div>
       <div>
-        <label htmlFor="areaToBuildGroundFloor"></label> Area to Build - Basement
-        <input
-          type="text"
-          id="areaToBuildGroundFloor"
-          name="areaToBuildGroundFloor"
-          value={formData.areaToBuildGroundFloor}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
         <label>
           <input
             type="checkbox"
@@ -485,24 +486,21 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
             checked={formData.basementToBuild}
             onChange={handleCheckboxChange}
           />
-         Area to Build - Ground Floor (m²):
+          Area to Build - Basement (m²):
         </label>
         {formData.basementToBuild &&
           formData.basementsToBuild.map((pavimento, index) => (
             <div key={index}>
-              <label htmlFor={`basementPavimento${index + 1}`}>{`${index + 1}º Basement:`}</label>
+              <label htmlFor={`basementPavimento${index + 1}`}>{`${
+                index + 1
+              }º Basement:`}</label>
               <input
                 type="text"
                 id={`basementPavimento${index + 1}`}
                 name={`basementPavimento${index + 1}`}
                 value={pavimento}
                 onChange={(e) =>
-                  handlePavimentoChange(
-                    index,
-                    e.target.value,
-                    formData.basementsToBuild,
-                    setFormData.basementsToBuild
-                  )
+                  handlePavimentoChange(index, e.target.value, "basementsToBuild")
                 }
               />
             </div>
@@ -510,9 +508,52 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
         {formData.basementToBuild && (
           <button
             type="button"
-            onClick={() => handlePavimentoClick('areaSubsoloConstruir', formData.basementsToBuild, setFormData)}
+            onClick={() =>
+              handlePavimentoClick("basementToBuild", formData.basementsToBuild)
+            }
           >
             Add Basement
+          </button>
+        )}
+      </div>
+      <div>
+        <label>
+          <input
+            type="checkbox"
+            name="areaToBuildGroundFloor"
+            onChange={handleCheckboxChange}
+            checked={formData.areaToBuildGroundFloor}
+          />
+          Area to Build - Ground Floor (m²):
+        </label>
+        {formData.areaToBuildGroundFloor &&
+          formData.areaToBuildGroundFloors.map((pavimento, index) => (
+            <div key={index}>
+              <label htmlFor={`groundFloorPavimento${index + 1}`}>{`${
+                index + 1
+              }º Ground Floor:`}</label>
+              <input
+                type="text"
+                id={`groundFloorPavimento${index + 1}`}
+                name={`groundFloorPavimento${index + 1}`}
+                value={pavimento}
+                onChange={(e) =>
+                  handlePavimentoChange(index, e.target.value, "areaToBuildGroundFloor")
+                }
+              />
+            </div>
+          ))}
+        {formData.areaToBuildGroundFloor && (
+          <button
+            type="button"
+            onClick={() =>
+              handlePavimentoClick(
+                "areaToBuildGroundFloor",
+                formData.areaToBuildGroundFloors
+              )
+            }
+          >
+            Add Ground Floor
           </button>
         )}
       </div>
@@ -524,24 +565,21 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
             checked={formData.existingArea}
             onChange={handleCheckboxChange}
           />
-          Existing Area (m²)
+          Existing Area (m²):
         </label>
         {formData.existingArea &&
           formData.existingAreas.map((pavimento, index) => (
             <div key={index}>
-              <label htmlFor={`existingPavimento${index + 1}`}>{`${index + 1}º Pavimento:`}</label>
+              <label htmlFor={`existingAreaPavimento${index + 1}`}>{`${
+                index + 1
+              }º Existing Area:`}</label>
               <input
                 type="text"
-                id={`existingPavimento${index + 1}`}
-                name={`existingPavimento${index + 1}`}
+                id={`existingAreaPavimento${index + 1}`}
+                name={`existingAreaPavimento${index + 1}`}
                 value={pavimento}
                 onChange={(e) =>
-                  handlePavimentoChange(
-                    index,
-                    e.target.value,
-                    formData.existingAreas,
-                    setFormData.existingAreas
-                  )
+                  handlePavimentoChange(index, e.target.value, "existingAreas")
                 }
               />
             </div>
@@ -549,9 +587,11 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
         {formData.existingArea && (
           <button
             type="button"
-            onClick={() => handlePavimentoClick('existingArea', formData.existingAreas, setFormData)}
+            onClick={() =>
+              handlePavimentoClick("existingArea", formData.existingAreas)
+            }
           >
-            Add Basement
+            Add Existing Area
           </button>
         )}
       </div>
@@ -563,24 +603,21 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
             checked={formData.existingBasementArea}
             onChange={handleCheckboxChange}
           />
-          Existing Basement Area (m²)
+          Existing Basement Area (m²):
         </label>
         {formData.existingBasementArea &&
           formData.existingBasementAreas.map((pavimento, index) => (
             <div key={index}>
-              <label htmlFor={`existingBasementPavimento${index + 1}`}>{`${index + 1}º Pavimento:`}</label>
+              <label htmlFor={`existingBasementAreaPavimento${index + 1}`}>{`${
+                index + 1
+              }º Existing Basement Area:`}</label>
               <input
                 type="text"
-                id={`existingBasementPavimento${index + 1}`}
-                name={`existingBasementPavimento${index + 1}`}
+                id={`existingBasementAreaPavimento${index + 1}`}
+                name={`existingBasementAreaPavimento${index + 1}`}
                 value={pavimento}
                 onChange={(e) =>
-                  handlePavimentoChange(
-                    index,
-                    e.target.value,
-                    formData.existingBasementAreas,
-                    setFormData.existingBasementAreas
-                  )
+                  handlePavimentoChange(index, e.target.value, "existingBasementAreas")
                 }
               />
             </div>
@@ -589,10 +626,13 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
           <button
             type="button"
             onClick={() =>
-              handlePavimentoClick('areaSubsoloExistente', formData.existingBasementAreas, setFormData)
+              handlePavimentoClick(
+                "existingBasementArea",
+                formData.existingBasementAreas
+              )
             }
           >
-            Add Basement
+            Add Existing Basement Area
           </button>
         )}
       </div>
@@ -604,19 +644,21 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
             checked={formData.deckOrPoolArea}
             onChange={handleCheckboxChange}
           />
-          Deck or Pool Area
+          Deck/Pool Area (m²):
         </label>
         {formData.deckOrPoolArea &&
           formData.deckOrPoolAreas.map((pavimento, index) => (
             <div key={index}>
-              <label htmlFor={`deckOrPoolPavimento${index + 1}`}>{`${index + 1}º Pavimento:`}</label>
+              <label htmlFor={`deckOrPoolAreaPavimento${index + 1}`}>{`${
+                index + 1
+              }º Deck/Pool Area:`}</label>
               <input
                 type="text"
-                id={`deckOrPoolPavimento${index + 1}`}
-                name={`deckOrPoolPavimento${index + 1}`}
+                id={`deckOrPoolAreaPavimento${index + 1}`}
+                name={`deckOrPoolAreaPavimento${index + 1}`}
                 value={pavimento}
                 onChange={(e) =>
-                  handlePavimentoChange(index, e.target.value, formData.deckOrPoolAreas, setFormData.deckOrPoolAreas)
+                  handlePavimentoChange(index, e.target.value, "deckOrPoolAreas")
                 }
               />
             </div>
@@ -624,9 +666,11 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
         {formData.deckOrPoolArea && (
           <button
             type="button"
-            onClick={() => handlePavimentoClick('deckOrPoolArea', formData.deckOrPoolAreas, setFormData)}
+            onClick={() =>
+              handlePavimentoClick("deckOrPoolArea", formData.deckOrPoolAreas)
+            }
           >
-            Add Basement
+            Add Deck/Pool Area
           </button>
         )}
       </div>
