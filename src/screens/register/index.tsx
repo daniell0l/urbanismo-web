@@ -63,7 +63,7 @@ const RegistrationPage: React.FC = () => {
   ) => {
     setCurrentState(event.target.value);
   };
-  
+
   const handleCepChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCep(event.target.value);
   };
@@ -203,7 +203,7 @@ const RegistrationPage: React.FC = () => {
             id="address"
             required
             value={AddressNumber}
-            onChange={handleAddressChange}
+            onChange={handleCepChange}
             placeholder="Obrigatório"
           />
           <label htmlFor="AddresCep">Cep:</label>
@@ -212,7 +212,7 @@ const RegistrationPage: React.FC = () => {
             id="AddressCep"
             required
             value={AddressCep}
-            onChange={handleAddressChange}
+            onChange={handleStreetChange}
             placeholder="Obrigatório"
           />
           <label htmlFor="AddressStreet">Rua:</label>
