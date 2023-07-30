@@ -85,6 +85,7 @@ const RegistrationPage: React.FC = () => {
     console.log("Current State:", currentState);
     console.log("Cep:", AddressCep);
     console.log("Street:", AddressStreet);
+    window.location.href = './principal'
   };
 
   return (
@@ -244,7 +245,7 @@ const RegistrationPage: React.FC = () => {
           />
           <button
             className="buttonRegistration"
-            type="button"
+            type="submit"
             onClick={handleRegistration}
           >
             Cadastrar
