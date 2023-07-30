@@ -1,91 +1,96 @@
 #principal {
-    height: 100%;
-    background: #fff;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar {
-    display: flex;
-    border: 1px solid red;
-    justify-content: center;
-    margin: 20px 40px 0px 40px;
+  display: flex;
+  margin: 10px 30px;
 }
 
 .construction-protocol {
-    border: 1px solid red;
+  display: flex;
+}
+
+.selectedConstruction select,
+.selectedProtocol select {
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  background-color: #fff;
+  width: 400px;
+  margin-left: 30px;
+}
+
+.selectedConstruction select:hover,
+.selectedProtocol select:hover {
+  background-color: #f5f5f5;
+}
+
+.selectedProtocol select {
+  width: 400px;
+}
+
+.Search input {
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  background-color: #fff;
+  margin-right: 20px;
+  margin-left: 60px;
+}
+
+.Search button {
+  padding: 10px 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.Search button:hover {
+  background-color: #4a9ef8;
+}
+
+.Search-result {
+  height: 1000px;
+}
+
+.Search-result table {
+  height: 1000px;
+  margin-top: 10px;
+  margin-left: 60px;
+  width: 90%;
+  background: #dddddd;
+  border: 1px solid #ccc;
+}
+
+.Search-result tr {
+  background: #fff;
+  border-collapse: collapse;
+}
+
+.Search-result table th {
+  color: #727272;
+  padding: 10px 0px 10px 0px;
+}
+
+.Search-result table th:hover {
+  background: #f5f5f5;
+}
+
+.link-temporario {
     display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .selectedConstruction select,
-  .selectedProtocol select{
-    padding: 8px 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: none;
-    background-color: #fff;
-    transition: border-color 0.2s ease-in-out;
-    width: 250px;
-  }
-  
-  .selectedConstruction select:hover,
-  .selectedProtocol select:hover {
-    background-color: #f5f5f5;
-  }
-  
-  .selectedProtocol select {
-    width: 200px;
-  }
-  
-  .Search input {
-    padding: 8px 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: none;
-    background-color: #fff;
-    transition: border-color 0.2s ease-in-out;
-    margin-right: 10px;
-  }
-  
-  .Search button {
-    padding: 8px 12px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  .Search button:hover {
-    background-color: #4a9ef8;
-  }
-  
-  .Search-result {
-    height: 1000px;
-  }
-
-  .Search-result table{
-    height: 1000px;
-    margin-top: 50px;
-    margin-left: 60px;
-    width: 90%;
-    background: #b8b8b8;
-    border: 1px solid #ccc;}
-
-  .Search-result tr{
-    background: #fff;
-    border-collapse: collapse;
-  }
-
-  .Search-result table th{
-    color: #727272;
-    padding: 10px 0px 10px 0px;
-  }
-
-  .Search-result table th:hover{
-    background: #f5f5f5;
-  }
+    justify-content: center;
+    padding: 10px;
+}

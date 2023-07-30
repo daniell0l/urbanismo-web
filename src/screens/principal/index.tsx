@@ -39,7 +39,9 @@ const TableComponent: React.FC = () => {
 
   const [results, setResults] = useState<Result[]>([]);
 
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => {
+  const handleChange = (
+    event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
+  ) => {
     const { name, value } = event.target;
     setFormState((prevState) => ({
       ...prevState,
@@ -51,9 +53,15 @@ const TableComponent: React.FC = () => {
     const filteredResults = results.filter(
       (result) =>
         result.ir.toLowerCase().includes(formState.searchTerm.toLowerCase()) ||
-        result.proprietors.toLowerCase().includes(formState.searchTerm.toLowerCase()) ||
-        result.address.toLowerCase().includes(formState.searchTerm.toLowerCase()) ||
-        result.district.toLowerCase().includes(formState.searchTerm.toLowerCase()) ||
+        result.proprietors
+          .toLowerCase()
+          .includes(formState.searchTerm.toLowerCase()) ||
+        result.address
+          .toLowerCase()
+          .includes(formState.searchTerm.toLowerCase()) ||
+        result.district
+          .toLowerCase()
+          .includes(formState.searchTerm.toLowerCase()) ||
         result.data.toLowerCase().includes(formState.searchTerm.toLowerCase())
     );
 
@@ -109,11 +117,11 @@ const TableComponent: React.FC = () => {
           <thead>
             <tr>
               <th>IR</th>
-              <th>Proprietors</th>
-              <th>Address</th>
-              <th>District</th>
-              <th>Data</th>
-              <th>Actions</th>
+              <th>Proprietário</th>
+              <th>Endireitar</th>
+              <th>Bairro</th>
+              <th>Dados</th>
+              <th>Ações</th>
             </tr>
           </thead>
           <tbody>
@@ -131,7 +139,9 @@ const TableComponent: React.FC = () => {
           </tbody>
         </table>
       </div>
-      <a href="javascript:history.go(-1)">voltar a página anterior</a>
+      <div>
+        <a className="link-temporario" href="javascript:history.go(-1)">voltar a página anterior</a>
+      </div>
     </div>
   );
 };
