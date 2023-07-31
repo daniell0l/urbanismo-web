@@ -121,6 +121,7 @@ main {
   cursor: pointer;
   display: flex;
   transition: transform 0.2s ease; 
+  color: white;
 }
 
 #login:hover {
@@ -261,6 +262,7 @@ main {
 .info_down_cad .info_text {
   display: flex;
   flex-direction: column;
+  color: black;
 }
 
 .info_down_cad h2 {

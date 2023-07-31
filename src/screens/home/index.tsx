@@ -1,4 +1,4 @@
-import "./style.css"; 
+import "./style.css";
 import {
   FaUser,
   FaSearch,
@@ -8,6 +8,7 @@ import {
   FaBriefcase,
   FaUsers,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import logoWide from "../../assets/imgs/logoWide.png";
 import logoModel from "../../assets/imgs/logoModel.png";
 import logoprefeitura from "../../assets/imgs/logoPrefeitura.png";
@@ -31,7 +32,7 @@ export function Home() {
               <a href="/">downloads</a>
             </li>
             <li>
-              <a href="/">cadastro</a>
+              <a href="../register">cadastro</a>
             </li>
           </ul>
           <div className="search-bar">
@@ -41,12 +42,14 @@ export function Home() {
             </button>
           </div>
 
-          <div id="login">
-            <div className="circle">
-              <FaUser size={25} color="3a28a" />
+          <Link to="../Login" style={{ textDecoration: "none" }}>
+            <div id="login">
+              <div className="circle">
+                <FaUser size={25} color="3a28a" />
+              </div>
+              <span>Login</span>
             </div>
-            <span><a href="../Login">Login</a></span>
-          </div>
+          </Link>
         </nav>
       </header>
 
@@ -106,21 +109,23 @@ export function Home() {
               </div>
             </div>
 
-            <div className="info_item">
-              <a href="/">
-                <FaUserPlus color="3a28a" />
-              </a>
-              <div className="info_text">
-                <h2>cadastro</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam nonummy nibh euismod tincidunt ut laoreet dolorediam
-                  nonummy nibh euismod tincidunt ut laoreet dolorediam nonummy
-                  nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-                  volutpat.
-                </p>
+            <Link to="../register" style={{ textDecoration: "none" }}>
+              <div className="info_item">
+                <a href="">
+                  <FaUserPlus color="3a28a" />
+                </a>
+                <div className="info_text">
+                  <h2>cadastro</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                    sed diam nonummy nibh euismod tincidunt ut laoreet
+                    dolorediam nonummy nibh euismod tincidunt ut laoreet
+                    dolorediam nonummy nibh euismod tincidunt ut laoreet dolore
+                    magna aliquam erat volutpat.
+                  </p>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         </section>
 
@@ -130,7 +135,7 @@ export function Home() {
             <div className="botao-container">
               <a href="/" id="profissional-area">
                 <div className="circle-profissional">
-                <FaBriefcase size={50} color="3a28a"/> 
+                  <FaBriefcase size={50} color="3a28a" />
                 </div>
                 <span>
                   <h2>Área Profissional</h2>
@@ -138,7 +143,7 @@ export function Home() {
               </a>
               <a href="/" id="work-area">
                 <div className="circle-work">
-                <FaUsers size={60} color="3a28a" />
+                  <FaUsers size={60} color="3a28a" />
                 </div>
                 <h2>Área do Cliente</h2>
               </a>

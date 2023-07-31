@@ -1,0 +1,182 @@
+#registration-container {
+  max-width: 1200px;
+  width: 100%;
+  height: 1300px;
+  margin: 2% auto 2% auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #fff;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 1px #5c5b5b;
+}
+
+.form-group-register {
+  flex: 1;
+  padding: 20px;
+}
+
+.blocoRegistration {
+  width: 100%;
+  position: relative;
+  bottom: 30px;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.blocoRegistration h2 {
+  font-size: 2em;
+  color: rgb(0, 153, 255);
+  text-transform: uppercase;
+  margin-top: -180px;
+  margin-left: 43%;
+  display: block;
+}
+
+.form-group-register input {
+  width: 98%;
+  padding: 12px;
+  margin: 5px auto;
+  border-radius: 5px;
+  border: 1px solid rgb(201, 201, 201);
+  font-size: 1em;
+}
+
+.form-group-register label {
+  color: #3f3f3f;
+  font-size: 1em;
+  margin-left: 5px;
+}
+
+.buttonRegistration {
+  height: 30px;
+  width: 100%;
+  max-width: 345px;
+  background: #3a86ff;
+  padding: 20px auto;
+  border: none;
+  font-size: 1em;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 5px;
+  margin-top: 20px;
+  left: 35%;
+  position: relative;
+}
+
+.buttonRegistration:hover,
+.buttonRegistration:active {
+  background: #5595fd;
+}
+
+.logoRegister {
+  width: 250px;
+  top: -170px;
+  position: relative;
+}
+
+.cadastroLink {
+  margin-top: 20px;
+  position: relative;
+  left: 40%;
+}
+
+.cadastroLink a {
+  color: #0084ff;
+  text-decoration: none;
+}
+
+.cadastroLink a:hover {
+  color: #000;
+}
+
+.greenLineRegister {
+  width: 100%;
+  max-width: 800px;
+  border: 1px solid rgb(122, 224, 144);
+  margin-top: 20px;
+}
+
+.select-container {
+  display: inline-block;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 300px;
+  margin-right: 40px;
+}
+
+.Select select,
+.selectEstado select {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  font-size: 1em;
+  color: #7c7c7c;
+  margin-top: 5px;
+}
+
+.Select select option,
+.selectEstado select option {
+  font-size: 1em;
+  color: #555;
+  background: #e9e9e9;
+}
+
+.Select select:hover,
+.selectEstado select:hover {
+  background: #dbdbdb;
+}
+
+.form-Address {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-Address input {
+  padding: 10px;
+  margin: 0px 10px 10px 0px;
+  border-radius: 5px;
+  border: 1px solid rgb(201, 201, 201);
+  font-size: 1em;
+}
+
+.line-with-name {
+  display: block;
+  position: relative;
+  text-align: center;
+  margin: 30px 0;
+  color: #3f3f3f;
+}
+
+.line-with-name::before,
+.line-with-name::after {
+  content: "";
+  display: inline-block;
+  width: 300px;
+  height: 1px;
+  background-color: #ccc;
+  vertical-align: middle;
+}
+
+.line-with-name::before {
+  margin-right: 20px;
+}
+
+.line-with-name::after {
+  margin-left: 20px;
+}
+
+.line-with-name span {
+  background-color: #fff;
+  padding: 0 10px;
+  position: relative;
+  top: -8px;
+  font-size: 16px;
+  color: #707070;
+}

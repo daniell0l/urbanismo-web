@@ -24,7 +24,7 @@ const LoginPage: React.FC = () => {
       <div className="logoLateral">
         <img src={logoLateral} alt="logo lem urbanismo" />
       </div>
-      <div className="linhaVerde"></div>
+      <div className="greenLine"></div>
       <form className="blocoLogin">
         <h2>Login</h2>
         <div className="form-group">
@@ -33,6 +33,7 @@ const LoginPage: React.FC = () => {
             <input
               type="text"
               id="username"
+              required
               value={username}
               onChange={handleUsernameChange}
               placeholder="Usuário"
@@ -42,6 +43,7 @@ const LoginPage: React.FC = () => {
           <input
             type="password"
             id="password"
+            required
             value={password}
             onChange={handlePasswordChange}
             placeholder="Senha"
@@ -52,7 +54,7 @@ const LoginPage: React.FC = () => {
         </div>
         <div className="linkCadastro">
           <p>
-            Não tem uma conta? <a href="">Cadastre-se</a>
+            Não tem uma conta? <a href="/register">Cadastre-se</a>
           </p>
         </div>
       </form>
