@@ -4,6 +4,7 @@ import Login from '../screens/login'
 import Register from '../screens/register/index'
 import Principal from '../screens/principal/index'
 import AlvaraConstrucao from '../screens/alvaraConstrucao/index'
+import AlvaraRegularizacao from '../screens/alvaraRegularizacao/index'
 
 const AppRoutes: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const AppRoutes: React.FC = () => {
         <Route path="/Register" element={<Register />} />
         <Route path="/Principal" element={<Principal />} />
         <Route path='/AlvaraConstrucao' element={<AlvaraConstrucao />} />
+        <Route path='/AlvaraRegularizacao' element={<AlvaraRegularizacao />} />
       </Routes>
     </Router>
   );
