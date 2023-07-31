@@ -1,0 +1,210 @@
+#container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    justify-content: center;
+    border: 1px solid red;
+    background: #fff;
+    border-radius: 5px;
+  }
+  
+  .DadosProprietario,
+  .DadosProjeto,
+  .DadosEndereco,
+  .DadosTerreno {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .line-with-name {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  .DadosProprietario input,
+  .DadosProjeto input,
+  .DadosEndereco input,
+  .DadosTerreno input,
+  .DadosProprietario select,
+  .DadosProjeto select,
+  .DadosEndereco select,
+  .DadosTerreno select {
+    width: 30%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 20px;
+    font-size: 1em;
+  }
+
+  .DadosProprietario button,
+  .DadosProjeto button,
+  .DadosEndereco button,
+  .DadosTerreno button {
+    height: 30px;
+    width: 150px;
+    background: #3a86ff;
+    border: none;
+    font-size: 1em;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+    position: relative;
+    top: -150px;
+    left: 10px;
+  }
+
+  .RegistrationProcessButton {
+    background: #3a86ff;
+    border: none;
+    font-size: 1em;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding: 20px 50px 20px 50px;
+    position: relative;
+  }
+
+  .RegistrationProcessButton:hover,
+    .RegistrationProcessButton:active {
+    background: #0facf5;
+    color: #ece8e8;
+  }
+  
+  @media (max-width: 900px) {
+    #container {
+      flex-direction: column;
+    }
+  
+    .DadosProprietario,
+    .DadosProjeto,
+    .DadosEndereco,
+    .DadosTerreno {
+      flex-basis: 100%;
+    }
+  }
+
+  .checkbox-Owner {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .checkbox-Owner span{
+    position: relative;
+    right: 340px;
+    top: 2px;
+  }
+
+  .checkbox-Owner input{
+    position: relative;
+    right: 170px;
+  }
+
+  .radio-checkbox {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .radio-checkbox span {
+    position: relative;
+    right: 340px;
+    top: 2px;
+  }
+
+  .radio-checkbox input {
+    position: relative;
+    right: 170px;
+    }
+
+  .checkboxResponsabile {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .checkboxResponsabile span {
+    position: relative;
+    right: 340px;
+    top: 3px;
+  }
+
+  .checkboxResponsabile input {
+    position: relative;
+    right: 168px;
+    }
+  
+  .radio-Terreno {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  
+  .radio-Terreno span {
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    left: 455px;
+    bottom: 148px;
+  }
+  
+  .radio-Terreno input{
+    position: relative;
+    left: 250px;
+    bottom: 130px;
+  }
+  
+  .radio-container input {
+    margin-right: 5px;
+  }
+  
+  .radio-DadosTerreno {
+    height: auto;
+    margin-top: 40px;
+    position: relative;
+  }
+
+  .radio-DadosTerreno span{
+    position: relative;
+    display: flex;
+    left: 50px;
+    bottom: 148px;
+    margin-bottom: 20px;
+  }
+
+  .radio-DadosTerreno input{
+    position: relative;
+    right: 160px;
+    bottom: 130px;
+  }
+
+  .DadosEndereco input.min-Address {
+    width: 4%;
+  }
+  
+  .selectTerreno select {
+    width: 30%;
+  }
+
+  .InputTerreno input {
+    width: 30%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+    top: -120px;
+    margin-right: 20px;
+  }
+

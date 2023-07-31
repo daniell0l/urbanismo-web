@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./style.css";
 
 interface CadastroFormProps {
   onSubmit: (data: CadastroFormData) => void;
@@ -174,7 +175,10 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
         setFormData({ ...formData, basementsToBuild: [...pavimentos, ""] });
         break;
       case "areaToBuildGroundFloor":
-        setFormData({ ...formData, areaToBuildGroundFloors: [...pavimentos, ""] });
+        setFormData({
+          ...formData,
+          areaToBuildGroundFloors: [...pavimentos, ""],
+        });
         break;
       case "existingArea":
         setFormData({ ...formData, existingAreas: [...pavimentos, ""] });
@@ -213,468 +217,443 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="nome">Name:</label>
-        <input
-          type="text"
-          id="nome"
-          name="nome"
-          value={formData.nome}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="email">E-mail:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <label>
-          <input
-            type="radio"
-            name="tipoPessoa"
-            value="Física"
-            checked={formData.tipoPessoa === "Física"}
-            onChange={handleTipoPessoaChange}
-          />
-          Individual
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="tipoPessoa"
-            value="Jurídica"
-            checked={formData.tipoPessoa === "Jurídica"}
-            onChange={handleTipoPessoaChange}
-          />
-          Legal Entity
-        </label>
-      </div>
-      <div>
-        <label htmlFor="cpfCnpj">CPF/CNPJ:</label>
-        <input
-          type="text"
-          id="cpfCnpj"
-          name="cpfCnpj"
-          value={formData.cpfCnpj}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <label>
-          <input
-            type="checkbox"
-            name="adicionarProprietario"
-            checked={formData.adicionarProprietario}
-            onChange={handleAdicionarProprietarioChange}
-          />
-          Add Owner
-        </label>
-      </div>
-      {formData.adicionarProprietario && (
-        <div>
-          <label htmlFor="proprietarioNome">Owner Name:</label>
-          <input
-            type="text"
-            id="proprietarioNome"
-            name="nome"
-            value={formData.proprietario.nome}
-            onChange={handleProprietarioChange}
-          />
-          <label htmlFor="proprietarioEmail">Owner E-mail:</label>
-          <input
-            type="email"
-            id="proprietarioEmail"
-            name="email"
-            value={formData.proprietario.email}
-            onChange={handleProprietarioChange}
-          />
-          <label htmlFor="proprietarioCpfCnpj">Owner CPF/CNPJ:</label>
-          <input
-            type="text"
-            id="proprietarioCpfCnpj"
-            name="cpfCnpj"
-            value={formData.proprietario.cpfCnpj}
-            onChange={handleProprietarioChange}
-          />
-        </div>
-      )}
-      <div>
-        <label htmlFor="authorization">Authorization:</label>
-        <input
-          type="text"
-          id="authorization"
-          name="authorization"
-          value={formData.authorization}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="creaCau">CREA/CAU:</label>
-        <input
-          type="text"
-          id="creaCau"
-          name="creaCau"
-          value={formData.creaCau}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <label>
-          <input
-            type="checkbox"
-            name="responsibleTechnical"
-            checked={formData.responsibleTechnical}
-            onChange={handleResponsavelTecnicoChange}
-          />
-          Responsible Technical
-        </label>
-        {formData.responsibleTechnical && (
-          <div>
-            <label htmlFor="responsibleName">Responsible Name:</label>
+      <div id="container">
+        <div className="DadosProprietario">
+          <span className="line-with-name">Dados do Proprietário</span>
+          <div className="flex-container">
             <input
               type="text"
-              id="responsibleName"
+              placeholder="Nome"
               name="nome"
-              value={formData.responsible.nome}
-              onChange={handleResponsavelChange}
+              value={formData.nome}
+              onChange={handleInputChange}
             />
-            <label htmlFor="responsibleCreaCau">CREA/CAU of Responsible:</label>
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+            />
             <input
               type="text"
-              id="responsibleCreaCau"
-              name="creaCau"
-              value={formData.responsible.creaCau}
-              onChange={handleResponsavelChange}
+              placeholder="CPF/CNPJ"
+              name="cpfCnpj"
+              value={formData.cpfCnpj}
+              onChange={handleInputChange}
             />
           </div>
-        )}
-      </div>
-      <div>
-        <label htmlFor="address">Address:</label>
-        <input
-          type="text"
-          id="address"
-          name="address"
-          value={formData.address}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="subdivision">Subdivision:</label>
-        <input
-          type="text"
-          id="subdivision"
-          name="subdivision"
-          value={formData.subdivision}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="block">Block:</label>
-        <input
-          type="text"
-          id="block"
-          name="block"
-          value={formData.block}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="lot">Lot:</label>
-        <input
-          type="text"
-          id="lot"
-          name="lot"
-          value={formData.lot}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="number">Number:</label>
-        <input
-          type="text"
-          id="number"
-          name="number"
-          value={formData.number}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="purposeOfWork">Purpose of Work:</label>
-        <select
-          id="purposeOfWork"
-          name="purposeOfWork"
-          value={formData.purposeOfWork}
-          onChange={handleSelectChange}
-        >
-          <option value="Residential">Residential</option>
-          <option value="Residential in Condominium">
-            Residential in Condominium
-          </option>
-          <option value="Commercial">Commercial</option>
-          <option value="Mixed">Mixed</option>
-          <option value="Institutional">Institutional</option>
-          <option value="Industrial">Industrial</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor="landArea">Land Area (m²):</label>
-        <input
-          type="text"
-          id="landArea"
-          name="landArea"
-          value={formData.landArea}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <label>
-          Land Situation:
-          <label>
+
+          <div className="radio-checkbox">
             <input
               type="radio"
-              name="landSituation"
-              value="Meio Esquina"
-              checked={formData.landSituation === "Meio Esquina"}
+              name="tipoPessoa"
+              value="Física"
+              checked={formData.tipoPessoa === "Física"}
               onChange={handleTipoPessoaChange}
             />
-            Half Corner
-          </label>
-          <label>
+            <span>Física</span>
             <input
               type="radio"
-              name="landSituation"
-              value="Esquina"
-              checked={formData.landSituation === "Esquina"}
+              name="tipoPessoa"
+              value="Jurídica"
+              checked={formData.tipoPessoa === "Jurídica"}
               onChange={handleTipoPessoaChange}
             />
-            Corner
-          </label>
-        </label>
-      </div>
-      <div>
-        <label htmlFor="permeabilityRate">Permeability Rate (%):</label>
-        <input
-          type="text"
-          id="permeabilityRate"
-          name="permeabilityRate"
-          value={formData.permeabilityRate}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="occupancyRate">Occupancy Rate (%):</label>
-        <input
-          type="text"
-          id="occupancyRate"
-          name="occupancyRate"
-          value={formData.occupancyRate}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <label>
-          <input
-            type="checkbox"
-            name="basementToBuild"
-            checked={formData.basementToBuild}
-            onChange={handleCheckboxChange}
-          />
-          Area to Build - Basement (m²):
-        </label>
-        {formData.basementToBuild &&
-          formData.basementsToBuild.map((pavimento, index) => (
-            <div key={index}>
-              <label htmlFor={`basementPavimento${index + 1}`}>{`${
-                index + 1
-              }º Basement:`}</label>
+            <span>Jurídica</span>
+          </div>
+
+          <div className="checkbox-Owner">
+            <input
+              type="checkbox"
+              name="adicionarProprietario"
+              checked={formData.adicionarProprietario}
+              onChange={handleAdicionarProprietarioChange}
+            />
+            <span>Adicionar proprietário</span>
+          </div>
+
+          {formData.adicionarProprietario && (
+            <div className="flex-container">
               <input
                 type="text"
-                id={`basementPavimento${index + 1}`}
-                name={`basementPavimento${index + 1}`}
-                value={pavimento}
-                onChange={(e) =>
-                  handlePavimentoChange(index, e.target.value, "basementsToBuild")
-                }
+                placeholder="Nome"
+                name="nome"
+                value={formData.proprietario.nome}
+                onChange={handleProprietarioChange}
               />
-            </div>
-          ))}
-        {formData.basementToBuild && (
-          <button
-            type="button"
-            onClick={() =>
-              handlePavimentoClick("basementToBuild", formData.basementsToBuild)
-            }
-          >
-            Add Basement
-          </button>
-        )}
-      </div>
-      <div>
-        <label>
-          <input
-            type="checkbox"
-            name="areaToBuildGroundFloor"
-            onChange={handleCheckboxChange}
-            checked={formData.areaToBuildGroundFloor}
-          />
-          Area to Build - Ground Floor (m²):
-        </label>
-        {formData.areaToBuildGroundFloor &&
-          formData.areaToBuildGroundFloors.map((pavimento, index) => (
-            <div key={index}>
-              <label htmlFor={`groundFloorPavimento${index + 1}`}>{`${
-                index + 1
-              }º Ground Floor:`}</label>
+              <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                value={formData.proprietario.email}
+                onChange={handleProprietarioChange}
+              />
               <input
                 type="text"
-                id={`groundFloorPavimento${index + 1}`}
-                name={`groundFloorPavimento${index + 1}`}
-                value={pavimento}
-                onChange={(e) =>
-                  handlePavimentoChange(index, e.target.value, "areaToBuildGroundFloor")
-                }
+                placeholder="CPF/CNPJ"
+                name="cpfCnpj"
+                value={formData.proprietario.cpfCnpj}
+                onChange={handleProprietarioChange}
               />
             </div>
-          ))}
-        {formData.areaToBuildGroundFloor && (
-          <button
-            type="button"
-            onClick={() =>
-              handlePavimentoClick(
-                "areaToBuildGroundFloor",
-                formData.areaToBuildGroundFloors
-              )
-            }
-          >
-            Add Ground Floor
-          </button>
-        )}
-      </div>
-      <div>
-        <label>
+          )}
+        </div>
+
+        <div className="DadosProjeto">
+          <span className="line-with-name">Dados do Projeto</span>
+          <div className="flex-container">
+            <input
+              type="text"
+              placeholder="Autoria"
+              name="authorization"
+              value={formData.authorization}
+              onChange={handleInputChange}
+            />
+            <input
+              type="text"
+              placeholder="CREA/CAU"
+              name="creaCau"
+              value={formData.creaCau}
+              onChange={handleInputChange}
+            />
+          </div>
+
+          <div className="checkboxResponsabile">
+            <input
+              type="checkbox"
+              name="responsibleTechnical"
+              checked={formData.responsibleTechnical}
+              onChange={handleResponsavelTecnicoChange}
+            />
+            <span className="checkbox">Responsável técnico</span>
+
+            {formData.responsibleTechnical && (
+              <div className="flex-container">
+                <input
+                  type="text"
+                  placeholder="Nome"
+                  name="nome"
+                  value={formData.responsible.nome}
+                  onChange={handleResponsavelChange}
+                />
+                <input
+                  type="text"
+                  placeholder="CREA/CAU"
+                  name="creaCau"
+                  value={formData.responsible.creaCau}
+                  onChange={handleResponsavelChange}
+                />
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="DadosEndereco">
+          <span className="line-with-name">Dados de endereço</span>
           <input
-            type="checkbox"
-            name="existingArea"
-            checked={formData.existingArea}
-            onChange={handleCheckboxChange}
+            type="text"
+            placeholder="Endereço"
+            name="address"
+            value={formData.address}
+            onChange={handleInputChange}
           />
-          Existing Area (m²):
-        </label>
-        {formData.existingArea &&
-          formData.existingAreas.map((pavimento, index) => (
-            <div key={index}>
-              <label htmlFor={`existingAreaPavimento${index + 1}`}>{`${
-                index + 1
-              }º Existing Area:`}</label>
-              <input
-                type="text"
-                id={`existingAreaPavimento${index + 1}`}
-                name={`existingAreaPavimento${index + 1}`}
-                value={pavimento}
-                onChange={(e) =>
-                  handlePavimentoChange(index, e.target.value, "existingAreas")
-                }
-              />
-            </div>
-          ))}
-        {formData.existingArea && (
-          <button
-            type="button"
-            onClick={() =>
-              handlePavimentoClick("existingArea", formData.existingAreas)
-            }
-          >
-            Add Existing Area
-          </button>
-        )}
-      </div>
-      <div>
-        <label>
           <input
-            type="checkbox"
-            name="existingBasementArea"
-            checked={formData.existingBasementArea}
-            onChange={handleCheckboxChange}
+            type="text"
+            placeholder="Loteamento"
+            name="subdivision"
+            value={formData.subdivision}
+            onChange={handleInputChange}
           />
-          Existing Basement Area (m²):
-        </label>
-        {formData.existingBasementArea &&
-          formData.existingBasementAreas.map((pavimento, index) => (
-            <div key={index}>
-              <label htmlFor={`existingBasementAreaPavimento${index + 1}`}>{`${
-                index + 1
-              }º Existing Basement Area:`}</label>
-              <input
-                type="text"
-                id={`existingBasementAreaPavimento${index + 1}`}
-                name={`existingBasementAreaPavimento${index + 1}`}
-                value={pavimento}
-                onChange={(e) =>
-                  handlePavimentoChange(index, e.target.value, "existingBasementAreas")
-                }
-              />
-            </div>
-          ))}
-        {formData.existingBasementArea && (
-          <button
-            type="button"
-            onClick={() =>
-              handlePavimentoClick(
-                "existingBasementArea",
-                formData.existingBasementAreas
-              )
-            }
-          >
-            Add Existing Basement Area
-          </button>
-        )}
-      </div>
-      <div>
-        <label>
           <input
-            type="checkbox"
-            name="deckOrPoolArea"
-            checked={formData.deckOrPoolArea}
-            onChange={handleCheckboxChange}
+            className="min-Address"
+            type="text"
+            placeholder="Bloco"
+            name="block"
+            value={formData.block}
+            onChange={handleInputChange}
           />
-          Deck/Pool Area (m²):
-        </label>
-        {formData.deckOrPoolArea &&
-          formData.deckOrPoolAreas.map((pavimento, index) => (
-            <div key={index}>
-              <label htmlFor={`deckOrPoolAreaPavimento${index + 1}`}>{`${
-                index + 1
-              }º Deck/Pool Area:`}</label>
+          <input
+            className="min-Address"
+            type="text"
+            placeholder="Lote"
+            name="lot"
+            value={formData.lot}
+            onChange={handleInputChange}
+          />
+          <input
+            className="min-Address"
+            type="text"
+            placeholder="Nº"
+            name="number"
+            value={formData.number}
+            onChange={handleInputChange}
+          />
+          <input type="text" placeholder="Bahia" />
+          <input type="text" placeholder="Luís Eduardo Magalhães" />
+        </div>
+        <div className="DadosTerreno">
+          <span className="line-with-name">Dados do Terreno</span>
+          <label htmlFor="">Finalidade da obra: </label>
+          <div className="selectTerreno">
+            <select
+              name="purposeOfWork"
+              value={formData.purposeOfWork}
+              onChange={handleSelectChange}
+            >
+              <option value="Residential">Residential</option>
+              <option value="Residential in Condominium">
+                Residential in Condominium
+              </option>
+              <option value="Commercial">Commercial</option>
+              <option value="Mixed">Mixed</option>
+              <option value="Institutional">Institutional</option>
+              <option value="Industrial">Industrial</option>
+            </select>
+          </div>
+          <input
+            type="text"
+            placeholder="Área terreno (m²)"
+            name="landArea"
+            value={formData.landArea}
+            onChange={handleInputChange}
+          />
+          <div className="radio-Terreno">
+            <label>Situação terreno:</label>
+            <div className="radio-Terreno">
               <input
-                type="text"
-                id={`deckOrPoolAreaPavimento${index + 1}`}
-                name={`deckOrPoolAreaPavimento${index + 1}`}
-                value={pavimento}
-                onChange={(e) =>
-                  handlePavimentoChange(index, e.target.value, "deckOrPoolAreas")
-                }
+                type="radio"
+                id="meioEsquina"
+                name="landSituation"
+                value="Meio Esquina"
               />
+              <span>Meia esquina</span>
             </div>
-          ))}
-        {formData.deckOrPoolArea && (
-          <button
-            type="button"
-            onClick={() =>
-              handlePavimentoClick("deckOrPoolArea", formData.deckOrPoolAreas)
-            }
-          >
-            Add Deck/Pool Area
-          </button>
-        )}
+
+            <div className="radio-container">
+              <input
+                type="radio"
+                id="esquina"
+                name="landSituation"
+                value="Esquina"
+              />
+              <span>Esquina</span>
+            </div>
+          </div>
+          <br />
+          <br />
+          <div className="InputTerreno">
+            <input
+              type="text"
+              placeholder="Taxa de permeabilidade (%)"
+              name="permeabilityRate"
+              value={formData.permeabilityRate}
+              onChange={handleInputChange}
+            />
+            <input
+              type="text"
+              placeholder="Taxa de ocupação (%)"
+              name="occupancyRate"
+              value={formData.occupancyRate}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="radio-DadosTerreno">
+            <input
+              type="checkbox"
+              name="basementToBuild"
+              checked={formData.basementToBuild}
+              onChange={handleCheckboxChange}
+            />
+            <span>Área construir - Pavimento Térreo (m²):</span>
+            {formData.basementToBuild &&
+              formData.basementsToBuild.map((pavimento, index) => (
+                <div key={index}>
+                  <input
+                    type="text"
+                    placeholder={`${index + 1}º Basement:`}
+                    name={`basementPavimento${index + 1}`}
+                    value={pavimento}
+                    onChange={(e) =>
+                      handlePavimentoChange(
+                        index,
+                        e.target.value,
+                        "basementsToBuild"
+                      )
+                    }
+                  />
+                </div>
+              ))}
+            {formData.basementToBuild && (
+              <button
+                type="button"
+                onClick={() =>
+                  handlePavimentoClick(
+                    "basementToBuild",
+                    formData.basementsToBuild
+                  )
+                }
+              >
+                Adicionar pavimento
+              </button>
+            )}
+            <input
+              type="checkbox"
+              name="areaToBuildGroundFloor"
+              onChange={handleCheckboxChange}
+              checked={formData.areaToBuildGroundFloor}
+            />
+            <span>Área Subsolo a Construir (m²):</span>
+            {formData.areaToBuildGroundFloor &&
+              formData.areaToBuildGroundFloors.map((pavimento, index) => (
+                <div key={index}>
+                  <input
+                    type="text"
+                    placeholder={`${index + 1}º Ground Floor:`}
+                    name={`groundFloorPavimento${index + 1}`}
+                    value={pavimento}
+                    onChange={(e) =>
+                      handlePavimentoChange(
+                        index,
+                        e.target.value,
+                        "areaToBuildGroundFloor"
+                      )
+                    }
+                  />
+                </div>
+              ))}
+            {formData.areaToBuildGroundFloor && (
+              <button
+                type="button"
+                onClick={() =>
+                  handlePavimentoClick(
+                    "areaToBuildGroundFloor",
+                    formData.areaToBuildGroundFloors
+                  )
+                }
+              >
+                Adicionar pavimento
+              </button>
+            )}
+            <div>
+              <input
+                type="checkbox"
+                name="existingArea"
+                checked={formData.existingArea}
+                onChange={handleCheckboxChange}
+              />
+              <span>Área Subsolo Existente (m²):</span>
+              {formData.existingArea &&
+                formData.existingAreas.map((pavimento, index) => (
+                  <div key={index}>
+                    <input
+                      type="text"
+                      placeholder={`${index + 1}º Existing Area:`}
+                      name={`existingAreaPavimento${index + 1}`}
+                      value={pavimento}
+                      onChange={(e) =>
+                        handlePavimentoChange(
+                          index,
+                          e.target.value,
+                          "existingAreas"
+                        )
+                      }
+                    />
+                  </div>
+                ))}
+              {formData.existingArea && (
+                <button
+                  type="button"
+                  onClick={() =>
+                    handlePavimentoClick("existingArea", formData.existingAreas)
+                  }
+                >
+                  Adicionar pavimento
+                </button>
+              )}
+            </div>
+            <input
+              type="checkbox"
+              name="existingBasementArea"
+              checked={formData.existingBasementArea}
+              onChange={handleCheckboxChange}
+            />
+            <span>Área Existente (m²):</span>
+            {formData.existingBasementArea &&
+              formData.existingBasementAreas.map((pavimento, index) => (
+                <div key={index}>
+                  <input
+                    type="text"
+                    placeholder={`${index + 1}º Existing Basement Area:`}
+                    name={`existingBasementAreaPavimento${index + 1}`}
+                    value={pavimento}
+                    onChange={(e) =>
+                      handlePavimentoChange(
+                        index,
+                        e.target.value,
+                        "existingBasementAreas"
+                      )
+                    }
+                  />
+                </div>
+              ))}
+            {formData.existingBasementArea && (
+              <button
+                type="button"
+                onClick={() =>
+                  handlePavimentoClick(
+                    "existingBasementArea",
+                    formData.existingBasementAreas
+                  )
+                }
+              >
+                Adicionar pavimento
+              </button>
+            )}
+            <input
+              type="checkbox"
+              name="deckOrPoolArea"
+              checked={formData.deckOrPoolArea}
+              onChange={handleCheckboxChange}
+            />
+            <span>Área Deck ou Piscina (m²):</span>
+            {formData.deckOrPoolArea &&
+              formData.deckOrPoolAreas.map((pavimento, index) => (
+                <div key={index}>
+                  <input
+                    type="text"
+                    placeholder={`${index + 1}º Deck/Pool Area:`}
+                    name={`deckOrPoolAreaPavimento${index + 1}`}
+                    value={pavimento}
+                    onChange={(e) =>
+                      handlePavimentoChange(
+                        index,
+                        e.target.value,
+                        "deckOrPoolAreas"
+                      )
+                    }
+                  />
+                </div>
+              ))}
+            {formData.deckOrPoolArea && (
+              <button
+                type="button"
+                onClick={() =>
+                  handlePavimentoClick(
+                    "deckOrPoolArea",
+                    formData.deckOrPoolAreas
+                  )
+                }
+              >
+                Adicionar pavimento
+              </button>
+            )}
+          </div>
+        </div>
+        <button className="RegistrationProcessButton" type="submit">
+        Cadastrar processo
+      </button>
       </div>
-      <button type="submit">Submit</button>
     </form>
   );
 };
