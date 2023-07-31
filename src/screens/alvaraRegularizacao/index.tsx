@@ -301,7 +301,6 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
         </div>
 
         <div className="DadosProjeto">
-          <span className="line-with-name">Dados do Projeto</span>
           <div className="flex-container">
             <input
               type="text"
@@ -348,9 +347,8 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
             )}
           </div>
         </div>
-
+        <span className="line-with-name">Dados do Projeto</span>
         <div className="DadosEndereco">
-          <span className="line-with-name">Dados de endereço</span>
           <input
             type="text"
             placeholder="Endereço"
