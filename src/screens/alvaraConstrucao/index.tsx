@@ -262,7 +262,6 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
             />
             <span>Jurídica</span>
           </div>
-
           <div className="checkbox-Owner">
             <input
               type="checkbox"
@@ -297,6 +296,9 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
               />
             </div>
           )}
+          <div className="propritarioButton">
+            {formData.adicionarProprietario && <button>Adicionar</button>}
+          </div>
         </div>
         <span className="line-with-name">Dados do Projeto</span>
         <div className="DadosProjeto">
@@ -324,7 +326,6 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
               onChange={handleResponsavelTecnicoChange}
             />
             <span className="checkbox">Responsável técnico</span>
-
             {formData.responsibleTechnical && (
               <div className="flex-container">
                 <input
@@ -647,8 +648,8 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
           </div>
         </div>
         <button className="RegistrationProcessButton" type="submit">
-        Cadastrar processo
-      </button>
+          Cadastrar processo
+        </button>
       </div>
     </form>
   );
