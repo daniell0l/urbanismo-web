@@ -72,7 +72,7 @@ const RegistrationPage: React.FC = () => {
     setStreet(event.target.value);
   };
 
-  const handleRegistration = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleRegistration = () => {
     if (!name || !email || !cpf || !password || !currentCity || !AddressNumber || !AddressCep || !AddressStreet || !neighborhood || !phone) {
       return;
     }

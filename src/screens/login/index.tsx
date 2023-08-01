@@ -17,6 +17,10 @@ const LoginPage: React.FC = () => {
   const handleLogin = () => {
     console.log("Usuário:", username);
     console.log("Senha:", password);
+    window.location.href = '/principal'
+    if (!username || !password) {
+      return;
+    }
   };
 
   return (
@@ -25,7 +29,7 @@ const LoginPage: React.FC = () => {
         <img src={logoLateral} alt="logo lem urbanismo" />
       </div>
       <div className="greenLine"></div>
-      <form className="blocoLogin">
+      <form className="blocoLogin" onSubmit={handleLogin}>
         <h2>Login</h2>
         <div className="form-group">
           <div className="LabelLogin">
@@ -48,7 +52,7 @@ const LoginPage: React.FC = () => {
             onChange={handlePasswordChange}
             placeholder="Senha"
           />
-          <button className="buttonLogin" type="button" onClick={handleLogin}>
+          <button className="buttonLogin" type="submit">
             Entrar
           </button>
         </div>
