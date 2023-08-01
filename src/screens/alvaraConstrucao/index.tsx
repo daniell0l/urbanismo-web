@@ -229,64 +229,72 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
               />
             </div>
           )}
-          <div className="propritarioButton">
-            {formData.adicionarProprietario && <button>Adicionar</button>}
-          </div>
+{/* .............................................................................linha teste */}
         </div>
-        <span className="line-with-name">Responsável pelo projeto</span>
-        <div className="DadosProjeto">
+        <div className="DadosProprietario">
+          <span className="line-with-name">Dados do projeto</span>
           <div className="flex-container">
             <input
               type="text"
-              placeholder="Autoria"
-              name="authorization"
-              value={formData.authorization}
+              placeholder="Auditoria"
+              name="nome"
+              value={formData.nome}
               onChange={handleInputChange}
             />
             <input
               type="text"
-              placeholder="CREA/CAU"
-              name="creaCau"
-              value={formData.creaCau}
+              placeholder="CPF/CNPJ"
+              name="cpfCnpj"
+              value={formData.cpfCnpj}
               onChange={handleInputChange}
             />
           </div>
-          <div className="checkboxResponsabile">
+          <div className="SelectTechinical">
+            <select 
+              name="tipoPessoa"
+              value={formData.tipoPessoa}
+              onChange={handleTipoPessoaChange}
+            >
+              <option value="Física">Engenheiro</option>
+              <option value="Jurídica">Arquiteto</option>
+            </select>
+          </div>
+          <div className="checkboxTechnical">
             <input
               type="checkbox"
-              name="responsibleTechnical"
+              name="adicionar"
               checked={formData.responsibleTechnical}
               onChange={handleResponsavelTecnicoChange}
             />
-            <span >Responsável técnico</span>
-            {formData.responsibleTechnical && (
-              <div className="Reponsabile">
-                <input
-                  type="text"
-                  placeholder="Nome"
-                  name="nome"
-                  value={formData.responsible.nome}
-                  onChange={handleResponsavelChange}
-                />
-                <input
-                  type="text"
-                  placeholder="CPF/CNPJ"
-                  name="cpfCnpj"
-                  value={formData.responsible.cpfCnpj}
-                  onChange={handleResponsavelChange}
-                />
-                <select
-                  name="role"
-                  value={formData.responsible.role}
-                  onChange={handleResponsavelChange}
-                >
-                  <option value="Engenheiro">Engenheiro</option>
-                  <option value="Arquiteto">Arquiteto</option>
-                </select>
-              </div>
-            )}
+            <span>Responsável técnico</span>
           </div>
+          {formData.responsibleTechnical && (
+            <div className="flex-container">
+              <input
+                type="text"
+                placeholder="Nome"
+                name="nome"
+                value={formData.proprietario.nome}
+                onChange={handleResponsavelChange}
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                value={formData.proprietario.email}
+                onChange={handleResponsavelChange}
+              />
+              <input
+                type="text"
+                placeholder="CPF/CNPJ"
+                name="cpfCnpj"
+                value={formData.proprietario.cpfCnpj}
+                onChange={handleResponsavelChange}
+              />
+            </div>
+          )}
         </div>
+
         <div className="DadosEndereco">
           <span className="line-with-name">Dados de endereço</span>
           <input
