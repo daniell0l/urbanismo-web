@@ -1,5 +1,5 @@
 import "./style.css";
-import React, { useState } from "react";
+import React, {useState } from "react";
 import logoRegister from "../../assets/imgs/logoWide.png";
 
 const RegistrationPage: React.FC = () => {
@@ -72,7 +72,10 @@ const RegistrationPage: React.FC = () => {
     setStreet(event.target.value);
   };
 
-  const handleRegistration = () => {
+  const handleRegistration = (event: React.FormEvent<HTMLFormElement>) => {
+    if (!name || !email || !cpf || !password || !currentCity || !AddressNumber || !AddressCep || !AddressStreet || !neighborhood || !phone) {
+      return;
+    }
     console.log("Name:", name);
     console.log("CPF:", cpf);
     console.log("Email:", email);
@@ -85,12 +88,12 @@ const RegistrationPage: React.FC = () => {
     console.log("Current State:", currentState);
     console.log("Cep:", AddressCep);
     console.log("Street:", AddressStreet);
-    window.location.href = './principal'
+    window.location.href = '/principal'
   };
 
   return (
     <div id="registration-container">
-      <form className="blocoRegistration">
+      <form className="blocoRegistration" onSubmit={handleRegistration}>
         <div>
           <img
             className="logoRegister"
@@ -246,7 +249,6 @@ const RegistrationPage: React.FC = () => {
           <button
             className="buttonRegistration"
             type="submit"
-            onClick={handleRegistration}
           >
             Cadastrar
           </button>
