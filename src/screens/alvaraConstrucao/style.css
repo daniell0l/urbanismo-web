@@ -1,48 +1,88 @@
 #container {
-  #container {
-    max-width: 1200px;
-    width: 100%;
-    height: 100vh;
-    background: #fff;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 1px #5c5b5b;
-  }
-  
+  max-width: 1200px;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
-.DadosProprietario,
 .DadosProjeto,
-.DadosEndereco,
-.DadosTerreno {
+.DadosEndereco {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
-  border: 1px solid red;
 }
 
-.line-with-name {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 20px;
-  margin-top: 20px;
+.SelectTipoPessoa {
+  display: inline;
 }
+
+.SelectTipoPessoa select{
+  border-radius: 5px;
+  font-size: 1em;
+  position: relative;
+  top: -60px;
+  left: 400px;
+  background:#fff;
+}
+
+.SelectTipoPessoa option{
+  background-color: #fff;
+}
+
 
 .DadosProprietario input,
 .DadosProjeto input,
 .DadosEndereco input,
-.DadosTerreno input,
-.DadosProprietario select,
 .DadosProjeto select,
-.DadosEndereco select,
-.DadosTerreno select {
+.DadosEndereco select {
   width: 100%;
   padding: 12px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
+  margin-top: 20px;
   border-radius: 5px;
   margin-bottom: 10px;
   font-size: 1em;
+}
+
+.checkboxOwner {
+  display: block;
+}
+
+.checkboxOwner span{
+  position: relative;
+  right: 330px;
+  top: -10px;
+}
+
+.checkboxOwner input{
+  position: relative;
+  right: 165px;
+  top: -10px;
+}
+
+.checkboxResponsabile {
+  flex-direction: row;
+  border: 1px solid red;
+}
+
+.checkboxResponsabile input{
+  margin-bottom: 10px;
+}
+
+.checkboxResponsabile input:checked{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Reponsabile input, .Reponsabile select {
+  margin: 5px;
+}
+
+.checkboxResponsabile input{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .propritarioButton {
@@ -57,10 +97,7 @@
   left: -10px;
 }
 
-
-.DadosProjeto button,
-.DadosEndereco button,
-.DadosTerreno button {
+.DadosEndereco button {
   height: 50px;
   background: #3a86ff;
   border: none;
@@ -72,9 +109,8 @@
   margin-bottom: 10px;
 }
 
-
 .RegistrationProcessButton {
-  padding: 20px;
+  padding: 15px 50px;
   background: #3a86ff;
   border: none;
   font-size: 1em;
@@ -83,12 +119,6 @@
   text-transform: uppercase;
   border-radius: 5px;
   margin-bottom: 10px;
-  position: relative;
-  top: -50px;
-}
-
-.RegistrationProcessButton {
-  padding: 15px 50px;
 }
 
 .RegistrationProcessButton:hover,
@@ -105,19 +135,16 @@
 
   .DadosProprietario,
   .DadosProjeto,
-  .DadosEndereco,
-  .DadosTerreno {
+  .DadosEndereco {
     width: 100%;
   }
 
   .DadosProprietario input,
   .DadosProjeto input,
   .DadosEndereco input,
-  .DadosTerreno input,
   .DadosProprietario select,
   .DadosProjeto select,
-  .DadosEndereco select,
-  .DadosTerreno select {
+  .DadosEndereco select {
     margin-right: 0;
   }
 }
