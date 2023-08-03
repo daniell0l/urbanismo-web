@@ -381,6 +381,39 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
               <option value="industrial">Industrial</option>
             </select>
           </div>
+          <div className="dadosEndereco">
+            <input 
+            type="text"
+            value={formData.}
+            onChange={}
+            placeholder="Área do Terreno (m²)"
+            />
+            <input 
+            type="text"
+            value={formData.}
+            onChange={}
+            placeholder="Taxa de Permeabilidade (%)"
+            />
+            <input 
+            type="text"
+            value={formData.}
+            onChange={}
+            placeholder="Taxa de Ocupação (%)"
+            />
+            <input 
+            type="text"
+            value={formData.}
+            onChange={}
+            placeholder="
+            Área construir - Pavimento Térreo(m²):"
+            />
+            <input 
+            type="text"
+            value={formData.}
+            onChange={}
+            placeholder="Total"
+            />
+          </div>
         </div>
         <button className="RegistrationProcessButton" type="submit">
           Cadastrar processo
@@ -391,3 +424,16 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
 };
 
 export default CadastroForm;
+
+// permeabilityRate: string;
+//   occupancyRate: string;
+//   areaToBuildGroundFloor: boolean;
+//   basementToBuild: boolean;
+//   existingArea: boolean;
+//   existingBasementArea: boolean;
+//   deckOrPoolArea: boolean;
+//   basementsToBuild: string[];
+//   existingAreas: string[];
+//   existingBasementAreas: string[];
+//   deckOrPoolAreas: string[];
+//   areaToBuildGroundFloors: string[];
