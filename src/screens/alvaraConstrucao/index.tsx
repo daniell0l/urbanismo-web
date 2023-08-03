@@ -32,6 +32,14 @@ interface CadastroFormData {
   purposeOfWork: string;
   landArea: string;
   landSituation: "Meio Esquina" | "Esquina";
+  purposeWork:
+    | "residential"
+    | "residencialCondominium"
+    | "commercial"
+    | "mixed"
+    | "institutional"
+    | "shed"
+    | "industrial";
   permeabilityRate: string;
   occupancyRate: string;
   areaToBuildGroundFloor: boolean;
@@ -74,6 +82,7 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
     purposeOfWork: "",
     landArea: "",
     landSituation: "Meio Esquina",
+    purposeWork: "residential",
     permeabilityRate: "",
     occupancyRate: "",
     areaToBuildGroundFloor: false,
@@ -103,6 +112,21 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
     setFormData({
       ...formData,
       tipoPessoa: value as "Física" | "Jurídica",
+    });
+  };
+
+  const handlePurposeWork = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const { value } = event.target;
+    setFormData({
+      ...formData,
+      purposeWork: value as
+        | "residential"
+        | "residencialCondominium"
+        | "commercial"
+        | "mixed"
+        | "institutional"
+        | "shed"
+        | "industrial",
     });
   };
 
@@ -140,7 +164,9 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
   };
 
   const handleResponsavelChange = (
-    event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLSelectElement>
   ) => {
     const { name, value } = event.target;
     setFormData({
@@ -186,7 +212,7 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
             />
           </div>
           <div className="SelectTipoPessoa">
-            <select 
+            <select
               name="tipoPessoa"
               value={formData.tipoPessoa}
               onChange={handleTipoPessoaChange}
@@ -229,7 +255,6 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
               />
             </div>
           )}
-{/* .............................................................................linha teste */}
         </div>
         <div className="DadosProprietario">
           <span className="line-with-name">Dados do projeto</span>
@@ -250,7 +275,7 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
             />
           </div>
           <div className="SelectTechinical">
-            <select 
+            <select
               name="tipoPessoa"
               value={formData.tipoPessoa}
               onChange={handleTipoPessoaChange}
@@ -294,7 +319,6 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
             </div>
           )}
         </div>
-
         <div className="DadosEndereco">
           <span className="line-with-name">Dados de endereço</span>
           <input
@@ -337,6 +361,26 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
           />
           <input type="text" placeholder="Bahia" />
           <input type="text" placeholder="Luís Eduardo Magalhães" />
+        </div>
+        <div className="dadosEndereco">
+          <span className="line-with-name">Dados do endereço</span>
+          <div className="selectPurposeWork">
+            <select
+              name="PurposeWork"
+              value={formData.purposeWork}
+              onChange={handlePurposeWork}
+            >
+              <option value="residential">Residencial</option>
+              <option value="residencialCondominium">
+                Residencial em condomínio
+              </option>
+              <option value="commercial">Comercial</option>
+              <option value="mixed">Misto</option>
+              <option value="institutional">Institucional</option>
+              <option value="shed">Galão</option>
+              <option value="industrial">Industrial</option>
+            </select>
+          </div>
         </div>
         <button className="RegistrationProcessButton" type="submit">
           Cadastrar processo
