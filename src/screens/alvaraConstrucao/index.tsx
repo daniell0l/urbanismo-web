@@ -376,8 +376,8 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
           <input readOnly type="text" placeholder="Bahia" />
           <input readOnly type="text" placeholder="Luís Eduardo Magalhães" />
         </div>
-        <div className="dadosEndereco">
-          <span className="line-with-name">Dados do endereço</span>
+        <div className="dadosTerreno">
+          <span className="line-with-name">Dados do terreno</span>
           <div className="selectPurposeWork">
             <select
               name="PurposeWork"
