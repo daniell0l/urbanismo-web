@@ -31,7 +31,7 @@ interface CadastroFormData {
   number: string;
   purposeOfWork: string;
   landArea: string;
-  landSituation: "Meio Esquina" | "Esquina";
+  landSituation: "Meio quadra" | "Esquina";
   purposeWork:
     | "residential"
     | "residencialCondominium"
@@ -42,6 +42,7 @@ interface CadastroFormData {
     | "industrial";
   permeabilityRate: string;
   occupancyRate: string;
+  calculateTotal: string;
   areaToBuildGroundFloor: boolean;
   basementToBuild: boolean;
   existingArea: boolean;
@@ -81,10 +82,11 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
     number: "",
     purposeOfWork: "",
     landArea: "",
-    landSituation: "Meio Esquina",
+    landSituation: "Meio quadra",
     purposeWork: "residential",
     permeabilityRate: "",
     occupancyRate: "",
+    calculateTotal: "",
     areaToBuildGroundFloor: false,
     basementToBuild: false,
     existingArea: false,
@@ -177,6 +179,18 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
       },
     });
   };
+
+  const handleLandSituation = (
+  (event: React.ChangeEvent<HTMLSelectElement>) => {
+      const { value } = event.target;
+      setFormData({
+        ...formData,
+        landSituation: value as
+          | "Meio quadra"
+          | "Esquina"
+      });
+  });
+  
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -359,8 +373,8 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
             value={formData.number}
             onChange={handleInputChange}
           />
-          <input type="text" placeholder="Bahia" />
-          <input type="text" placeholder="Luís Eduardo Magalhães" />
+          <input readOnly type="text" placeholder="Bahia" />
+          <input readOnly type="text" placeholder="Luís Eduardo Magalhães" />
         </div>
         <div className="dadosEndereco">
           <span className="line-with-name">Dados do endereço</span>
@@ -381,39 +395,43 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
               <option value="industrial">Industrial</option>
             </select>
           </div>
-          <div className="dadosEndereco">
-            <input 
-            type="text"
-            value={formData.}
-            onChange={}
-            placeholder="Área do Terreno (m²)"
-            />
-            <input 
-            type="text"
-            value={formData.}
-            onChange={}
-            placeholder="Taxa de Permeabilidade (%)"
-            />
-            <input 
-            type="text"
-            value={formData.}
-            onChange={}
-            placeholder="Taxa de Ocupação (%)"
-            />
-            <input 
-            type="text"
-            value={formData.}
-            onChange={}
-            placeholder="
-            Área construir - Pavimento Térreo(m²):"
-            />
-            <input 
-            type="text"
-            value={formData.}
-            onChange={}
-            placeholder="Total"
-            />
+          <div className="selectLandSituation">
+            <select
+              name="landSituation"
+              value={formData.landSituation}
+              onChange={handleLandSituation}
+            >
+              <option value="Meio quadra">Meio quadra</option>
+              <option value="Esquina">Esquina</option>
+            </select>
           </div>
+          <input
+              type="text"
+              placeholder="Área do Terreno (m²)"
+              name="landArea"
+              value={formData.landArea}
+              onChange={handleInputChange}
+            />
+            <input
+              type="text"
+              placeholder="Taxa de Permeabilidade (%)"
+              name="permeabilityRate"
+              value={formData.permeabilityRate}
+              onChange={handleInputChange}
+            />
+            <input
+              type="text"
+              placeholder="Taxa de Ocupação (%)"
+              name="occupancyRate"
+              value={formData.occupancyRate}
+              onChange={handleInputChange}
+            />
+            <input
+              type="text"
+              placeholder="Total"
+              readOnly
+              value={formData.calculateTotal}
+            />
         </div>
         <button className="RegistrationProcessButton" type="submit">
           Cadastrar processo
@@ -424,16 +442,3 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
 };
 
 export default CadastroForm;
-
-// permeabilityRate: string;
-//   occupancyRate: string;
-//   areaToBuildGroundFloor: boolean;
-//   basementToBuild: boolean;
-//   existingArea: boolean;
-//   existingBasementArea: boolean;
-//   deckOrPoolArea: boolean;
-//   basementsToBuild: string[];
-//   existingAreas: string[];
-//   existingBasementAreas: string[];
-//   deckOrPoolAreas: string[];
-//   areaToBuildGroundFloors: string[];
