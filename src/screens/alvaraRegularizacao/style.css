@@ -3,123 +3,125 @@
   width: 100%;
   height: 100vh;
   background: #fff;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
-.DadosProjeto,
+select {
+  background: #fff;
+  color: #696969;
+  border: 1px solid #ccc;
+}
+
+.dadosProprietario,
+.dadosProjeto,
 .DadosEndereco {
   width: 100%;
+  height: auto;
   padding: 10px;
   box-sizing: border-box;
 }
 
-.SelectTipoPessoa {
-  display: inline;
+.dadosProprietario .flex-container,
+.dadosProjeto .flex-container,
+.DadosEndereco .flex-container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.SelectTipoPessoa select{
-  border-radius: 5px;
-  font-size: 1em;
-  position: relative;
-  top: -60px;
-  left: 400px;
-  color: #696969;
-  background: #fff;
-}
-
-.SelectTipoPessoa option{
-  background-color: #fff;
-}
-
-
-.DadosProprietario input,
-.DadosProjeto input,
-.DadosEndereco input,
-.DadosProjeto select,
-.DadosEndereco select {
-  color: #696969;
-  background: #fff;
-  width: 100%;
+.dadosProprietario .SelectTipoPessoa select {
+  width: 35%;
   padding: 12px;
-  margin-top: 20px;
+  top: -55px;
+  left: 440px;
   border-radius: 5px;
   margin-bottom: 10px;
   font-size: 1em;
-}
-
-.checkboxOwner {
-  display: block;
-}
-
-.checkboxOwner span{
+  margin-left: 20px;
   position: relative;
-  right: 330px;
-  top: -10px;
+  right: 12px;
+  float: left;
 }
 
-.checkboxOwner input{
+.dadosProjeto .SelectTechinical select {
+  width: 35%;
+  padding: 12px;
+  top: 0px;
+  left: -11px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 1em;
+  margin-left: 20px;
   position: relative;
-  right: 165px;
-  top: -10px;
+  right: 12px;
 }
 
-.checkboxResponsabile {
-  flex-direction: row;
+.dadosProprietario input,
+.dadosProjeto input,
+.DadosEndereco input {
+  width: 35%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  margin-left: 20px;
+  position: relative;
+  right: 12px;
 }
 
-.checkboxResponsabile input{
+.DadosEndereco input {
+  width: 25%;
   margin-bottom: 10px;
 }
 
-.checkboxResponsabile input:checked{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.DadosProprietario {
-  height: auto;
-}
-
-.Reponsabile input, .Reponsabile select {
-  margin: 5px;
-}
-
-.SelectTechinical select {
-  color: #696969;
-  background: #fff;
-}
-
-.checkboxResponsabile input{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.checkboxTechnical {
+.min-Address input {
+  width: 10%;
   position: relative;
-  right: 170px;
-  top: 40px;
-  padding-bottom: 60px;
+  top: -65px;
+  left: 330px;
 }
 
-.checkboxTechnical span{
-  position: relative;
-  right: 165px;
-  padding-bottom: 60px;
-
+.adicionarProprietario {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.propritarioButton {
-  border: none;
+.adicionarProprietario input {
+  width: 40%;
+  padding: 12px;
+  margin-top: -50px;
+  border-radius: 5px;
+  margin-bottom: 30px;
   font-size: 1em;
+  border: 1px solid hsl(0, 0%, 80%);
+  margin-left: 20px;
+}
+
+.adicionarProprietario button {
+  padding: 12px;
+  margin-top: -50px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 1em;
+  margin-left: 10px;
+  background: #3a86ff;
   color: #fff;
-  cursor: pointer;
-  text-transform: uppercase;
+  border: none;
+}
+
+.adicionarTechinical button {
+  padding: 12px;
+  margin-top: 10px;
   border-radius: 5px;
-  position: relative;
-  top: 150px;
-  left: -10px;
+  margin-bottom: 10px;
+  font-size: 1em;
+  margin-left: 10px;
+  background: #3a86ff;
+  color: #fff;
+  border: none;
 }
 
 .DadosEndereco button {
@@ -134,7 +136,7 @@
   margin-bottom: 10px;
 }
 
-.dadosTerreno select{
+.dadosTerreno select {
   width: 35%;
   padding: 12px;
   margin-top: 20px;
@@ -147,16 +149,16 @@
   float: left;
   color: #696969;
   background: #fff;
-  border:1px solid #ccc;
+  border: 1px solid #ccc;
 }
 
-.dadosTerreno select option{
+.dadosTerreno select option {
   font-size: 1em;
   color: #696969;
   background: #fff;
 }
 
-.dadosTerreno input{
+.dadosTerreno input {
   width: 35%;
   padding: 12px;
   margin-top: 10px;
@@ -174,7 +176,7 @@
   height: auto;
 }
 
-.AddBasementeLabel input{
+.AddBasementeLabel input {
   width: 100%;
   padding: 12px;
   margin-top: 10px;
@@ -209,7 +211,6 @@
   margin-top: 10px;
 }
 
-
 .RegistrationProcessButton {
   padding: 15px 50px;
   background: #3a86ff;
@@ -221,6 +222,8 @@
   border-radius: 5px;
   margin-bottom: 10px;
   margin-top: 50px;
+  position: relative;
+  left: 445px;
 }
 
 .RegistrationProcessButton:hover,
