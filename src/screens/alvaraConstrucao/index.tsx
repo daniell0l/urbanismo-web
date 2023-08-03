@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
+import AdicionarPavimentoButton from "../../components/buttonAddBasement";
 
 interface CadastroFormProps {
   onSubmit: (data: CadastroFormData) => void;
@@ -180,17 +181,13 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
     });
   };
 
-  const handleLandSituation = (
-  (event: React.ChangeEvent<HTMLSelectElement>) => {
-      const { value } = event.target;
-      setFormData({
-        ...formData,
-        landSituation: value as
-          | "Meio quadra"
-          | "Esquina"
-      });
-  });
-  
+  const handleLandSituation = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const { value } = event.target;
+    setFormData({
+      ...formData,
+      landSituation: value as "Meio quadra" | "Esquina",
+    });
+  };
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -406,32 +403,56 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
             </select>
           </div>
           <input
-              type="text"
-              placeholder="Área do Terreno (m²)"
-              name="landArea"
-              value={formData.landArea}
-              onChange={handleInputChange}
-            />
-            <input
-              type="text"
-              placeholder="Taxa de Permeabilidade (%)"
-              name="permeabilityRate"
-              value={formData.permeabilityRate}
-              onChange={handleInputChange}
-            />
-            <input
-              type="text"
-              placeholder="Taxa de Ocupação (%)"
-              name="occupancyRate"
-              value={formData.occupancyRate}
-              onChange={handleInputChange}
-            />
-            <input
-              type="text"
-              placeholder="Total"
-              readOnly
-              value={formData.calculateTotal}
-            />
+            type="text"
+            placeholder="Área do Terreno (m²)"
+            name="landArea"
+            value={formData.landArea}
+            onChange={handleInputChange}
+          />
+          <input
+            type="text"
+            placeholder="Taxa de Permeabilidade (%)"
+            name="permeabilityRate"
+            value={formData.permeabilityRate}
+            onChange={handleInputChange}
+          />
+          <input
+            type="text"
+            placeholder="Taxa de Ocupação (%)"
+            name="occupancyRate"
+            value={formData.occupancyRate}
+            onChange={handleInputChange}
+          />
+          <input
+            type="text"
+            placeholder="Total"
+            readOnly
+            value={formData.calculateTotal}
+          />
+          <label
+          className="AddBasementeLabel"
+          >
+            Área construir - Pavimento Térreo(m²)
+            <AdicionarPavimentoButton></AdicionarPavimentoButton>
+          </label>
+          <label
+          className="AddBasementeLabel"
+          >
+            Área Subsolo a Construir(m²)
+            <AdicionarPavimentoButton></AdicionarPavimentoButton>
+          </label>
+          <label
+          className="AddBasementeLabel"
+          >
+            Área Subsolo Existente(m²)
+            <AdicionarPavimentoButton></AdicionarPavimentoButton>
+          </label>
+          <label
+          className="AddBasementeLabel"
+          >
+            Área Deck ou Piscina
+            <AdicionarPavimentoButton></AdicionarPavimentoButton>
+          </label>
         </div>
         <button className="RegistrationProcessButton" type="submit">
           Cadastrar processo
