@@ -21,11 +21,7 @@ interface CadastroFormData {
   };
   authorization: string;
   creaCau: string;
-  responsibleTechnical: {
-    name: string;
-    cpfCnpj: string;
-    role: "Engenheiro" | "Arquiteto";
-  };
+  responsibleTechnical: "Engenheiro" | "Arquiteto";
   address: string;
   subdivision: string;
   block: string;
@@ -71,11 +67,7 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
     },
     authorization: "",
     creaCau: "",
-    responsibleTechnical: {
-      name: "",
-      cpfCnpj: "",
-      role: "Engenheiro",
-    },
+    responsibleTechnical: "Engenheiro",
     address: "",
     subdivision: "",
     block: "",
