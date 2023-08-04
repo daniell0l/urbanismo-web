@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
-interface Proprietario {
+interface Own {
   nome: string;
   cpfCnpj: string;
   creaCau: string;
 }
 
-const AddProprietarioButton: React.FC = () => {
+const AddOwnButton: React.FC = () => {
   const [showInputs, setShowInputs] = useState(false);
-  const [proprietario, setProprietario] = useState<Proprietario>({
+  const [Own, setOwn] = useState<Own>({
     nome: '',
     cpfCnpj: '',
     creaCau: '',
@@ -16,15 +16,15 @@ const AddProprietarioButton: React.FC = () => {
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
-    setProprietario((prevProprietario) => ({
-      ...prevProprietario,
+    setOwn((prevOwn) => ({
+      ...prevOwn,
       [name]: value,
     }));
   };
 
-  const handleAddProprietario = () => {
-    console.log('Proprietário:', proprietario);
-    setProprietario({
+  const handleAddOwn = () => {
+    console.log('Own:', Own);
+    setOwn({
       nome: '',
       cpfCnpj: '',
       creaCau: '',
@@ -33,8 +33,8 @@ const AddProprietarioButton: React.FC = () => {
   };
 
   const handleExcluir = () => {
-    console.log('Excluindo proprietário:', proprietario);
-    setProprietario({
+    console.log('Excluindo proprietário:', Own);
+    setOwn({
       nome: '',
       cpfCnpj: '',
       creaCau: '',
@@ -52,24 +52,24 @@ const AddProprietarioButton: React.FC = () => {
             type="text"
             name="nome"
             placeholder="Nome"
-            value={proprietario.nome}
+            value={Own.nome}
             onChange={handleInputChange}
           />
           <input
             type="text"
             name="cpfCnpj"
             placeholder="CPF/CNPJ"
-            value={proprietario.cpfCnpj}
+            value={Own.cpfCnpj}
             onChange={handleInputChange}
           />
           <input
             type="text"
             name="creaCau"
             placeholder="CREA/CAU"
-            value={proprietario.creaCau}
+            value={Own.creaCau}
             onChange={handleInputChange}
           />
-          <button onClick={handleAddProprietario}>Adicionar</button>
+          <button onClick={handleAddOwn}>Adicionar</button>
           <button onClick={handleExcluir}>Excluir</button>
         </div>
       )}
@@ -77,4 +77,4 @@ const AddProprietarioButton: React.FC = () => {
   );
 };
 
-export default AddProprietarioButton;
+export default AddOwnButton;
