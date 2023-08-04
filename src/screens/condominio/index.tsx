@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 import AddOwnButton from "../../components/AddOwner";
 import AddTechinical from "../../components/AddTechinical";
+import AddUnity from "../../components/AddUnity";
 
 interface CadastroFormProps {
   onSubmit: (data: CadastroFormData) => void;
@@ -30,13 +31,13 @@ interface CadastroFormData {
   landArea: string;
   landSituation: "Meio quadra" | "Esquina";
   purposeWork:
-  | "residential"
-  | "residencialCondominium"
-  | "commercial"
-  | "mixed"
-  | "institutional"
-  | "shed"
-  | "industrial";
+    | "residential"
+    | "residencialCondominium"
+    | "commercial"
+    | "mixed"
+    | "institutional"
+    | "shed"
+    | "industrial";
 }
 
 const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
@@ -236,6 +237,9 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
             value={formData.landArea}
             onChange={handleInputChange}
           />
+          <div className="addUnity">
+            <AddUnity></AddUnity>
+          </div>
         </div>
         <button className="RegistrationProcessButton" type="submit">
           Cadastrar processo
