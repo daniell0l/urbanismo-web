@@ -239,11 +239,11 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
           />
           <div className="addUnity">
             <AddUnity></AddUnity>
-          </div>
         </div>
         <button className="RegistrationProcessButton" type="submit">
-          Cadastrar processo
-        </button>
+            Cadastrar processo
+          </button>
+          </div>
       </div>
     </form>
   );
