@@ -192,7 +192,7 @@ select {
 .AddBasementeLabel {
   color: #696969;
   width: 35%;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-left: 10px;
   margin-right: 50px;
   float: left;
@@ -203,10 +203,9 @@ select {
   height: 30px;
   background: #3a86ff;
   border: none;
-  font-size: 0.9em;
+  font-size: 1em;
   color: #fff;
   cursor: pointer;
-  text-transform: uppercase;
   border-radius: 5px;
   float: left;
   margin-right: 10px;

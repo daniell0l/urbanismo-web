@@ -27,10 +27,10 @@ const AdicionarPavimentoButton = () => {
               setPavimentos(novosPavimentos);
             }}
           />
-          <button onClick={() => handleRemoverPavimento(index)}>-</button>
+          <button onClick={handleAdicionarPavimento}>+</button>
+      <button onClick={() => handleRemoverPavimento(index)}>-</button>
         </div>
       ))}
-      <button onClick={handleAdicionarPavimento}>+</button>
     </div>
   );
 };

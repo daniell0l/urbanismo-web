@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./style.css";
+import "../alvaraConstrucao/style.css";
 import AdicionarPavimentoButton from "../../components/buttonAddBasement";
 import AddOwnButton from "../../components/AddOwner";
 import AddTechinical from "../../components/AddTechinical";
