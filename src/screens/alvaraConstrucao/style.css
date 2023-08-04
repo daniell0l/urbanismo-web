@@ -199,6 +199,7 @@ select {
 }
 
 .AddBasementeLabel button {
+  width: 40px;
   height: 30px;
   background: #3a86ff;
   border: none;
@@ -211,7 +212,7 @@ select {
   margin-right: 10px;
 }
 
-.RegistrationProcess Button {
+.RegistrationProcessButton {
   padding: 15px 50px;
   background: #3a86ff;
   border: none;
