@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const AdicionarPavimentoButton = () => {
   const [pavimentos, setPavimentos] = useState<string[]>(['1']);
