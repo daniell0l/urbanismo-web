@@ -116,7 +116,7 @@ const TableComponent: React.FC = () => {
         <table>
           <thead>
             <tr>
-              <th>IR</th>
+              <th>Ir</th>
               <th>Proprietário</th>
               <th>Endireitar</th>
               <th>Bairro</th>
@@ -140,7 +140,9 @@ const TableComponent: React.FC = () => {
         </table>
       </div>
       <div>
-        <a className="link-temporario" href="javascript:history.go(-1)">voltar a página anterior</a>
+        <a className="link-temporario" href="javascript:history.go(-1)">
+          voltar a página anterior
+        </a>
         <a href="/alvaraConstrucao">Alvara Construcão</a>
       </div>
     </div>

@@ -1,3 +1,7 @@
+html {
+  background: #fff;
+}
+
 #principal {
   width: 100%;
   height: auto;
@@ -90,7 +94,29 @@
 }
 
 .link-temporario {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .construction-protocol,
+  .selectedConstruction,
+  .selectedProtocol {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .selectedConstruction select,
+  .selectedProtocol select,
+  .Search input {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .Search-result table {
+    margin-left: 0;
+    width: 100%;
+  }
 }

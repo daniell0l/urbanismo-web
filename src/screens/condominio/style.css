@@ -1,130 +1,128 @@
-#container {
+/* #container {
   max-width: 1200px;
   width: 100%;
   height: 100vh;
   background: #fff;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
-select {
-  background: #fff;
-  color: #696969;
-  border: 1px solid #ccc;
-}
-
-.ownerData,
-.projectData,
-.addresData {
+.DadosProjeto,
+.DadosEndereco {
   width: 100%;
-  height: auto;
   padding: 10px;
   box-sizing: border-box;
 }
 
-.ownerData .flex-container,
-.projectData .flex-container,
-.addresData .flex-container {
-  display: flex;
-  flex-wrap: wrap;
+.SelectTipoPessoa {
+  display: inline;
 }
 
-.ownerData .SelecttypePeople select {
-  width: 35%;
-  padding: 12px;
-  top: -55px;
-  left: 440px;
+.SelectTipoPessoa select{
   border-radius: 5px;
-  margin-bottom: 10px;
   font-size: 1em;
-  margin-left: 20px;
   position: relative;
-  right: 12px;
-  float: left;
+  top: -60px;
+  left: 400px;
+  color: #696969;
+  background: #fff;
 }
 
-.projectData .SelectTechinical select {
-  width: 35%;
-  padding: 12px;
-  top: 0px;
-  left: -11px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  font-size: 1em;
-  margin-left: 20px;
-  position: relative;
-  right: 12px;
+.SelectTipoPessoa option{
+  background-color: #fff;
 }
 
-.ownerData input,
-.projectData input,
-.addresData input {
-  width: 35%;
-  padding: 12px;
-  margin-top: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  font-size: 1em;
-  border: 1px solid #ccc;
-  margin-left: 20px;
-  position: relative;
-  right: 12px;
-}
 
-.addresData input {
-  width: 25%;
-  margin-bottom: 10px;
-}
-
-.min-Address input {
-  width: 10%;
-  position: relative;
-  top: -65px;
-  left: 330px;
-}
-
-.addOwn {
+.DadosProprietario input,
+.DadosProjeto input,
+.DadosEndereco input,
+.DadosProjeto select,
+.DadosEndereco select {
+  color: #696969;
+  background: #fff;
   width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+.checkboxOwner {
+  display: block;
+}
+
+.checkboxOwner span{
+  position: relative;
+  right: 330px;
+  top: -10px;
+}
+
+.checkboxOwner input{
+  position: relative;
+  right: 165px;
+  top: -10px;
+}
+
+.checkboxResponsabile {
+  flex-direction: row;
+}
+
+.checkboxResponsabile input{
+  margin-bottom: 10px;
+}
+
+.checkboxResponsabile input:checked{
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.addOwn input {
-  width: 40%;
-  padding: 12px;
-  margin-top: -50px;
-  border-radius: 5px;
-  margin-bottom: 30px;
-  font-size: 1em;
-  border: 1px solid hsl(0, 0%, 80%);
-  margin-left: 20px;
+.DadosProprietario {
+  height: auto;
 }
 
-.addOwn button {
-  padding: 12px;
-  margin-top: -50px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  font-size: 1em;
-  margin-left: 10px;
-  background: #3a86ff;
-  color: #fff;
+.Reponsabile input, .Reponsabile select {
+  margin: 5px;
+}
+
+.SelectTechinical select {
+  color: #696969;
+  background: #fff;
+}
+
+.checkboxResponsabile input{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkboxTechnical {
+  position: relative;
+  right: 170px;
+  top: 40px;
+  padding-bottom: 60px;
+}
+
+.checkboxTechnical span{
+  position: relative;
+  right: 165px;
+  padding-bottom: 60px;
+
+}
+
+.propritarioButton {
   border: none;
-}
-
-.addTechinical button {
-  padding: 12px;
-  margin-top: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
   font-size: 1em;
-  margin-left: 10px;
-  background: #3a86ff;
   color: #fff;
-  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 5px;
+  position: relative;
+  top: 150px;
+  left: -10px;
 }
 
-.addresData button {
+.DadosEndereco button {
   height: 50px;
   background: #3a86ff;
   border: none;
@@ -136,7 +134,7 @@ select {
   margin-bottom: 10px;
 }
 
-.propertyData select {
+.dadosTerreno select{
   width: 35%;
   padding: 12px;
   margin-top: 20px;
@@ -149,16 +147,16 @@ select {
   float: left;
   color: #696969;
   background: #fff;
-  border: 1px solid #ccc;
+  border:1px solid #ccc;
 }
 
-.propertyData select option {
+.dadosTerreno select option{
   font-size: 1em;
   color: #696969;
   background: #fff;
 }
 
-.propertyData input {
+.dadosTerreno input{
   width: 35%;
   padding: 12px;
   margin-top: 10px;
@@ -171,12 +169,12 @@ select {
   right: 12px;
 }
 
-.propertyData {
+.dadosTerreno {
   width: 100%;
   height: auto;
 }
 
-.AddBasementeLabel input {
+.AddBasementeLabel input{
   width: 100%;
   padding: 12px;
   margin-top: 10px;
@@ -199,18 +197,18 @@ select {
 }
 
 .AddBasementeLabel button {
-  width: 40px;
-  height: 30px;
+  padding: 10px 20px;
   background: #3a86ff;
   border: none;
-  font-size: 0.9em;
+  font-size: 1em;
   color: #fff;
   cursor: pointer;
   text-transform: uppercase;
   border-radius: 5px;
-  float: left;
-  margin-right: 10px;
+  margin-bottom: 5px;
+  margin-top: 10px;
 }
+
 
 .RegistrationProcessButton {
   padding: 15px 50px;
@@ -223,8 +221,6 @@ select {
   border-radius: 5px;
   margin-bottom: 10px;
   margin-top: 50px;
-  position: relative;
-  left: 445px;
 }
 
 .RegistrationProcessButton:hover,
@@ -239,18 +235,18 @@ select {
     flex-direction: column;
   }
 
-  .ownerData,
-  .projectData,
-  .addresData {
+  .DadosProprietario,
+  .DadosProjeto,
+  .DadosEndereco {
     width: 100%;
   }
 
-  .ownerData input,
-  .projectData input,
-  .addresData input,
-  .ownerData select,
-  .projectData select,
-  .addresData select {
+  .DadosProprietario input,
+  .DadosProjeto input,
+  .DadosEndereco input,
+  .DadosProprietario select,
+  .DadosProjeto select,
+  .DadosEndereco select {
     margin-right: 0;
   }
-}
+} */
