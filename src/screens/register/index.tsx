@@ -207,7 +207,7 @@ const RegistrationPage: React.FC = () => {
             id="address"
             required
             value={AddressNumber}
-            onChange={handleCepChange}
+            onChange={handleAddressChange}
             placeholder="Obrigatório"
           />
           <label htmlFor="AddresCep">Cep:</label>
@@ -216,7 +216,7 @@ const RegistrationPage: React.FC = () => {
             id="AddressCep"
             required
             value={AddressCep}
-            onChange={handleStreetChange}
+            onChange={handleCepChange}
             placeholder="Obrigatório"
           />
           <label htmlFor="AddressStreet">Rua:</label>
@@ -225,7 +225,7 @@ const RegistrationPage: React.FC = () => {
             id="AddressStreet"
             required
             value={AddressStreet}
-            onChange={handleAddressChange}
+            onChange={handleStreetChange}
             placeholder="Obrigatório"
           />
           <label htmlFor="neighborhood">Bairro:</label>

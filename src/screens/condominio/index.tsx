@@ -1,30 +1,27 @@
 import React, { useState } from "react";
 import "./style.css";
-import AdicionarPavimentoButton from "../../components/buttonAddBasement";
+import AddOwnButton from "../../components/AddOwner";
+import AddTechinical from "../../components/AddTechinical";
+import AddUnity from "../../components/AddUnity";
 
 interface CadastroFormProps {
   onSubmit: (data: CadastroFormData) => void;
 }
 
 interface CadastroFormData {
-  nome: string;
+  name: string;
   email: string;
-  tipoPessoa: "Física" | "Jurídica";
+  typePeople: "Física" | "Jurídica";
   cpfCnpj: string;
-  adicionarProprietario: boolean;
-  proprietario: {
-    nome: string;
+  addOwn: boolean;
+  Own: {
+    name: string;
     email: string;
     cpfCnpj: string;
   };
   authorization: string;
   creaCau: string;
-  responsibleTechnical: boolean;
-  responsible: {
-    nome: string;
-    cpfCnpj: string;
-    role: "Engenheiro" | "Arquiteto";
-  };
+  responsibleTechnical: "Engenheiro" | "Arquiteto";
   address: string;
   subdivision: string;
   block: string;
@@ -41,41 +38,23 @@ interface CadastroFormData {
     | "institutional"
     | "shed"
     | "industrial";
-  permeabilityRate: string;
-  occupancyRate: string;
-  calculateTotal: string;
-  areaToBuildGroundFloor: boolean;
-  basementToBuild: boolean;
-  existingArea: boolean;
-  existingBasementArea: boolean;
-  deckOrPoolArea: boolean;
-  basementsToBuild: string[];
-  existingAreas: string[];
-  existingBasementAreas: string[];
-  deckOrPoolAreas: string[];
-  areaToBuildGroundFloors: string[];
 }
 
 const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
   const [formData, setFormData] = useState<CadastroFormData>({
-    nome: "",
+    name: "",
     email: "",
-    tipoPessoa: "Física",
+    typePeople: "Física",
     cpfCnpj: "",
-    adicionarProprietario: false,
-    proprietario: {
-      nome: "",
+    addOwn: false,
+    Own: {
+      name: "",
       email: "",
       cpfCnpj: "",
     },
     authorization: "",
     creaCau: "",
-    responsibleTechnical: false,
-    responsible: {
-      nome: "",
-      cpfCnpj: "",
-      role: "Engenheiro",
-    },
+    responsibleTechnical: "Engenheiro",
     address: "",
     subdivision: "",
     block: "",
@@ -85,19 +64,6 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
     landArea: "",
     landSituation: "Meio quadra",
     purposeWork: "residential",
-    permeabilityRate: "",
-    occupancyRate: "",
-    calculateTotal: "",
-    areaToBuildGroundFloor: false,
-    basementToBuild: false,
-    existingArea: false,
-    existingBasementArea: false,
-    deckOrPoolArea: false,
-    basementsToBuild: [],
-    existingAreas: [],
-    existingBasementAreas: [],
-    deckOrPoolAreas: [],
-    areaToBuildGroundFloors: [],
   });
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -108,13 +74,23 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
     });
   };
 
-  const handleTipoPessoaChange = (
+  const handleresponsibleTechnicalChange = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
     const { value } = event.target;
     setFormData({
       ...formData,
-      tipoPessoa: value as "Física" | "Jurídica",
+      responsibleTechnical: value as "Engenheiro" | "Arquiteto",
+    });
+  };
+
+  const handletypePeopleChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    const { value } = event.target;
+    setFormData({
+      ...formData,
+      typePeople: value as "Física" | "Jurídica",
     });
   };
 
@@ -130,54 +106,6 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
         | "institutional"
         | "shed"
         | "industrial",
-    });
-  };
-
-  const handleAdicionarProprietarioChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const { checked } = event.target;
-    setFormData({
-      ...formData,
-      adicionarProprietario: checked,
-    });
-  };
-
-  const handleProprietarioChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      proprietario: {
-        ...formData.proprietario,
-        [name]: value,
-      },
-    });
-  };
-
-  const handleResponsavelTecnicoChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const { checked } = event.target;
-    setFormData({
-      ...formData,
-      responsibleTechnical: checked,
-    });
-  };
-
-  const handleResponsavelChange = (
-    event:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      responsible: {
-        ...formData.responsible,
-        [name]: value,
-      },
     });
   };
 
@@ -197,14 +125,14 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div id="container">
-        <div className="DadosProprietario">
+        <div className="ownerData">
           <span className="line-with-name">Dados do Proprietário</span>
           <div className="flex-container">
             <input
               type="text"
               placeholder="Nome"
-              name="nome"
-              value={formData.nome}
+              name="name"
+              value={formData.name}
               onChange={handleInputChange}
             />
             <input
@@ -222,59 +150,28 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
               onChange={handleInputChange}
             />
           </div>
-          <div className="SelectTipoPessoa">
+          <div className="SelecttypePeople">
             <select
-              name="tipoPessoa"
-              value={formData.tipoPessoa}
-              onChange={handleTipoPessoaChange}
+              name="typePeople"
+              value={formData.typePeople}
+              onChange={handletypePeopleChange}
             >
               <option value="Física">Física</option>
               <option value="Jurídica">Jurídica</option>
             </select>
           </div>
-          <div className="checkboxOwner">
-            <input
-              type="checkbox"
-              name="adicionarProprietario"
-              checked={formData.adicionarProprietario}
-              onChange={handleAdicionarProprietarioChange}
-            />
-            <span>Adicionar proprietário</span>
+          <div className="addOwn">
+            <AddOwnButton></AddOwnButton>
           </div>
-          {formData.adicionarProprietario && (
-            <div className="flex-container">
-              <input
-                type="text"
-                placeholder="Nome"
-                name="nome"
-                value={formData.proprietario.nome}
-                onChange={handleProprietarioChange}
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                name="email"
-                value={formData.proprietario.email}
-                onChange={handleProprietarioChange}
-              />
-              <input
-                type="text"
-                placeholder="CPF/CNPJ"
-                name="cpfCnpj"
-                value={formData.proprietario.cpfCnpj}
-                onChange={handleProprietarioChange}
-              />
-            </div>
-          )}
         </div>
-        <div className="DadosProprietario">
+        <div className="projectData">
           <span className="line-with-name">Dados do projeto</span>
           <div className="flex-container">
             <input
               type="text"
               placeholder="Auditoria"
-              name="nome"
-              value={formData.nome}
+              name="name"
+              value={formData.name}
               onChange={handleInputChange}
             />
             <input
@@ -287,93 +184,24 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
           </div>
           <div className="SelectTechinical">
             <select
-              name="tipoPessoa"
-              value={formData.tipoPessoa}
-              onChange={handleTipoPessoaChange}
+              name="responsibleTechnical"
+              value={formData.responsibleTechnical}
+              onChange={handleresponsibleTechnicalChange}
             >
               <option value="Física">Engenheiro</option>
               <option value="Jurídica">Arquiteto</option>
             </select>
           </div>
-          <div className="checkboxTechnical">
-            <input
-              type="checkbox"
-              name="adicionar"
-              checked={formData.responsibleTechnical}
-              onChange={handleResponsavelTecnicoChange}
-            />
-            <span>Responsável técnico</span>
+          <div className="addTechinical">
+            <AddTechinical></AddTechinical>
           </div>
-          {formData.responsibleTechnical && (
-            <div className="flex-container">
-              <input
-                type="text"
-                placeholder="Nome"
-                name="nome"
-                value={formData.proprietario.nome}
-                onChange={handleResponsavelChange}
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                name="email"
-                value={formData.proprietario.email}
-                onChange={handleResponsavelChange}
-              />
-              <input
-                type="text"
-                placeholder="CPF/CNPJ"
-                name="cpfCnpj"
-                value={formData.proprietario.cpfCnpj}
-                onChange={handleResponsavelChange}
-              />
-            </div>
-          )}
         </div>
-        <div className="DadosEndereco">
+        <div className="addresData">
           <span className="line-with-name">Dados de endereço</span>
-          <input
-            type="text"
-            placeholder="Endereço"
-            name="address"
-            value={formData.address}
-            onChange={handleInputChange}
-          />
-          <input
-            type="text"
-            placeholder="Loteamento"
-            name="subdivision"
-            value={formData.subdivision}
-            onChange={handleInputChange}
-          />
-          <input
-            className="min-Address"
-            type="text"
-            placeholder="Bloco"
-            name="block"
-            value={formData.block}
-            onChange={handleInputChange}
-          />
-          <input
-            className="min-Address"
-            type="text"
-            placeholder="Lote"
-            name="lot"
-            value={formData.lot}
-            onChange={handleInputChange}
-          />
-          <input
-            className="min-Address"
-            type="text"
-            placeholder="Nº"
-            name="number"
-            value={formData.number}
-            onChange={handleInputChange}
-          />
           <input readOnly type="text" placeholder="Bahia" />
           <input readOnly type="text" placeholder="Luís Eduardo Magalhães" />
         </div>
-        <div className="dadosTerreno">
+        <div className="propertyData">
           <span className="line-with-name">Dados do terreno</span>
           <div className="selectPurposeWork">
             <select
@@ -409,54 +237,13 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
             value={formData.landArea}
             onChange={handleInputChange}
           />
-          <input
-            type="text"
-            placeholder="Taxa de Permeabilidade (%)"
-            name="permeabilityRate"
-            value={formData.permeabilityRate}
-            onChange={handleInputChange}
-          />
-          <input
-            type="text"
-            placeholder="Taxa de Ocupação (%)"
-            name="occupancyRate"
-            value={formData.occupancyRate}
-            onChange={handleInputChange}
-          />
-          <input
-            type="text"
-            placeholder="Total"
-            readOnly
-            value={formData.calculateTotal}
-          />
-          <label
-          className="AddBasementeLabel"
-          >
-            Área construir - Pavimento Térreo(m²)
-            <AdicionarPavimentoButton></AdicionarPavimentoButton>
-          </label>
-          <label
-          className="AddBasementeLabel"
-          >
-            Área Subsolo a Construir(m²)
-            <AdicionarPavimentoButton></AdicionarPavimentoButton>
-          </label>
-          <label
-          className="AddBasementeLabel"
-          >
-            Área Subsolo Existente(m²)
-            <AdicionarPavimentoButton></AdicionarPavimentoButton>
-          </label>
-          <label
-          className="AddBasementeLabel"
-          >
-            Área Deck ou Piscina
-            <AdicionarPavimentoButton></AdicionarPavimentoButton>
-          </label>
+          <div className="addUnity">
+            <AddUnity></AddUnity>
         </div>
         <button className="RegistrationProcessButton" type="submit">
-          Cadastrar processo
-        </button>
+            Cadastrar processo
+          </button>
+          </div>
       </div>
     </form>
   );
