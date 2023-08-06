@@ -102,7 +102,7 @@ const RegistrationPage: React.FC = () => {
           />
         </div>
         <div className="form-group-register">
-          <h2>Cadastro</h2>
+          <h1>Cadastro</h1>
           <span className="line-with-name">Dados pessoais</span>
           <label htmlFor="name">Nome completo:</label>
           <input
@@ -246,18 +246,19 @@ const RegistrationPage: React.FC = () => {
             onChange={handlePhoneChange}
             placeholder="Obrigatório"
           />
+          <div className="buttonRegisterExternalClient">
           <button
             className="buttonRegistration"
             type="submit"
           >
             Cadastrar
           </button>
-          <br />
+
           <p className="cadastroLink">
-            {" "}
             Já tem cadastro?
             <a href="/login"> Faça o login</a>
           </p>
+          </div>
         </div>
       </form>
     </div>

@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Home } from '../screens/home';
-import Login from '../screens/login'
+import Login  from '../screens/login/'
 import Register from '../screens/register/index'
 import Principal from '../screens/principal/index'
 import AlvaraConstrucao from '../screens/alvaraConstrucao/index'
-import AlvaraRegularizacao from '../screens/alvaraRegularizacao/index'
-import Condominio from '../screens/condominio/index'
+import  AlvaraRegularizacao  from '../screens/alvaraRegularizacao/index'
+import  Condominio  from '../screens/condominio/index'
 
 const AppRoutes: React.FC = () => {
   return (

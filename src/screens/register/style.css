@@ -2,7 +2,7 @@
   max-width: 1200px;
   width: 100%;
   height: 1300px;
-  margin: 2% auto 2% auto;
+  margin: 2% auto;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -11,6 +11,7 @@
     "Lucida Sans", Arial, sans-serif;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 1px #5c5b5b;
+  position: relative;
 }
 
 .form-group-register {
@@ -26,12 +27,14 @@
   margin-top: 200px;
 }
 
-.blocoRegistration h2 {
-  font-size: 2em;
+.blocoRegistration h1 {
+  font-size: 2.5em;
   color: rgb(0, 153, 255);
   text-transform: uppercase;
-  margin-top: -180px;
-  margin-left: 43%;
+  margin-top: -220px;
+  margin-bottom: 50px;
+ justify-content: center;
+ text-align: center;
   display: block;
 }
 
@@ -50,20 +53,30 @@
   margin-left: 5px;
 }
 
+.buttonRegisterExternalClient {
+  display: flex;
+}
+
 .buttonRegistration {
-  height: 30px;
   width: 100%;
-  max-width: 345px;
+  max-width: 300px;
   background: #3a86ff;
-  padding: 20px auto;
+  padding: 15px;
   border: none;
-  font-size: 1em;
+  font-size: 1.4em;
   color: #fff;
   cursor: pointer;
   text-transform: uppercase;
   border-radius: 5px;
-  margin-top: 20px;
-  left: 35%;
+  margin-top: 25px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cadastroLink {
+  margin-top: 90px;
+  margin-left: 40%;
   position: relative;
 }
 
@@ -76,12 +89,6 @@
   width: 250px;
   top: -170px;
   position: relative;
-}
-
-.cadastroLink {
-  margin-top: 20px;
-  position: relative;
-  left: 40%;
 }
 
 .cadastroLink a {
