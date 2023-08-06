@@ -15,6 +15,7 @@ const RegistrationPage: React.FC = () => {
   const [neighborhood, setNeighborhood] = useState("");
   const [phone, setPhone] = useState("");
   const [currentState, setCurrentState] = useState("AC");
+  
 
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
@@ -73,22 +74,23 @@ const RegistrationPage: React.FC = () => {
   };
 
   const handleRegistration = () => {
-    if (!name || !email || !cpf || !password || !currentCity || !AddressNumber || !AddressCep || !AddressStreet || !neighborhood || !phone) {
+    if (
+      !name ||
+      !email ||
+      !cpf ||
+      !password ||
+      !currentCity ||
+      !AddressNumber ||
+      !AddressCep ||
+      !AddressStreet ||
+      !neighborhood ||
+      !phone
+    ) {
+      alert("Por favor, preencha todos os campos do formulário.");
       return;
     }
-    console.log("Name:", name);
-    console.log("CPF:", cpf);
-    console.log("Email:", email);
-    console.log("Password:", password);
-    console.log("Professional Type:", professionalType);
-    console.log("Current City:", currentCity);
-    console.log("Address:", AddressNumber);
-    console.log("Neighborhood:", neighborhood);
-    console.log("Phone:", phone);
-    console.log("Current State:", currentState);
-    console.log("Cep:", AddressCep);
-    console.log("Street:", AddressStreet);
-    window.location.href = '/principal'
+
+    window.location.href = "/";
   };
 
   return (
@@ -249,7 +251,8 @@ const RegistrationPage: React.FC = () => {
           <div className="buttonRegisterExternalClient">
           <button
             className="buttonRegistration"
-            type="submit"
+            type="button"
+            onClick={handleRegistration}
           >
             Cadastrar
           </button>
