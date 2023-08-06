@@ -1,13 +1,15 @@
 import "./style.css";
-import React, {useState } from "react";
+import React, { useState } from "react";
 import logoRegister from "../../assets/imgs/logoWide.png";
+import axios from "axios";
+// import * as yup from 'yup';
 
 const RegistrationPage: React.FC = () => {
   const [name, setName] = useState("");
   const [cpf, setCpf] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [professionalType, setProfessionalType] = useState("Engineer");
+  const [professionalType, setProfessionalType] = useState("engenheiro");
   const [currentCity, setCurrentCity] = useState("");
   const [AddressNumber, setAddressNumber] = useState("");
   const [AddressCep, setCep] = useState("");
@@ -15,11 +17,8 @@ const RegistrationPage: React.FC = () => {
   const [neighborhood, setNeighborhood] = useState("");
   const [phone, setPhone] = useState("");
   const [currentState, setCurrentState] = useState("AC");
-  
-
-  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setName(event.target.value);
-  };
+  const [errorMessage, setErrorMessage] = useState("");
+  const apiUrl = "http://localhost:3000";
 
   const handleCpfChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCpf(event.target.value);
@@ -73,7 +72,7 @@ const RegistrationPage: React.FC = () => {
     setStreet(event.target.value);
   };
 
-  const handleRegistration = () => {
+  const handleRegistration = async () => {
     if (
       !name ||
       !email ||
@@ -89,10 +88,42 @@ const RegistrationPage: React.FC = () => {
       alert("Por favor, preencha todos os campos do formulário.");
       return;
     }
+  
+    const externalClientData = {
+      name,
+      email,
+      cpf,
+      password,
+      professional_type: professionalType,
+      contact: phone,
+      creacau: "1234567",
 
-    window.location.href = "/";
+    };
+  
+    const addressData = {
+      address_type: "PERSON",
+      street: AddressStreet,
+      number: AddressNumber,
+      complement: "",
+      neighborhood,
+      city: currentCity,
+      state: currentState,
+      zip_code: AddressCep,
+    };
+  
+    try {
+      const response = await axios.post(apiUrl + "/external-clients", {
+        externalClient: externalClientData,
+        address: addressData,
+      });
+      console.log(response.data);
+      window.location.href = "/";
+    } catch (error) {
+      console.error(error, "Erro ao cadastrar:");
+      setErrorMessage("Erro ao cadastrar. Por favor, tente novamente mais tarde.");
+    }
   };
-
+  
   return (
     <div id="registration-container">
       <form className="blocoRegistration" onSubmit={handleRegistration}>
@@ -112,7 +143,7 @@ const RegistrationPage: React.FC = () => {
             id="name"
             required
             value={name}
-            onChange={handleNameChange}
+            onChange={(e) => setName(e.target.value)}
             placeholder="Obrigatório"
           />
           <label htmlFor="email">Email:</label>
@@ -150,9 +181,9 @@ const RegistrationPage: React.FC = () => {
                 value={professionalType}
                 onChange={handleProfessionalTypeChange}
               >
-                <option value="Engineer">Engenheiro</option>
-                <option value="Technician">Técnico</option>
-                <option value="Architect">Arquiteto</option>
+                <option value="engenheiro">Engenheiro</option>
+                <option value="tecnico">Técnico</option>
+                <option value="arquiteto">Arquiteto</option>
               </select>
             </div>
           </div>
@@ -249,18 +280,19 @@ const RegistrationPage: React.FC = () => {
             placeholder="Obrigatório"
           />
           <div className="buttonRegisterExternalClient">
-          <button
-            className="buttonRegistration"
-            type="button"
-            onClick={handleRegistration}
-          >
-            Cadastrar
-          </button>
+            <button
+              className="buttonRegistration"
+              type="button"
+              onClick={handleRegistration}
+            >
+              Cadastrar
+            </button>
 
-          <p className="cadastroLink">
-            Já tem cadastro?
-            <a href="/login"> Faça o login</a>
-          </p>
+            <p className="cadastroLink">
+              Já tem cadastro?
+              <a href="/login"> Faça o login</a>
+            </p>
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
           </div>
         </div>
       </form>

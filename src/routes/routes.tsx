@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Home } from '../screens/home';
 import Login  from '../screens/login/'
-import Register from '../screens/register/index'
+import  Register  from '../screens/register'
 import Principal from '../screens/principal/index'
 import AlvaraConstrucao from '../screens/alvaraConstrucao/index'
 import  AlvaraRegularizacao  from '../screens/alvaraRegularizacao/index'
