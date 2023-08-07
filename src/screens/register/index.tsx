@@ -7,8 +7,10 @@ import logoRegister from "../../assets/imgs/logoWide.png";
 const RegistrationPage: React.FC = () => {
   const [name, setName] = useState("");
   const [cpf, setCpf] = useState("");
+  const [creaCau, setCreaCau] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [professionalType, setProfessionalType] = useState("engenheiro");
   const [currentCity, setCurrentCity] = useState("");
   const [AddressNumber, setAddressNumber] = useState("");
@@ -16,6 +18,7 @@ const RegistrationPage: React.FC = () => {
   const [AddressStreet, setStreet] = useState("");
   const [neighborhood, setNeighborhood] = useState("");
   const [phone, setPhone] = useState("");
+  const [complement, setComplement] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const apiUrl = "http://localhost:3000";
 
@@ -25,11 +28,14 @@ const RegistrationPage: React.FC = () => {
       !email ||
       !cpf ||
       !password ||
+      !confirmPassword ||
+      !creaCau ||
       !currentCity ||
       !AddressNumber ||
       !AddressCep ||
       !AddressStreet ||
       !neighborhood ||
+      !complement ||
       !phone
     ) {}
   
@@ -38,6 +44,7 @@ const RegistrationPage: React.FC = () => {
       email,
       cpf,
       password,
+      confirmPassword,
       professional_type: professionalType,
       contact: phone,
       creacau: "1234567",
@@ -80,14 +87,14 @@ const RegistrationPage: React.FC = () => {
         <div className="form-group-register">
           <h1>Cadastro</h1>
           <span className="line-with-name">Dados pessoais</span>
-          <label htmlFor="name">Nome completo:</label>
+          <label htmlFor="name">Nome:</label>
           <input
             type="text"
             id="name"
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Obrigatório"
+            placeholder="Nome"
           />
           <label htmlFor="email">Email:</label>
           <input
@@ -96,7 +103,7 @@ const RegistrationPage: React.FC = () => {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Obrigatório"
+            placeholder="Email"
           />
           <label htmlFor="cpf">CPF:</label>
           <input
@@ -105,7 +112,15 @@ const RegistrationPage: React.FC = () => {
             required
             value={cpf}
             onChange={(e) => setCpf(e.target.value)}
-            placeholder="Obrigatório"
+            placeholder="CPF"
+          />
+          <label htmlFor="crea/cau"></label>
+          <input type="text"
+          id="crea/cau"
+          required
+          value={creaCau}
+          onChange={(e) => setCreaCau(e.target.value)}
+          placeholder="Crea/Cau"
           />
           <label htmlFor="password">Senha:</label>
           <input
@@ -114,7 +129,15 @@ const RegistrationPage: React.FC = () => {
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Obrigatório"
+            placeholder="Senha"
+          />
+          <label htmlFor="confirmPassword">Confirmar senha:</label>
+          <input type="password"
+          id="confirmPassword"
+          required
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          placeholder="Confirmar senha"
           />
           <span className="line-with-name">Dados de Endereço/Contato</span>
           <div className="select-container">
@@ -145,7 +168,7 @@ const RegistrationPage: React.FC = () => {
               required
               value={currentCity}
               onChange={(e) => setCurrentCity(e.target.value)}
-              placeholder="Obrigatório"
+              placeholder="Cidade Atual"
             />
           </label>
           <label htmlFor="address">Número:</label>
@@ -155,7 +178,7 @@ const RegistrationPage: React.FC = () => {
             required
             value={AddressNumber}
             onChange={(e) => setAddressNumber(e.target.value)}
-            placeholder="Obrigatório"
+            placeholder="Número"
           />
           <label htmlFor="AddresCep">Cep:</label>
           <input
@@ -164,7 +187,7 @@ const RegistrationPage: React.FC = () => {
             required
             value={AddressCep}
             onChange={(e) => setCep(e.target.value)}
-            placeholder="Obrigatório"
+            placeholder="Cep"
           />
           <label htmlFor="AddressStreet">Rua:</label>
           <input
@@ -173,7 +196,7 @@ const RegistrationPage: React.FC = () => {
             required
             value={AddressStreet}
             onChange={(e) => setStreet(e.target.value)}
-            placeholder="Obrigatório"
+            placeholder="Rua"
           />
           <label htmlFor="neighborhood">Bairro:</label>
           <input
@@ -182,7 +205,15 @@ const RegistrationPage: React.FC = () => {
             required
             value={neighborhood}
             onChange={(e) => setNeighborhood (e.target.value)}
-            placeholder="Obrigatório"
+            placeholder="Bairro"
+          />
+          <label htmlFor="Complement">Complemento:</label>
+          <input type="text"
+          id="complemente"
+          required
+          value={complement}
+          onChange={(e) => setComplement(e.target.value)}
+          placeholder="Complemento"
           />
           <label htmlFor="Phone">Telefone:</label>
           <input
@@ -191,7 +222,7 @@ const RegistrationPage: React.FC = () => {
             required
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            placeholder="Obrigatório"
+            placeholder="Telefone"
           />
           <div className="buttonRegisterExternalClient">
             <button
