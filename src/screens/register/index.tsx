@@ -94,7 +94,7 @@ const RegistrationPage: React.FC = () => {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Nome"
+            placeholder="insira o seu nome"
           />
           <label htmlFor="email">Email:</label>
           <input
@@ -103,7 +103,7 @@ const RegistrationPage: React.FC = () => {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
+            placeholder="insira o seu email"
           />
           <label htmlFor="cpf">CPF:</label>
           <input
@@ -112,15 +112,15 @@ const RegistrationPage: React.FC = () => {
             required
             value={cpf}
             onChange={(e) => setCpf(e.target.value)}
-            placeholder="CPF"
+            placeholder="insira o seu cpf"
           />
-          <label htmlFor="crea/cau"></label>
+          <label htmlFor="crea/cau">Crea/Cau:</label>
           <input type="text"
           id="crea/cau"
           required
           value={creaCau}
           onChange={(e) => setCreaCau(e.target.value)}
-          placeholder="Crea/Cau"
+          placeholder="insira o seu crea/cau"
           />
           <label htmlFor="password">Senha:</label>
           <input
@@ -129,7 +129,7 @@ const RegistrationPage: React.FC = () => {
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Senha"
+            placeholder="insira uma senha"
           />
           <label htmlFor="confirmPassword">Confirmar senha:</label>
           <input type="password"
@@ -137,7 +137,7 @@ const RegistrationPage: React.FC = () => {
           required
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
-          placeholder="Confirmar senha"
+          placeholder="confirme sua senha"
           />
           <span className="line-with-name">Dados de Endereço/Contato</span>
           <div className="select-container">
@@ -159,7 +159,6 @@ const RegistrationPage: React.FC = () => {
             </div>
           </div>
           <br />
-
           <label htmlFor="currentCity">
             Cidade Atual:
             <input
@@ -168,7 +167,7 @@ const RegistrationPage: React.FC = () => {
               required
               value={currentCity}
               onChange={(e) => setCurrentCity(e.target.value)}
-              placeholder="Cidade Atual"
+              placeholder="insira sua cidade"
             />
           </label>
           <label htmlFor="address">Número:</label>
@@ -178,7 +177,7 @@ const RegistrationPage: React.FC = () => {
             required
             value={AddressNumber}
             onChange={(e) => setAddressNumber(e.target.value)}
-            placeholder="Número"
+            placeholder="insira um número"
           />
           <label htmlFor="AddresCep">Cep:</label>
           <input
@@ -187,7 +186,7 @@ const RegistrationPage: React.FC = () => {
             required
             value={AddressCep}
             onChange={(e) => setCep(e.target.value)}
-            placeholder="Cep"
+            placeholder="insira um cep"
           />
           <label htmlFor="AddressStreet">Rua:</label>
           <input
@@ -196,7 +195,7 @@ const RegistrationPage: React.FC = () => {
             required
             value={AddressStreet}
             onChange={(e) => setStreet(e.target.value)}
-            placeholder="Rua"
+            placeholder="insira sua rua"
           />
           <label htmlFor="neighborhood">Bairro:</label>
           <input
@@ -205,7 +204,7 @@ const RegistrationPage: React.FC = () => {
             required
             value={neighborhood}
             onChange={(e) => setNeighborhood (e.target.value)}
-            placeholder="Bairro"
+            placeholder="insira seu bairro"
           />
           <label htmlFor="Complement">Complemento:</label>
           <input type="text"
@@ -213,7 +212,7 @@ const RegistrationPage: React.FC = () => {
           required
           value={complement}
           onChange={(e) => setComplement(e.target.value)}
-          placeholder="Complemento"
+          placeholder="insira um complemento"
           />
           <label htmlFor="Phone">Telefone:</label>
           <input
@@ -222,7 +221,7 @@ const RegistrationPage: React.FC = () => {
             required
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            placeholder="Telefone"
+            placeholder="insira seu telefone"
           />
           <div className="buttonRegisterExternalClient">
             <button

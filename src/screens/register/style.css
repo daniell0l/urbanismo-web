@@ -1,7 +1,7 @@
 #registration-container {
   max-width: 1200px;
   width: 100%;
-  height: 1300px;
+  height: auto;
   margin: 2% auto;
   display: flex;
   flex-direction: row;
@@ -51,6 +51,10 @@
   color: #3f3f3f;
   font-size: 1em;
   margin-left: 5px;
+}
+
+.form-group-register input::placeholder{
+  color: #a0a0a0
 }
 
 .buttonRegisterExternalClient {
