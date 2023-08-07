@@ -20,58 +20,6 @@ const RegistrationPage: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const apiUrl = "http://localhost:3000";
 
-  const handleCpfChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCpf(event.target.value);
-  };
-
-  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(event.target.value);
-  };
-
-  const handleProfessionalTypeChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    setProfessionalType(event.target.value);
-  };
-
-  const handleCurrentCityChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setCurrentCity(event.target.value);
-  };
-
-  const handleAddressChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setAddressNumber(event.target.value);
-  };
-
-  const handleNeighborhoodChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setNeighborhood(event.target.value);
-  };
-
-  const handlePhoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setPhone(event.target.value);
-  };
-
-  const handleCurrentStateChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    setCurrentState(event.target.value);
-  };
-
-  const handleCepChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCep(event.target.value);
-  };
-
-  const handleStreetChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setStreet(event.target.value);
-  };
-
   const handleRegistration = async () => {
     if (
       !name ||
@@ -152,7 +100,7 @@ const RegistrationPage: React.FC = () => {
             id="email"
             required
             value={email}
-            onChange={handleEmailChange}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Obrigatório"
           />
           <label htmlFor="cpf">CPF:</label>
@@ -161,7 +109,7 @@ const RegistrationPage: React.FC = () => {
             id="cpf"
             required
             value={cpf}
-            onChange={handleCpfChange}
+            onChange={(e) => setCpf(e.target.value)}
             placeholder="Obrigatório"
           />
           <label htmlFor="password">Senha:</label>
@@ -170,7 +118,7 @@ const RegistrationPage: React.FC = () => {
             id="password"
             required
             value={password}
-            onChange={handlePasswordChange}
+            onChange={(e) => setPassword(e.target.value)}
             placeholder="Obrigatório"
           />
           <span className="line-with-name">Dados de Endereço/Contato</span>
@@ -179,7 +127,7 @@ const RegistrationPage: React.FC = () => {
             <div className="Select">
               <select
                 value={professionalType}
-                onChange={handleProfessionalTypeChange}
+                onChange={(e) => setProfessionalType(e.target.value)}
               >
                 <option value="engenheiro">Engenheiro</option>
                 <option value="tecnico">Técnico</option>
@@ -190,7 +138,7 @@ const RegistrationPage: React.FC = () => {
           <div className="select-container">
             <label htmlFor="currentState">Estado atual:</label>
             <div className="selectEstado">
-              <select value={currentState} onChange={handleCurrentStateChange}>
+              <select value={currentState} onChange={(e) => setCurrentState(e.target.value)}>
                 <option value="AC">Acre</option>
                 <option value="AL">Alagoas</option>
                 <option value="AP">Amapá</option>
@@ -230,7 +178,7 @@ const RegistrationPage: React.FC = () => {
               id="currentCity"
               required
               value={currentCity}
-              onChange={handleCurrentCityChange}
+              onChange={(e) => setCurrentCity(e.target.value)}
               placeholder="Obrigatório"
             />
           </label>
@@ -240,7 +188,7 @@ const RegistrationPage: React.FC = () => {
             id="address"
             required
             value={AddressNumber}
-            onChange={handleAddressChange}
+            onChange={(e) => setAddressNumber(e.target.value)}
             placeholder="Obrigatório"
           />
           <label htmlFor="AddresCep">Cep:</label>
@@ -249,7 +197,7 @@ const RegistrationPage: React.FC = () => {
             id="AddressCep"
             required
             value={AddressCep}
-            onChange={handleCepChange}
+            onChange={(e) => setCep(e.target.value)}
             placeholder="Obrigatório"
           />
           <label htmlFor="AddressStreet">Rua:</label>
@@ -258,7 +206,7 @@ const RegistrationPage: React.FC = () => {
             id="AddressStreet"
             required
             value={AddressStreet}
-            onChange={handleStreetChange}
+            onChange={(e) => setStreet(e.target.value)}
             placeholder="Obrigatório"
           />
           <label htmlFor="neighborhood">Bairro:</label>
@@ -267,7 +215,7 @@ const RegistrationPage: React.FC = () => {
             id="neighborhood"
             required
             value={neighborhood}
-            onChange={handleNeighborhoodChange}
+            onChange={(e) => setNeighborhood (e.target.value)}
             placeholder="Obrigatório"
           />
           <label htmlFor="Phone">Telefone:</label>
@@ -276,7 +224,7 @@ const RegistrationPage: React.FC = () => {
             id="phone"
             required
             value={phone}
-            onChange={handlePhoneChange}
+            onChange={(e) => setPhone(e.target.value)}
             placeholder="Obrigatório"
           />
           <div className="buttonRegisterExternalClient">
