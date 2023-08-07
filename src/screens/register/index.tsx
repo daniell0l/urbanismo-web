@@ -1,7 +1,7 @@
 import "./style.css";
 import React, { useState } from "react";
 import logoRegister from "../../assets/imgs/logoWide.png";
-import axios from "axios";
+// import axios from "axios";
 // import * as yup from 'yup';
 
 const RegistrationPage: React.FC = () => {
@@ -16,7 +16,6 @@ const RegistrationPage: React.FC = () => {
   const [AddressStreet, setStreet] = useState("");
   const [neighborhood, setNeighborhood] = useState("");
   const [phone, setPhone] = useState("");
-  const [currentState, setCurrentState] = useState("AC");
   const [errorMessage, setErrorMessage] = useState("");
   const apiUrl = "http://localhost:3000";
 
@@ -32,10 +31,7 @@ const RegistrationPage: React.FC = () => {
       !AddressStreet ||
       !neighborhood ||
       !phone
-    ) {
-      alert("Por favor, preencha todos os campos do formulário.");
-      return;
-    }
+    ) {}
   
     const externalClientData = {
       name,
@@ -55,7 +51,6 @@ const RegistrationPage: React.FC = () => {
       complement: "",
       neighborhood,
       city: currentCity,
-      state: currentState,
       zip_code: AddressCep,
     };
   
@@ -138,35 +133,6 @@ const RegistrationPage: React.FC = () => {
           <div className="select-container">
             <label htmlFor="currentState">Estado atual:</label>
             <div className="selectEstado">
-              <select value={currentState} onChange={(e) => setCurrentState(e.target.value)}>
-                <option value="AC">Acre</option>
-                <option value="AL">Alagoas</option>
-                <option value="AP">Amapá</option>
-                <option value="AM">Amazonas</option>
-                <option value="BA">Bahia</option>
-                <option value="CE">Ceará</option>
-                <option value="DF">Distrito Federal</option>
-                <option value="ES">Espírito Santo</option>
-                <option value="GO">Goiás</option>
-                <option value="MA">Maranhão</option>
-                <option value="MT">Mato Grosso</option>
-                <option value="MS">Mato Grosso do Sul</option>
-                <option value="MG">Minas Gerais</option>
-                <option value="PA">Pará</option>
-                <option value="PB">Paraíba</option>
-                <option value="PR">Paraná</option>
-                <option value="PE">Pernambuco</option>
-                <option value="PI">Piauí</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="RN">Rio Grande do Norte</option>
-                <option value="RS">Rio Grande do Sul</option>
-                <option value="RO">Rondônia</option>
-                <option value="RR">Roraima</option>
-                <option value="SC">Santa Catarina</option>
-                <option value="SP">São Paulo</option>
-                <option value="SE">Sergipe</option>
-                <option value="TO">Tocantins</option>
-              </select>
             </div>
           </div>
           <br />
