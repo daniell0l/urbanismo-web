@@ -94,7 +94,7 @@ const RegistrationPage: React.FC = () => {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="insira o seu nome"
+            placeholder="insira seu nome"
           />
           <label htmlFor="email">Email:</label>
           <input
@@ -103,7 +103,7 @@ const RegistrationPage: React.FC = () => {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="insira o seu email"
+            placeholder="insira seu email"
           />
           <label htmlFor="cpf">CPF:</label>
           <input
@@ -112,7 +112,7 @@ const RegistrationPage: React.FC = () => {
             required
             value={cpf}
             onChange={(e) => setCpf(e.target.value)}
-            placeholder="insira o seu cpf"
+            placeholder="insira seu cpf"
           />
           <label htmlFor="crea/cau">Crea/Cau:</label>
           <input type="text"
@@ -120,7 +120,7 @@ const RegistrationPage: React.FC = () => {
           required
           value={creaCau}
           onChange={(e) => setCreaCau(e.target.value)}
-          placeholder="insira o seu crea/cau"
+          placeholder="insira seu crea/cau"
           />
           <label htmlFor="password">Senha:</label>
           <input
