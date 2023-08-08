@@ -143,12 +143,6 @@ const TableComponent: React.FC = () => {
           </tbody>
         </table>
       </div>
-      <div>
-        <a className="link-temporario" href="javascript:history.go(-1)">
-          voltar a página anterior
-        </a>
-        <a href="/alvaraConstrucao">Alvara Construcão</a>
-      </div>
     </div>
   );
 };

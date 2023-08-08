@@ -3,6 +3,7 @@ import "./style.css";
 import AdicionarPavimentoButton from "../../components/buttonAddBasement";
 import AddOwnButton from "../../components/AddOwner";
 import AddTechinical from "../../components/AddTechinical";
+import Header from '../../components/header';
 
 interface CadastroFormProps {
   onSubmit: (data: CadastroFormData) => void;
@@ -151,6 +152,9 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div id="container">
+      <div>
+      <Header title=""/>
+      </div>
         <div className="ownerData">
           <span className="line-with-name">Dados do Proprietário</span>
           <div className="flex-container">

@@ -5,6 +5,7 @@
     position: fixed;
     top: 0;
     background: #fff;
+    z-index: 10;
 }
 
 .headerUrbanismo img{
