@@ -9,6 +9,9 @@ html {
   background: #fff;
   display: flex;
   flex-direction: column;
+  position: relative;
+  margin-top: 100px;
+
 }
 
 .navbar {
