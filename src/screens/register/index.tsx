@@ -2,7 +2,6 @@ import "./style.css";
 import React, { useState } from "react";
 import logoRegister from "../../assets/imgs/logoWide.png";
 // import axios from "axios";
-// import * as yup from 'yup';
 
 const RegistrationPage: React.FC = () => {
   const [name, setName] = useState("");
