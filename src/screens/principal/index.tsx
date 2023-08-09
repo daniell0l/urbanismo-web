@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
+import Header from '../../components/header';
 
 interface Result {
   id: number;
@@ -70,6 +71,9 @@ const TableComponent: React.FC = () => {
 
   return (
     <div id="principal">
+      <div>
+      <Header title=""/>
+      </div>
       <div className="navbar">
         <div className="construction-protocol">
           <div className="selectedConstruction">
@@ -138,12 +142,6 @@ const TableComponent: React.FC = () => {
             ))}
           </tbody>
         </table>
-      </div>
-      <div>
-        <a className="link-temporario" href="javascript:history.go(-1)">
-          voltar a página anterior
-        </a>
-        <a href="/alvaraConstrucao">Alvara Construcão</a>
       </div>
     </div>
   );

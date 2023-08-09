@@ -4,11 +4,14 @@ html {
 
 #principal {
   width: 100%;
-  height: auto;
+  height: 100vh;
   border-radius: 10px;
   background: #fff;
   display: flex;
   flex-direction: column;
+  margin-top: 100px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+  "Lucida Sans", Arial, sans-serif;
 }
 
 .navbar {

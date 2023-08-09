@@ -3,6 +3,7 @@ import "../alvaraConstrucao/style.css";
 import AdicionarPavimentoButton from "../../components/buttonAddBasement";
 import AddOwnButton from "../../components/AddOwner";
 import AddTechinical from "../../components/AddTechinical";
+import Header from "../../components/header";
 
 interface CadastroFormProps {
   onSubmit: (data: CadastroFormData) => void;
@@ -31,13 +32,13 @@ interface CadastroFormData {
   landArea: string;
   landSituation: "Meio quadra" | "Esquina";
   purposeWork:
-  | "residential"
-  | "residencialCondominium"
-  | "commercial"
-  | "mixed"
-  | "institutional"
-  | "shed"
-  | "industrial";
+    | "residential"
+    | "residencialCondominium"
+    | "commercial"
+    | "mixed"
+    | "institutional"
+    | "shed"
+    | "industrial";
   permeabilityRate: string;
   occupancyRate: string;
   calculateTotal: string;
@@ -151,6 +152,11 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div id="container">
+        <div>
+          <div>
+            <Header title="" />
+          </div>
+        </div>
         <div className="ownerData">
           <span className="line-with-name">Dados do Proprietário</span>
           <div className="flex-container">

@@ -1,6 +1,7 @@
 import "./style.css";
 import React, { useState } from "react";
 import logoRegister from "../../assets/imgs/logoWide.png";
+import { uf } from "../../utils/states";
 // import axios from "axios";
 // import * as yup from 'yup';
 
@@ -37,8 +38,9 @@ const RegistrationPage: React.FC = () => {
       !neighborhood ||
       !complement ||
       !phone
-    ) {}
-  
+    ) {
+    }
+
     const externalClientData = {
       name,
       email,
@@ -48,9 +50,8 @@ const RegistrationPage: React.FC = () => {
       professional_type: professionalType,
       contact: phone,
       creacau: "1234567",
-
     };
-  
+
     const addressData = {
       address_type: "PERSON",
       street: AddressStreet,
@@ -60,7 +61,7 @@ const RegistrationPage: React.FC = () => {
       city: currentCity,
       zip_code: AddressCep,
     };
-  
+
     try {
       const response = await axios.post(apiUrl + "/external-clients", {
         externalClient: externalClientData,
@@ -70,10 +71,12 @@ const RegistrationPage: React.FC = () => {
       window.location.href = "/";
     } catch (error) {
       console.error(error, "Erro ao cadastrar:");
-      setErrorMessage("Erro ao cadastrar. Por favor, tente novamente mais tarde.");
+      setErrorMessage(
+        "Erro ao cadastrar. Por favor, tente novamente mais tarde."
+      );
     }
   };
-  
+
   return (
     <div id="registration-container">
       <form className="blocoRegistration" onSubmit={handleRegistration}>
@@ -115,12 +118,13 @@ const RegistrationPage: React.FC = () => {
             placeholder="insira seu cpf"
           />
           <label htmlFor="crea/cau">Crea/Cau:</label>
-          <input type="text"
-          id="crea/cau"
-          required
-          value={creaCau}
-          onChange={(e) => setCreaCau(e.target.value)}
-          placeholder="insira seu crea/cau"
+          <input
+            type="text"
+            id="crea/cau"
+            required
+            value={creaCau}
+            onChange={(e) => setCreaCau(e.target.value)}
+            placeholder="insira seu crea/cau"
           />
           <label htmlFor="password">Senha:</label>
           <input
@@ -132,12 +136,13 @@ const RegistrationPage: React.FC = () => {
             placeholder="insira uma senha"
           />
           <label htmlFor="confirmPassword">Confirmar senha:</label>
-          <input type="password"
-          id="confirmPassword"
-          required
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          placeholder="confirme sua senha"
+          <input
+            type="password"
+            id="confirmPassword"
+            required
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            placeholder="confirme sua senha"
           />
           <span className="line-with-name">Dados de Endereço/Contato</span>
           <div className="select-container">
@@ -156,6 +161,13 @@ const RegistrationPage: React.FC = () => {
           <div className="select-container">
             <label htmlFor="currentState">Estado atual:</label>
             <div className="selectEstado">
+              <select>
+                {uf.map((item) => (
+                  <option key={item.UF} value={item.UF}>
+                    {item.Value}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
           <br />
@@ -203,16 +215,17 @@ const RegistrationPage: React.FC = () => {
             id="neighborhood"
             required
             value={neighborhood}
-            onChange={(e) => setNeighborhood (e.target.value)}
+            onChange={(e) => setNeighborhood(e.target.value)}
             placeholder="insira seu bairro"
           />
           <label htmlFor="Complement">Complemento:</label>
-          <input type="text"
-          id="complemente"
-          required
-          value={complement}
-          onChange={(e) => setComplement(e.target.value)}
-          placeholder="insira um complemento"
+          <input
+            type="text"
+            id="complemente"
+            required
+            value={complement}
+            onChange={(e) => setComplement(e.target.value)}
+            placeholder="insira um complemento"
           />
           <label htmlFor="Phone">Telefone:</label>
           <input
