@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 interface Own {
   nome: string;
   cpfCnpj: string;
-  creaCau: string;
+  creacau: string;
 }
 
 const AddOwnButton: React.FC = () => {
@@ -11,7 +11,7 @@ const AddOwnButton: React.FC = () => {
   const [Own, setOwn] = useState<Own>({
     nome: '',
     cpfCnpj: '',
-    creaCau: '',
+    creacau: '',
   });
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,7 +27,7 @@ const AddOwnButton: React.FC = () => {
     setOwn({
       nome: '',
       cpfCnpj: '',
-      creaCau: '',
+      creacau: '',
     });
     setShowInputs(false);
   };
@@ -37,7 +37,7 @@ const AddOwnButton: React.FC = () => {
     setOwn({
       nome: '',
       cpfCnpj: '',
-      creaCau: '',
+      creacau: '',
     });
     setShowInputs(false);
   };
@@ -64,9 +64,9 @@ const AddOwnButton: React.FC = () => {
           />
           <input
             type="text"
-            name="creaCau"
+            name="creacau"
             placeholder="CREA/CAU"
-            value={Own.creaCau}
+            value={Own.creacau}
             onChange={handleInputChange}
           />
           <button onClick={handleAddOwn}>Adicionar</button>

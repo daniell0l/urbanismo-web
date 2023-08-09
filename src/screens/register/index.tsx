@@ -2,13 +2,14 @@ import "./style.css";
 import React, { useState } from "react";
 import logoRegister from "../../assets/imgs/logoWide.png";
 import { uf } from "../../utils/states";
+import { api } from "../../services/apiService";
 // import axios from "axios";
 // import * as yup from 'yup';
 
 const RegistrationPage: React.FC = () => {
   const [name, setName] = useState("");
   const [cpf, setCpf] = useState("");
-  const [creaCau, setCreaCau] = useState("");
+  const [creacau, setCreaCau] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -21,26 +22,9 @@ const RegistrationPage: React.FC = () => {
   const [phone, setPhone] = useState("");
   const [complement, setComplement] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const apiUrl = "http://localhost:3000";
+  // const apiUrl = "http://localhost:3000";
 
   const handleRegistration = async () => {
-    if (
-      !name ||
-      !email ||
-      !cpf ||
-      !password ||
-      !confirmPassword ||
-      !creaCau ||
-      !currentCity ||
-      !AddressNumber ||
-      !AddressCep ||
-      !AddressStreet ||
-      !neighborhood ||
-      !complement ||
-      !phone
-    ) {
-    }
-
     const externalClientData = {
       name,
       email,
@@ -49,7 +33,7 @@ const RegistrationPage: React.FC = () => {
       confirmPassword,
       professional_type: professionalType,
       contact: phone,
-      creacau: "1234567",
+      creacau,
     };
 
     const addressData = {
@@ -63,7 +47,7 @@ const RegistrationPage: React.FC = () => {
     };
 
     try {
-      const response = await axios.post(apiUrl + "/external-clients", {
+      const response = await api.post("/external-clients", {
         externalClient: externalClientData,
         address: addressData,
       });
@@ -122,7 +106,7 @@ const RegistrationPage: React.FC = () => {
             type="text"
             id="crea/cau"
             required
-            value={creaCau}
+            value={creacau}
             onChange={(e) => setCreaCau(e.target.value)}
             placeholder="insira seu crea/cau"
           />
@@ -198,7 +182,7 @@ const RegistrationPage: React.FC = () => {
             required
             value={AddressCep}
             onChange={(e) => setCep(e.target.value)}
-            placeholder="insira um cep"
+            placeholder="insira um cep válido"
           />
           <label htmlFor="AddressStreet">Rua:</label>
           <input
@@ -225,7 +209,7 @@ const RegistrationPage: React.FC = () => {
             required
             value={complement}
             onChange={(e) => setComplement(e.target.value)}
-            placeholder="insira um complemento"
+            placeholder="casa, apartamento, bloco"
           />
           <label htmlFor="Phone">Telefone:</label>
           <input
@@ -234,7 +218,7 @@ const RegistrationPage: React.FC = () => {
             required
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            placeholder="insira seu telefone"
+            placeholder="telefone, celular"
           />
           <div className="buttonRegisterExternalClient">
             <button

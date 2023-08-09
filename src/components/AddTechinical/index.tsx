@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 interface Techinical {
   nome: string;
   cpfCnpj: string;
-  creaCau: string;
+  creacau: string;
 }
 
 const AddTechinicalButton: React.FC = () => {
@@ -11,7 +11,7 @@ const AddTechinicalButton: React.FC = () => {
   const [Techinical , setTechinical ] = useState<Techinical >({
     nome: '',
     cpfCnpj: '',
-    creaCau: '',
+    creacau: '',
   });
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,7 +27,7 @@ const AddTechinicalButton: React.FC = () => {
     setTechinical ({
       nome: '',
       cpfCnpj: '',
-      creaCau: '',
+      creacau: '',
     });
     setShowInputs(false);
   };
@@ -37,7 +37,7 @@ const AddTechinicalButton: React.FC = () => {
     setTechinical ({
       nome: '',
       cpfCnpj: '',
-      creaCau: '',
+      creacau: '',
     });
     setShowInputs(false);
   };
@@ -64,9 +64,9 @@ const AddTechinicalButton: React.FC = () => {
           />
           <input
             type="text"
-            name="creaCau"
+            name="creacau"
             placeholder="CREA/CAU"
-            value={Techinical .creaCau}
+            value={Techinical .creacau}
             onChange={handleInputChange}
           />
           <button onClick={handleAddTechinical }>Adicionar</button>
