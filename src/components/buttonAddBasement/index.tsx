@@ -1,16 +1,24 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 const AdicionarPavimentoButton = () => {
-  const [pavimentos, setPavimentos] = useState<string[]>(['1']);
+  const [pavimentos, setPavimentos] = useState<string[]>(['']);
 
   const handleAdicionarPavimento = () => {
-    const proximoNumeroPavimento = pavimentos.length + 1;
-    setPavimentos([...pavimentos, proximoNumeroPavimento.toString()]);
+    setPavimentos([...pavimentos, '']);
   };
 
   const handleRemoverPavimento = (index) => {
+    if (pavimentos.length === 1) {
+      return; // Não remover o último pavimento
+    }
     const novosPavimentos = [...pavimentos];
     novosPavimentos.splice(index, 1);
+    setPavimentos(novosPavimentos);
+  };
+
+  const handleInputChange = (event, index) => {
+    const novosPavimentos = [...pavimentos];
+    novosPavimentos[index] = event.target.value;
     setPavimentos(novosPavimentos);
   };
 
@@ -20,17 +28,16 @@ const AdicionarPavimentoButton = () => {
         <div key={index}>
           <input
             type="text"
-            placeholder={`${pavimento}º Pavimento`}
-            onChange={(event) => {
-              const novosPavimentos = [...pavimentos];
-              novosPavimentos[index] = event.target.value;
-              setPavimentos(novosPavimentos);
-            }}
+            placeholder={`${index + 1}º Pavimento`}
+            value={pavimento}
+            onChange={(event) => handleInputChange(event, index)}
           />
-          <button onClick={handleAdicionarPavimento}>+</button>
-      <button onClick={() => handleRemoverPavimento(index)}>-</button>
         </div>
       ))}
+      <button onClick={handleAdicionarPavimento}>+</button>
+      {pavimentos.length > 1 && (
+        <button onClick={() => handleRemoverPavimento(pavimentos.length - 1)}>-</button>
+      )}
     </div>
   );
 };

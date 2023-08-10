@@ -187,7 +187,7 @@ select {
   border: 1px solid #ccc;
   margin-left: 20px;
   position: relative;
-  right: 20px;
+  float: left;
 }
 
 .AddBasementeLabel {
@@ -197,6 +197,7 @@ select {
   margin-left: 10px;
   margin-right: 50px;
   float: left;
+  position: relative;
 }
 
 .AddBasementeLabel button {
@@ -208,8 +209,13 @@ select {
   color: #fff;
   cursor: pointer;
   border-radius: 5px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
   float: left;
   margin-right: 10px;
+  margin-top: 15px;
+  margin-left: 10px;
 }
 
 .RegistrationProcessButton {
@@ -228,6 +234,7 @@ select {
 }
 
 .RegistrationProcessButton:hover,
+.AddBasementeLabel button:hover,
 .RegistrationProcessButton:active {
   background: #0582bd;
   color: #ece8e8;
