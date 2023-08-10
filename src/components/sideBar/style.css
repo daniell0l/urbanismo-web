@@ -1,65 +1,57 @@
 .sideBarUrbanismo {
-    position: fixed;
-    width: 200px;
-    height: 100%;
-    margin-top: 100px;
-    background-color: #fff;
-    transition: transform 0.3s;
-    transform: translateX(0);
-    top: 0;
-    overflow: hidden;
-  }
-  
-  .sideBarUrbanismo h2 {
-    padding: 20px;
-  }
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  margin-top: 100px;
+  background: #fff;
+  transition: transform 0.3s;
+  transform: translateX(0);
+  top: 0;
+  overflow: hidden;
+  z-index: 9;
+  margin-left: -2px;
+}
 
-  .sideBarUrbanismo select{
-    border: none;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    font-size: 1em;
-    appearance: none;
-    box-shadow: none; 
-    
-  }
-  
-  .sideBarUrbanismo select::-ms-expand {
-    display: none;
-  }
-  
-  .sideBarUrbanismo select:focus {
-    outline: none;
-  }
-  
-  .sideBarUrbanismo select option {
-    border: none;
-  }
-  
-  .sideBarUrbanismo select option:hover {
-    background-color: transparent;
-  }
+.sideBarUrbanismo h2 {
+  padding: 20px;
+}
 
-  .sideBarUrbanismo.open {
-    transform: translateX(-140px);
-  }
+.sideBarUrbanismo select {
+  border: none;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  appearance: none;
+  box-shadow: none;
+  background-color: transparent;
+}
 
-  .hamburgerIcon {
-    position: relative;
-    top: 5px;
-    left: 140px;
-    font-size: 30px;
-  }
-  
-  .hamburgerIcon {
-    font-size: 30px;
-    cursor: pointer;
-  }
-  
-  .sideBarUrbanismo > div {
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-    max-height: 100%;
-  }
+.custom-select option {
+  border: 1px solid #fff;
+  background-color: white;
+  color: black;
+}
+
+.sideBarUrbanismo.open {
+  transform: translateX(-180px);
+}
+
+.hamburgerIcon {
+  position: relative;
+  top: 5px;
+  left: 150px;
+  font-size: 30px;
+}
+
+.hamburgerIcon {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.sideBarUrbanismo > div {
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  max-height: 100%;
+}

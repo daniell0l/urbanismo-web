@@ -4,6 +4,7 @@
   border-radius: 10px;
   background: #fff;
   margin-top: 100px;
+  margin-left: 50px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
   "Lucida Sans", Arial, sans-serif;
 }
@@ -142,7 +143,7 @@ select {
   padding: 12px;
   margin-top: 20px;
   margin-left: 20px;
-  right: 12px;
+  right: 14px;
   position: relative;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -159,22 +160,10 @@ select {
   background: #fff;
 }
 
-.propertyData input {
-  width: 35%;
-  padding: 12px;
-  margin-top: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  font-size: 1em;
-  border: 1px solid #ccc;
-  margin-left: 20px;
-  position: relative;
-  right: 12px;
-}
-
 .propertyData {
   width: 100%;
   height: auto;
+  margin-left: 10px;
 }
 
 .AddBasementeLabel input {
