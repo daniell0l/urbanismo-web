@@ -25,7 +25,13 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #fff;
+    color: #7d85f8;
+    background: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
 }
 
 .iconWrapper {
@@ -33,9 +39,14 @@
 }
 
 .userSelector {
-    display: block;
-    background-color: transparent;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-}
+    position: relative;
+    display: inline-block;
+  }
+  
+  .showOptions {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    z-index: 1;
+  }
+  

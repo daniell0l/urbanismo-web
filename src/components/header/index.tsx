@@ -7,7 +7,7 @@ interface HeaderProps {
   title: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ title }) => {
+const Header: React.FC<HeaderProps> = ({}) => {
   const [showOptions, setShowOptions] = useState(false);
 
   const toggleOptions = () => {
@@ -20,13 +20,15 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
         <img src={logoWide} alt="logoWide" />
         <div className="userIcon">
           <div className="iconWrapper" onClick={toggleOptions}>
-            <FaUser />
+            <FaUser className="customUserIcon" />
           </div>
           {showOptions && (
-            <select className="userSelector">
-              <option value="user1">Usuário 1</option>
-              <option value="user2">Usuário 2</option>
-            </select>
+            <div className="userSelector">
+              <select>
+                <option value=""></option>
+                <option value=""></option>
+              </select>
+            </div>
           )}
         </div>
       </div>
