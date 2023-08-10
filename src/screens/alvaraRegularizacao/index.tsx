@@ -4,6 +4,7 @@ import AdicionarPavimentoButton from "../../components/buttonAddBasement";
 import AddOwnButton from "../../components/AddOwner";
 import AddTechinical from "../../components/AddTechinical";
 import Header from "../../components/header";
+import SideBar from "../../components/sideBar";
 
 interface CadastroFormProps {
   onSubmit: (data: CadastroFormData) => void;
@@ -155,6 +156,7 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
         <div>
           <div>
             <Header title="" />
+            <SideBar title=""/>
           </div>
         </div>
         <div className="ownerData">
