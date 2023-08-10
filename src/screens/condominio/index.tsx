@@ -4,6 +4,7 @@ import AddOwnButton from "../../components/AddOwner";
 import AddTechinical from "../../components/AddTechinical";
 import AddUnity from "../../components/AddUnity";
 import Header from '../../components/header'
+import SideBar from "../../components/sideBar";
 
 interface CadastroFormProps {
   onSubmit: (data: CadastroFormData) => void;
@@ -128,6 +129,7 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
       <div id="container">
       <div>
       <Header title=""/>
+      <SideBar title=""/>
       </div>
         <div className="ownerData">
           <span className="line-with-name">Dados do Proprietário</span>
