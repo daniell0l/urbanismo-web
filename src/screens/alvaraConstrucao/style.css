@@ -22,6 +22,7 @@ select {
   height: auto;
   padding: 10px;
   box-sizing: border-box;
+  margin-left: 40px;
 }
 
 .ownerData .flex-container,
@@ -78,11 +79,13 @@ select {
   margin-bottom: 10px;
 }
 
-.min-Address input {
-  width: 10%;
+.minAddressData {
+  width: 30%;
   position: relative;
   top: -65px;
-  left: 330px;
+  left: 342px;
+  display: flex;
+  flex-direction: row;
 }
 
 .addOwn {
@@ -163,7 +166,7 @@ select {
 .propertyData {
   width: 100%;
   height: auto;
-  margin-left: 10px;
+  margin-left: 50px;
 }
 
 .AddBasementeLabel input {

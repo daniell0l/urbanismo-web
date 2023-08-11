@@ -248,7 +248,7 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
           />
           <input readOnly type="text" placeholder="Bahia" />
           <input readOnly type="text" placeholder="Luís Eduardo Magalhães" />
-          <div className="min-Address">
+          <div className="minAddressData">
             <input
               type="text"
               placeholder="Bloco"
