@@ -10,23 +10,35 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({}) => {
   const [showOptions, setShowOptions] = useState(false);
 
-  const toggleOptions = () => {
-    setShowOptions(!showOptions);
+  const showOptionsHandler = () => {
+    setShowOptions(true);
+  };
+
+  const hideOptionsHandler = () => {
+    setShowOptions(false);
   };
 
   return (
     <header>
       <div className="headerUrbanismo">
         <img src={logoWide} alt="logoWide" />
-        <div className="userIcon">
-          <div className="iconWrapper" onClick={toggleOptions}>
+        <div
+          className="userIcon"
+          onMouseEnter={showOptionsHandler}
+          onMouseLeave={hideOptionsHandler}
+        >
+          <div className="iconWrapper">
             <FaUser className="customUserIcon" />
           </div>
           {showOptions && (
-            <div className="userSelector">
+            <div
+              className="userSelector"
+              onMouseEnter={showOptionsHandler}
+              onMouseLeave={hideOptionsHandler}
+            >
               <select>
-                <option value=""></option>
-                <option value=""></option>
+                <option value="">Perfil</option>
+                <option value="">Sair</option>
               </select>
             </div>
           )}

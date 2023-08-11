@@ -27,26 +27,67 @@
     gap: 10px;
     color: #7d85f8;
     background: #fff;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     justify-content: center;
     align-items: center;
 }
 
-.iconWrapper {
-    cursor: pointer;
+.userIcon svg{
+    width: 22px;
+    height: 22px;
 }
 
-.userSelector {
+  .userIcon {
     position: relative;
-    display: inline-block;
+    background: #fff;
+    float: right;
+    cursor: pointer;
   }
+
+  .userIcon::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+    opacity: 0;
+}
+
+.userIcon:hover::before {
+    opacity: 1;
+}
+
   
-  .showOptions {
+  .userSelector {
     position: absolute;
     top: 100%;
-    left: 100%;
-    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: none;
+    box-shadow: 0px 2px 4px rgba(1, 1, 2, 1);
+    padding: 10px;
+    margin-top: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
   }
   
+  .userSelector select{
+    border: none;
+}
+
+.userSelector::before {
+    content: "";
+    position: absolute;
+    border: 15px solid transparent;
+    border-bottom-color: #fff;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
