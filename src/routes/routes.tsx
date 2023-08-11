@@ -6,6 +6,7 @@ import Principal from '../screens/principal/index'
 import AlvaraConstrucao from '../screens/alvaraConstrucao/index'
 import  AlvaraRegularizacao  from '../screens/alvaraRegularizacao/index'
 import  Condominio  from '../screens/condominio/index'
+import Resizing from '../screens/resizing/index'
 
 const AppRoutes: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const AppRoutes: React.FC = () => {
         <Route path='/AlvaraConstrucao' element={<AlvaraConstrucao />} />
         <Route path='/AlvaraRegularizacao' element={<AlvaraRegularizacao />} />
         <Route path='/Condominio' element={<Condominio />} />
+        <Route path='/Resizing' element={<Resizing />} />
       </Routes>
     </Router>
   );
