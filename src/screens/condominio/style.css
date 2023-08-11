@@ -9,7 +9,7 @@
 
 .ownerData,
 .projectData,
-.addresData, {
+.addresData {
   width: 100%;
   height: auto;
   padding: 10px;
@@ -130,8 +130,6 @@
   margin-bottom: 10px;
   font-size: 1em;
   float: left;
-  color: #696969;
-  background: #fff;
   border: 1px solid #ccc;
 }
 

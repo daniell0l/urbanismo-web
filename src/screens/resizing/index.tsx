@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "./style.css";
 import AddOwnButton from "../../components/AddOwner";
 import AddTechinical from "../../components/AddTechinical";
-import Header from '../../components/header';
+import Header from "../../components/header";
 import SideBar from "../../components/sideBar";
+import { FORMERR } from "dns";
+import { eventNames } from "process";
 
 interface CadastroFormProps {
   onSubmit: (data: CadastroFormData) => void;
@@ -28,6 +30,13 @@ interface CadastroFormData {
   block: string;
   lot: string;
   number: string;
+  NumberofLots: string;
+  TotallandArea: string;
+  selectResizing: "Remembramento" | "Desmembramento";
+  numberOfUnits: string;
+  unitDescriptions: string;
+  requester: string;
+  phone: string;
 }
 
 const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
@@ -49,7 +58,14 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
     subdivision: "",
     block: "",
     lot: "",
-    number: ""
+    number: "",
+    NumberofLots: "",
+    TotallandArea: "",
+    selectResizing: "Remembramento",
+    numberOfUnits: "",
+    unitDescriptions: "",
+    requester: "",
+    phone: "",
   });
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -70,6 +86,16 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
     });
   };
 
+  const handleselectResizing = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    const { value } = event.target;
+    setFormData({
+      ...formData,
+      selectResizing: value as "Remembramento" | "Desmembramento",
+    });
+  };
+
   const handletypePeopleChange = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
@@ -85,13 +111,23 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
     onSubmit(formData);
   };
 
+  const handleTotallandArea = (event: React.FormEvent) => {
+    event.preventDefault();
+    onSubmit(formData);
+  };
+
+  const handleNumberofLots = (event: React.FormEvent) => {
+    event.preventDefault();
+    onSubmit(formData);
+  };
+
   return (
     <form onSubmit={handleSubmit}>
       <div id="container">
-      <div>
-      <Header title=""/>
-      <SideBar title=""/>
-      </div>
+        <div>
+          <Header title="" />
+          <SideBar title="" />
+        </div>
         <div className="ownerData">
           <span className="line-with-name">Dados do Proprietário</span>
           <div className="flex-container">
@@ -207,6 +243,67 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
         </div>
         <div className="propertyData">
           <span className="line-with-name">Dados do terreno</span>
+          <div>
+            <input
+              type="text"
+              placeholder="Quantidade de Lotes (Unidades)"
+              name="NumberofLots"
+              value={formData.NumberofLots}
+              onChange={handleNumberofLots}
+            />
+            <input
+              type="text"
+              placeholder="Área total do terreno (m²)"
+              name="TotallandArea"
+              value={formData.TotallandArea}
+              onChange={handleTotallandArea}
+            />
+          </div>
+        </div>
+        <div className="ResizingObjectIntendedSituation">
+          <span className="line-with-name">
+            Dados do Redimensionamento Objeto/Situação Pretendida
+          </span>
+          <div>
+            <input
+              type="text"
+              placeholder="Quantidade de Lotes (Unidades)"
+              name="numberOfUnits"
+              value={formData.numberOfUnits}
+              onChange={handleInputChange}
+            />
+            <input
+              type="text"
+              placeholder="Descrição dos Lotes (Unidades)"
+              name="unitDescriptions"
+              value={formData.unitDescriptions}
+              onChange={handleInputChange}
+            />
+            <input
+              type="text"
+              placeholder="Requerente"
+              name="requester"
+              value={formData.requester}
+              onChange={handleInputChange}
+            />
+            <input
+              type="text"
+              placeholder="Telefone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleInputChange}
+            />
+          <div className="SelectResizing">
+            <select
+              name="selectResizing"
+              value={formData.selectResizing}
+              onChange={handleselectResizing}
+            >
+              <option value="remembering">Remembramento</option>
+              <option value="dismemberment">Desmembramento</option>
+            </select>
+          </div>
+          </div>
         </div>
         <button className="RegistrationProcessButton" type="submit">
           Cadastrar processo
