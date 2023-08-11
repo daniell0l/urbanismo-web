@@ -29,7 +29,7 @@ const SideBar: React.FC<sideBarProps> = ({ title }) => {
             </div>
           </div>
         ) : (
-          <div>
+          <div className="selectSideBar">
             <h2>{title}</h2>
             <select onClick={handleSelectClick} className="custom-select">
               <option value="alvaraConstrucao">Alvará Construção</option>
