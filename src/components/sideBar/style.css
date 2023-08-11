@@ -1,0 +1,51 @@
+.sideBarUrbanismo {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  margin-top: 100px;
+  background: #fff;
+  transition: 0.4s;
+  transform: translateX(0);
+  top: 0;
+  z-index: 9;
+  margin-top: 0;
+  margin: 0px;
+}
+
+.sideBarUrbanismo select {
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  appearance: none;
+  box-shadow: none;
+  background-color: transparent;
+  font-size: 1.3em;
+  padding: 15px;
+  margin: 0px;
+  position: relative;
+  top: -30px;
+  right: 30px;
+}
+
+.sideBarUrbanismo.open {
+  transform: translateX(-150px);
+  cursor: pointer;
+}
+
+.hamburgerIcon {
+  display: inline;
+  position: relative;
+  top: 90px;
+  left: 120px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburgerIcon {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.selectSideBar {
+  margin-top: 100px;
+}

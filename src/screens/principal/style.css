@@ -10,9 +10,11 @@ html {
   display: flex;
   flex-direction: column;
   margin-top: 100px;
+  margin-left: 40px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
   "Lucida Sans", Arial, sans-serif;
 }
+
 
 .navbar {
   display: flex;
@@ -23,7 +25,6 @@ html {
   display: flex;
 }
 
-.selectedConstruction select,
 .selectedProtocol select {
   padding: 10px 12px;
   font-size: 16px;
@@ -31,8 +32,18 @@ html {
   border-radius: 4px;
   outline: none;
   background-color: #fff;
-  width: 400px;
   margin-left: 30px;
+}
+
+.selectedConstruction select {
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  background-color: #fff;
+  margin-left: 30px;
+  width: 350px;
 }
 
 .selectedConstruction select:hover,
@@ -52,7 +63,7 @@ html {
   outline: none;
   background-color: #fff;
   margin-right: 20px;
-  margin-left: 60px;
+  margin-left: 55px;
 }
 
 .Search button {
@@ -78,7 +89,7 @@ html {
   margin-top: 10px;
   margin-left: 60px;
   width: 90%;
-  background: #dddddd;
+  background: #f0f0f0;
   border: 1px solid #ccc;
 }
 

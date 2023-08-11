@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import "../alvaraConstrucao/style.css";
-import AdicionarPavimentoButton from "../../components/buttonAddBasement";
+import "./style.css";
 import AddOwnButton from "../../components/AddOwner";
 import AddTechinical from "../../components/AddTechinical";
 import Header from "../../components/header";
 import SideBar from "../../components/sideBar";
+import { FORMERR } from "dns";
+import { eventNames } from "process";
 
 interface CadastroFormProps {
   onSubmit: (data: CadastroFormData) => void;
@@ -22,37 +23,20 @@ interface CadastroFormData {
     cpfCnpj: string;
   };
   authorization: string;
-  creacau: string;
+  creaCau: string;
   responsibleTechnical: "Engenheiro" | "Arquiteto";
   address: string;
   subdivision: string;
   block: string;
   lot: string;
   number: string;
-  purposeOfWork: string;
-  landArea: string;
-  landSituation: "Meio quadra" | "Esquina";
-  purposeWork:
-    | "residential"
-    | "residencialCondominium"
-    | "commercial"
-    | "mixed"
-    | "institutional"
-    | "shed"
-    | "industrial";
-  permeabilityRate: string;
-  occupancyRate: string;
-  calculateTotal: string;
-  areaToBuildGroundFloor: boolean;
-  basementToBuild: boolean;
-  existingArea: boolean;
-  existingBasementArea: boolean;
-  deckOrPoolArea: boolean;
-  basementsToBuild: string[];
-  existingAreas: string[];
-  existingBasementAreas: string[];
-  deckOrPoolAreas: string[];
-  areaToBuildGroundFloors: string[];
+  NumberofLots: string;
+  TotallandArea: string;
+  selectResizing: "Remembramento" | "Desmembramento";
+  numberOfUnits: string;
+  unitDescriptions: string;
+  requester: string;
+  phone: string;
 }
 
 const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
@@ -68,30 +52,20 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
       cpfCnpj: "",
     },
     authorization: "",
-    creacau: "",
+    creaCau: "",
     responsibleTechnical: "Engenheiro",
     address: "",
     subdivision: "",
     block: "",
     lot: "",
     number: "",
-    purposeOfWork: "",
-    landArea: "",
-    landSituation: "Meio quadra",
-    purposeWork: "residential",
-    permeabilityRate: "",
-    occupancyRate: "",
-    calculateTotal: "",
-    areaToBuildGroundFloor: false,
-    basementToBuild: false,
-    existingArea: false,
-    existingBasementArea: false,
-    deckOrPoolArea: false,
-    basementsToBuild: [],
-    existingAreas: [],
-    existingBasementAreas: [],
-    deckOrPoolAreas: [],
-    areaToBuildGroundFloors: [],
+    NumberofLots: "",
+    TotallandArea: "",
+    selectResizing: "Remembramento",
+    numberOfUnits: "",
+    unitDescriptions: "",
+    requester: "",
+    phone: "",
   });
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -112,6 +86,16 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
     });
   };
 
+  const handleselectResizing = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    const { value } = event.target;
+    setFormData({
+      ...formData,
+      selectResizing: value as "Remembramento" | "Desmembramento",
+    });
+  };
+
   const handletypePeopleChange = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
@@ -122,30 +106,17 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
     });
   };
 
-  const handlePurposeWork = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const { value } = event.target;
-    setFormData({
-      ...formData,
-      purposeWork: value as
-        | "residential"
-        | "residencialCondominium"
-        | "commercial"
-        | "mixed"
-        | "institutional"
-        | "shed"
-        | "industrial",
-    });
-  };
-
-  const handleLandSituation = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const { value } = event.target;
-    setFormData({
-      ...formData,
-      landSituation: value as "Meio quadra" | "Esquina",
-    });
-  };
-
   const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    onSubmit(formData);
+  };
+
+  const handleTotallandArea = (event: React.FormEvent) => {
+    event.preventDefault();
+    onSubmit(formData);
+  };
+
+  const handleNumberofLots = (event: React.FormEvent) => {
     event.preventDefault();
     onSubmit(formData);
   };
@@ -154,10 +125,8 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
     <form onSubmit={handleSubmit}>
       <div id="container">
         <div>
-          <div>
-            <Header title="" />
-            <SideBar title=""/>
-          </div>
+          <Header title="" />
+          <SideBar title="" />
         </div>
         <div className="ownerData">
           <span className="line-with-name">Dados do Proprietário</span>
@@ -274,76 +243,67 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
         </div>
         <div className="propertyData">
           <span className="line-with-name">Dados do terreno</span>
-          <div className="selectPurposeWork">
+          <div>
+            <input
+              type="text"
+              placeholder="Quantidade de Lotes (Unidades)"
+              name="NumberofLots"
+              value={formData.NumberofLots}
+              onChange={handleNumberofLots}
+            />
+            <input
+              type="text"
+              placeholder="Área total do terreno (m²)"
+              name="TotallandArea"
+              value={formData.TotallandArea}
+              onChange={handleTotallandArea}
+            />
+          </div>
+        </div>
+        <div className="ResizingObjectIntendedSituation">
+          <span className="line-with-name">
+            Dados do Redimensionamento Objeto/Situação Pretendida
+          </span>
+          <div>
+            <input
+              type="text"
+              placeholder="Quantidade de Lotes (Unidades)"
+              name="numberOfUnits"
+              value={formData.numberOfUnits}
+              onChange={handleInputChange}
+            />
+            <input
+              type="text"
+              placeholder="Descrição dos Lotes (Unidades)"
+              name="unitDescriptions"
+              value={formData.unitDescriptions}
+              onChange={handleInputChange}
+            />
+            <input
+              type="text"
+              placeholder="Requerente"
+              name="requester"
+              value={formData.requester}
+              onChange={handleInputChange}
+            />
+            <input
+              type="text"
+              placeholder="Telefone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleInputChange}
+            />
+          <div className="SelectResizing">
             <select
-              name="PurposeWork"
-              value={formData.purposeWork}
-              onChange={handlePurposeWork}
+              name="selectResizing"
+              value={formData.selectResizing}
+              onChange={handleselectResizing}
             >
-              <option value="residential">Residencial</option>
-              <option value="residencialCondominium">
-                Residencial em condomínio
-              </option>
-              <option value="commercial">Comercial</option>
-              <option value="mixed">Misto</option>
-              <option value="institutional">Institucional</option>
-              <option value="shed">Galão</option>
-              <option value="industrial">Industrial</option>
+              <option value="remembering">Remembramento</option>
+              <option value="dismemberment">Desmembramento</option>
             </select>
           </div>
-          <div className="selectLandSituation">
-            <select
-              name="landSituation"
-              value={formData.landSituation}
-              onChange={handleLandSituation}
-            >
-              <option value="Meio quadra">Meio quadra</option>
-              <option value="Esquina">Esquina</option>
-            </select>
           </div>
-          <input
-            type="text"
-            placeholder="Área do Terreno (m²)"
-            name="landArea"
-            value={formData.landArea}
-            onChange={handleInputChange}
-          />
-          <input
-            type="text"
-            placeholder="Taxa de Permeabilidade (%)"
-            name="permeabilityRate"
-            value={formData.permeabilityRate}
-            onChange={handleInputChange}
-          />
-          <input
-            type="text"
-            placeholder="Taxa de Ocupação (%)"
-            name="occupancyRate"
-            value={formData.occupancyRate}
-            onChange={handleInputChange}
-          />
-          <input
-            type="text"
-            placeholder="Total"
-            readOnly
-            value={formData.calculateTotal}
-          />
-          <label className="AddBasementeLabel">
-            Área construir - Pavimento Térreo(m²)
-            <AdicionarPavimentoButton></AdicionarPavimentoButton>
-          </label>
-          <label className="AddBasementeLabel">
-            Área Subsolo a Construir(m²)
-            <AdicionarPavimentoButton></AdicionarPavimentoButton>
-          </label>
-          <label className="AddBasementeLabel">
-            Área Subsolo Existente(m²)
-            <AdicionarPavimentoButton></AdicionarPavimentoButton>
-          </label>
-          <label className="AddBasementeLabel">
-            Área Deck ou Piscina
-            <AdicionarPavimentoButton></AdicionarPavimentoButton>
-          </label>
         </div>
         <button className="RegistrationProcessButton" type="submit">
           Cadastrar processo

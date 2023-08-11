@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 import Header from '../../components/header';
+import SideBar from "../../components/sideBar";
 
 interface Result {
   id: number;
@@ -73,6 +74,9 @@ const TableComponent: React.FC = () => {
     <div id="principal">
       <div>
       <Header title=""/>
+      </div>
+      <div>
+      <SideBar title="" />
       </div>
       <div className="navbar">
         <div className="construction-protocol">
