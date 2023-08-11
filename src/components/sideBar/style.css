@@ -1,6 +1,6 @@
 .sideBarUrbanismo {
   position: fixed;
-  width: 180px;
+  width: 200px;
   height: 100%;
   margin-top: 100px;
   background: #fff;
@@ -9,19 +9,22 @@
   top: 0;
   z-index: 9;
   margin-top: 0;
+  margin: 0px;
 }
 
 .sideBarUrbanismo select {
   border: none;
   width: 100%;
-  margin-bottom: 10px;
   cursor: pointer;
   appearance: none;
   box-shadow: none;
   background-color: transparent;
-  margin-bottom: 30px;
   font-size: 1.3em;
-  margin-left: -30px;
+  padding: 15px;
+  margin: 0px;
+  position: relative;
+  top: -30px;
+  right: 30px;
 }
 
 .sideBarUrbanismo.open {
@@ -33,7 +36,7 @@
   display: inline;
   position: relative;
   top: 90px;
-  left: 140px;
+  left: 120px;
   cursor: pointer;
   padding: 10px;
 }
