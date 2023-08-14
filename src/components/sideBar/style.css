@@ -4,6 +4,7 @@
   background: #ffffff;
   position: fixed;
   left: -150px;
+  top: 60px;
   transition: left 0.3s;
   display: flex;
   flex-direction: column;
@@ -32,7 +33,7 @@
   padding: 50px 0px 300px 50px;
   position: relative;
   left: -20px;
-  top: 100px;
+  top: 140px;
 }
 
 .arrow {
@@ -47,7 +48,7 @@
   width: 100%;
   position: relative;
   right: 5px;
-  top: -100px;
+  top: -60px;
 }
 
 .menu-item {
@@ -65,10 +66,18 @@
 .submenu {
   padding-left: 10px;
   width: 100%;
-  color: #747373;
+}
+
+.submenu:hover{
+  background: #ececec;
 }
 
 .submenu-item {
   padding: 8px 0;
   cursor: pointer;
+}
+
+.submenu-item a{
+  color: #747373;
+  text-decoration: none;
 }

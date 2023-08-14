@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 
 interface SubmenuProps {
-  items: string[];
+  items: { label: string; link: string }[];
 }
 
 const Submenu: React.FC<SubmenuProps> = ({ items }) => {
@@ -10,7 +10,7 @@ const Submenu: React.FC<SubmenuProps> = ({ items }) => {
     <div className="submenu">
       {items.map((item, index) => (
         <div className="submenu-item" key={index}>
-          {item}
+          <a href={item.link}>{item.label}</a>
         </div>
       ))}
     </div>
@@ -19,7 +19,7 @@ const Submenu: React.FC<SubmenuProps> = ({ items }) => {
 
 interface MenuItemProps {
   title: string;
-  items: string[];
+  items: { label: string; link: string }[];
 }
 
 const MenuItem: React.FC<MenuItemProps> = ({ title, items }) => {
@@ -52,9 +52,25 @@ const SideBar: React.FC = () => {
       <div className="toggle">
         {!isOpen && <div className="toggle-icon">☰</div>}
       </div>
-      <MenuItem title="Cadastrar processo" items={["Alvará Construção", "Alvará Regularização", "Condomínio", "Redimensionamento"]} />,
-      <MenuItem title="Listar processos" items={["Alvará de Projeto", "Alvará de construção", "Alvará de Regularização", "Condomínio", "Redimensionamento"
-      ]} />
+      <MenuItem
+        title="Cadastrar processo"
+        items={[
+          { label: "Alvará Construção", link: "../alvaraConstrucao" },
+          { label: "Alvará Regularização", link: "../alvaraRegularizacao" },
+          { label: "Condomínio", link: "../condominio" },
+          { label: "Redimensionamento", link: "../resizing" },
+        ]}
+      />
+      <MenuItem
+        title="Listar processos"
+        items={[
+          { label: "Alvará de Projeto", link: "/alvara-projeto" },
+          { label: "Alvará de construção", link: "/alvara-construcao" },
+          { label: "Alvará de Regularização", link: "/alvara-regularizacao" },
+          { label: "Condomínio", link: "/condominio" },
+          { label: "Redimensionamento", link: "/redimensionamento" },
+        ]}
+      />
     </div>
   );
 };
