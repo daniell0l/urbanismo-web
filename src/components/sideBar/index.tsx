@@ -33,7 +33,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ title, items }) => {
     <div className="menu" onClick={(e) => e.stopPropagation()}>
       <div className="menu-item" onClick={toggleSubmenu}>
         {title}
-        <div className="arrow">{showSubmenu ? "▽" : ">"}</div>
+        <div className="arrow">{showSubmenu ? "⌄" : "›"}</div>
       </div>
       {showSubmenu && <Submenu items={items} />}
     </div>
