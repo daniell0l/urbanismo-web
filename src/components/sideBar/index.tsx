@@ -1,68 +1,42 @@
 import React, { useState } from "react";
 import "./style.css";
 
-interface sideBarProps {
-  title: string;
+interface SideBarProps {
 }
 
-const SideBar: React.FC<sideBarProps> = ({ title }) => {
-  const [sideBarOpen, setSideBarOpen] = useState(true);
+const SideBar: React.FC<SideBarProps> = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [showProcessOptions, setShowProcessOptions] = useState(false);
 
   const toggleSideBar = () => {
-    setSideBarOpen(!sideBarOpen);
+    setIsOpen(!isOpen);
+    setShowProcessOptions(false);
+  };
+
+  const toggleProcessOptions = () => {
+    setShowProcessOptions(!showProcessOptions);
   };
 
   return (
-    <header>
-      <div
-        className={`sideBarUrbanismo ${sideBarOpen ? "open" : ""}`}
-        onClick={toggleSideBar}
-      >
-        {sideBarOpen ? (
-          <div className="closedSidebar">
-            <div className="hamburgerIcon" onClick={toggleSideBar}>
-              ☰
-            </div>
-          </div>
-        ) : (
-          <div className="selectSideBar">
-            <h2>{title}</h2>
-            <select
-              onChange={(e) => (window.location.href = e.target.value)}
-              className="custom-select"
-            >
-              <option value="">Cadastrar processos</option>
-              <option value="../alvaraConstrucao">Alvará Construção</option>
-              <option value="../alvaraRegularizacao">Alvará Regularização</option>
-              <option value="../condominio">Condomínio</option>
-              <option value="../resizing">Redimensionamento</option>
-            </select>
-            <select
-              onChange={(e) =>
-                (window.location.href = `${e.target.value}.html`)
-              }
-              className="custom-select"
-            >
-              <option value="">Listar processos</option>
-              <option value="alvaraProjeto">Alvará Projeto</option>
-              <option value="alvaraConstrucao">Alvará Construção</option>
-              <option value="alvaraRegularizacao">Alvará Regularização</option>
-              <option value="condominio">Condomínio</option>
-              <option value="redimensionamento">Redimensionamento</option>
-            </select>
-            <select
-              onChange={(e) =>
-                (window.location.href = `${e.target.value}.html`)
-              }
-              className="custom-select"
-            >
-              <option value="usuarios">Usuários</option>
-              <option value="clientes">Clientes</option>
-            </select>
+    <div className={`sidebar ${isOpen ? 'open' : ''}`} onClick={toggleSideBar}>
+      <div className="toggle">
+        {!isOpen && <div className="toggle-icon">☰</div>}
+      </div>
+      <div className="menu" onClick={(e) => e.stopPropagation()}>
+        <div className="menu-item" onClick={toggleProcessOptions}>
+          Cadastrar Processos
+          {showProcessOptions ? <div className="arrow">▼</div> : <div className="arrow">▶</div>}
+        </div>
+        {showProcessOptions && (
+          <div className="submenu">
+            <div className="submenu-item">Alvará Construção</div>
+            <div className="submenu-item">Alvará Regularização</div>
+            <div className="submenu-item">Condomínio</div>
+            <div className="submenu-item">Redimensionamento</div>
           </div>
         )}
       </div>
-    </header>
+    </div>
   );
 };
 

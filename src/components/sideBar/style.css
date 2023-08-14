@@ -1,51 +1,60 @@
-.sideBarUrbanismo {
-  position: fixed;
+.sidebar {
   width: 200px;
-  height: 100%;
-  margin-top: 100px;
-  background: #fff;
-  transition: 0.4s;
-  transform: translateX(0);
-  top: 0;
-  z-index: 9;
-  margin-top: 0;
-  margin: 0px;
+  height: 100vh;
+  background-color: #ffffff;
+  position: fixed;
+  left: -150px;
+  transition: left 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  cursor: pointer;
 }
 
-.sideBarUrbanismo select {
-  border: none;
+.sidebar.open {
+  left: 0;
+}
+
+.toggle {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.toggle-icon {
+  font-size: 35px;
+  color: #3d83ce;
+}
+
+.menu {
+  margin-top: 0px;
   width: 100%;
-  cursor: pointer;
-  appearance: none;
-  box-shadow: none;
-  background-color: transparent;
-  font-size: 1.1em;
-  padding: 15px;
-  margin: 0px;
-  position: relative;
-  top: -30px;
-  right: 50px;
+  padding-left: 10px;
 }
 
-.sideBarUrbanismo.open {
-  transform: translateX(-150px);
+.menu-item {
   cursor: pointer;
-}
-
-.hamburgerIcon {
-  display: inline;
-  position: relative;
-  top: 90px;
-  left: 120px;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 10px;
+  width: 100%;
 }
 
-.hamburgerIcon {
-  font-size: 30px;
+.arrow {
+  font-size: 14px;
+}
+
+.submenu {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.submenu-item {
+  padding: 8px 0;
   cursor: pointer;
-}
-
-.selectSideBar {
-  margin-top: 100px;
 }
