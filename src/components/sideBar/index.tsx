@@ -1,55 +1,60 @@
 import React, { useState } from "react";
 import "./style.css";
 
-interface SideBarProps {
+interface SubmenuProps {
+  items: string[];
 }
 
-const SideBar: React.FC<SideBarProps> = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [showProcessOptions, setShowProcessOptions] = useState(false);
+const Submenu: React.FC<SubmenuProps> = ({ items }) => {
+  return (
+    <div className="submenu">
+      {items.map((item, index) => (
+        <div className="submenu-item" key={index}>
+          {item}
+        </div>
+      ))}
+    </div>
+  );
+};
 
-  const toggleSideBar = () => {
-    setIsOpen(!isOpen);
-    setShowProcessOptions(false);
-  };
+interface MenuItemProps {
+  title: string;
+  items: string[];
+}
 
-  const toggleProcessOptions = () => {
-    setShowProcessOptions(!showProcessOptions);
+const MenuItem: React.FC<MenuItemProps> = ({ title, items }) => {
+  const [showSubmenu, setShowSubmenu] = useState(false);
+
+  const toggleSubmenu = () => {
+    setShowSubmenu(!showSubmenu);
   };
 
   return (
-    <div className={`sidebar ${isOpen ? 'open' : ''}`} onClick={toggleSideBar}>
+    <div className="menu" onClick={(e) => e.stopPropagation()}>
+      <div className="menu-item" onClick={toggleSubmenu}>
+        {title}
+        <div className="arrow">{showSubmenu ? "▼" : "▶"}</div>
+      </div>
+      {showSubmenu && <Submenu items={items} />}
+    </div>
+  );
+};
+
+const SideBar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSideBar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <div className={`sidebar ${isOpen ? "open" : ""}`} onClick={toggleSideBar}>
       <div className="toggle">
         {!isOpen && <div className="toggle-icon">☰</div>}
       </div>
-      <div className="menu" onClick={(e) => e.stopPropagation()}>
-        <div className="menu-item" onClick={toggleProcessOptions}>
-          Cadastrar processos
-          {showProcessOptions ? <div className="arrow">▼</div> : <div className="arrow">▶</div>}
-        </div>
-        {showProcessOptions && (
-          <div className="submenu">
-            <div className="submenu-item">Alvará Construção</div>
-            <div className="submenu-item">Alvará Regularização</div>
-            <div className="submenu-item">Condomínio</div>
-            <div className="submenu-item">Redimensionamento</div>
-          </div>
-        )}
-      </div>
-      <div className="menu" onClick={(e) => e.stopPropagation()}>
-        <div className="menu-item" onClick={toggleProcessOptions}>
-          Listar processos
-          {showProcessOptions ? <div className="arrow">▼</div> : <div className="arrow">▶</div>}
-        </div>
-        {showProcessOptions && (
-          <div className="submenu">
-            <div className="submenu-item">Alvará Construção</div>
-            <div className="submenu-item">Alvará Regularização</div>
-            <div className="submenu-item">Condomínio</div>
-            <div className="submenu-item">Redimensionamento</div>
-          </div>
-        )}
-      </div>
+      <MenuItem title="Cadastrar processo" items={["Alvará Construção", "Alvará Regularização", "Condomínio", "Redimensionamento"]} />,
+      <MenuItem title="Listar processos" items={["Alvará de Projeto", "Alvará de construção", "Alvará de Regularização", "Condomínio", "Redimensionamento"
+      ]} />
     </div>
   );
 };
