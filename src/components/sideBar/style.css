@@ -82,3 +82,7 @@
   color: #747373;
   text-decoration: none;
 }
+
+.submenu-item a:hover{
+  color: #3b3b3b;
+}
