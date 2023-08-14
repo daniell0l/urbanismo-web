@@ -71,6 +71,24 @@ const SideBar: React.FC = () => {
           { label: "Redimensionamento", link: "/redimensionamento" },
         ]}
       />
+      <MenuItem
+        title="Listar Usuários"
+        items={[
+          { label: "Coordenador", link: ""},
+          { label: "Fiscal", link: "" },
+          { label: "Analista", link: "" },
+          { label: "Administrador", link: ""},
+          { label: "clientes", link: "" },
+        ]}
+      />
+            <MenuItem
+        title="Listar Clientes"
+        items={[
+          { label: "Engenheiro", link: ""},
+          { label: "Arquiteto", link: "" },
+          { label: "Técnico", link: "" },
+        ]}
+      />
     </div>
   );
 };

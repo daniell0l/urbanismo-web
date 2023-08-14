@@ -31,10 +31,10 @@
   color: #3d83ce;
   background: #fff;
   z-index: 2;
-  padding: 50px 0px 300px 50px;
+  padding: 50px 10px 1000px 50px;
   position: relative;
   left: -20px;
-  top: 150px;
+  top: 500px;
 }
 
 .arrow {
@@ -66,7 +66,8 @@
 
 .submenu {
   padding-left: 10px;
-  width: 100%;
+  width: 90%;
+  background: #f3f3f3;
 }
 
 .submenu-item {
