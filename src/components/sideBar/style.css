@@ -1,5 +1,5 @@
 .sidebar {
-  width: 200px;
+  width: 210px;
   height: 100vh;
   background-color: #ffffff;
   position: fixed;
@@ -18,25 +18,38 @@
 
 .toggle {
   width: 40px;
-  height: 40px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff;
 }
 
 .toggle-icon {
   font-size: 35px;
   color: #3d83ce;
+  background: #fff;
+  z-index: 2;
+  padding: 30px;
+}
+
+.arrow {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  right: 20px;
 }
 
 .menu {
-  margin-top: 0px;
+  margin-top: 20px;
   width: 100%;
-  padding-left: 10px;
+  position: relative;
+  right: 0px;
+  top: -60px;
+  color: #4e4e4e;
 }
 
 .menu-item {
+  font-size: 1.1em;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -45,13 +58,9 @@
   width: 100%;
 }
 
-.arrow {
-  font-size: 14px;
-}
-
 .submenu {
-  margin-top: 10px;
-  padding-left: 20px;
+  padding-left: 10px;
+  width: 100%;
 }
 
 .submenu-item {
