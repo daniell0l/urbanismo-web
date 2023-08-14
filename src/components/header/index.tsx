@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logoWide from "../../assets/imgs/logoWide.png";
+// import logoWide from "../../assets/imgs/logoWide.png";
 import "./style.css";
 import { FaUser } from "react-icons/fa";
 
@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({}) => {
   return (
     <header>
       <div className="headerUrbanismo">
-        <img src={logoWide} alt="logoWide" />
+        {/* <img src={logoWide} alt="logoWide" /> */}
         <div
           className="userIcon"
           onMouseEnter={showOptionsHandler}
