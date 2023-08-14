@@ -11,6 +11,7 @@
   align-items: flex-end;
   justify-content: flex-start;
   cursor: pointer;
+  z-index: 2;
 }
 
 .sidebar.open {
@@ -33,7 +34,7 @@
   padding: 50px 0px 300px 50px;
   position: relative;
   left: -20px;
-  top: 140px;
+  top: 150px;
 }
 
 .arrow {
@@ -66,10 +67,6 @@
 .submenu {
   padding-left: 10px;
   width: 100%;
-}
-
-.submenu:hover{
-  background: #ececec;
 }
 
 .submenu-item {
