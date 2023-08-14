@@ -72,7 +72,7 @@ const SideBar: React.FC = () => {
         ]}
       />
       <MenuItem
-        title="Listar Usuários"
+        title="Listar usuários"
         items={[
           { label: "Coordenador", link: ""},
           { label: "Fiscal", link: "" },
@@ -82,7 +82,7 @@ const SideBar: React.FC = () => {
         ]}
       />
             <MenuItem
-        title="Listar Clientes"
+        title="Listar clientes"
         items={[
           { label: "Engenheiro", link: ""},
           { label: "Arquiteto", link: "" },
