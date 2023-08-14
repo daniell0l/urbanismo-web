@@ -31,12 +31,11 @@ const SideBar: React.FC<sideBarProps> = ({ title }) => {
               onChange={(e) => (window.location.href = e.target.value)}
               className="custom-select"
             >
-              <option value="../../../alvaraConstrucao/index">
-                Alvará Construção
-              </option>
-              <option value="../../../alvaraRegularizacao">Alvará Regularização</option>
-              <option value="condominio">Condomínio</option>
-              <option value="redimensionamento">Redimensionamento</option>
+              <option value="">Cadastrar processos</option>
+              <option value="../alvaraConstrucao">Alvará Construção</option>
+              <option value="../alvaraRegularizacao">Alvará Regularização</option>
+              <option value="../condominio">Condomínio</option>
+              <option value="../resizing">Redimensionamento</option>
             </select>
             <select
               onChange={(e) =>
@@ -44,6 +43,7 @@ const SideBar: React.FC<sideBarProps> = ({ title }) => {
               }
               className="custom-select"
             >
+              <option value="">Listar processos</option>
               <option value="alvaraProjeto">Alvará Projeto</option>
               <option value="alvaraConstrucao">Alvará Construção</option>
               <option value="alvaraRegularizacao">Alvará Regularização</option>
