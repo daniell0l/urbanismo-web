@@ -1,7 +1,7 @@
 .sidebar {
   width: 210px;
   height: 100vh;
-  background-color: #ffffff;
+  background: #ffffff;
   position: fixed;
   left: -150px;
   transition: left 0.3s;
@@ -29,7 +29,10 @@
   color: #3d83ce;
   background: #fff;
   z-index: 2;
-  padding: 30px;
+  padding: 50px 0px 150px 50px;
+  position: relative;
+  left: -20px;
+  top: 25px;
 }
 
 .arrow {
@@ -40,11 +43,11 @@
 }
 
 .menu {
-  margin-top: 20px;
+  margin-bottom: 10px;
   width: 100%;
   position: relative;
   right: 0px;
-  top: -60px;
+  top: -100px;
   color: #4e4e4e;
 }
 
