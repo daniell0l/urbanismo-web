@@ -1,57 +1,95 @@
 import React, { useState } from "react";
 import "./style.css";
 
-interface sideBarProps {
-  title: string;
+interface SubmenuProps {
+  items: { label: string; link: string }[];
 }
 
-const SideBar: React.FC<sideBarProps> = ({ title }) => {
-  const [sideBarOpen, setSideBarOpen] = useState(true);
+const Submenu: React.FC<SubmenuProps> = ({ items }) => {
+  return (
+    <div className="submenu">
+      {items.map((item, index) => (
+        <div className="submenu-item" key={index}>
+          <a href={item.link}>{item.label}</a>
+        </div>
+      ))}
+    </div>
+  );
+};
 
-  const toggleSideBar = () => {
-    setSideBarOpen(!sideBarOpen);
-  };
+interface MenuItemProps {
+  title: string;
+  items: { label: string; link: string }[];
+}
 
-  const handleSelectClick = (e: React.MouseEvent<HTMLSelectElement>) => {
-    e.stopPropagation();
+const MenuItem: React.FC<MenuItemProps> = ({ title, items }) => {
+  const [showSubmenu, setShowSubmenu] = useState(false);
+
+  const toggleSubmenu = () => {
+    setShowSubmenu(!showSubmenu);
   };
 
   return (
-    <header>
-      <div
-        className={`sideBarUrbanismo ${sideBarOpen ? "open" : ""}`}
-        onClick={toggleSideBar}
-      >
-        {sideBarOpen ? (
-          <div className="closedSidebar">
-            <div className="hamburgerIcon" onClick={toggleSideBar}>
-              ☰
-            </div>
-          </div>
-        ) : (
-          <div className="selectSideBar">
-            <h2>{title}</h2>
-            <select onClick={handleSelectClick} className="custom-select">
-              <option value="alvaraConstrucao">Alvará Construção</option>
-              <option value="alvaraRegularizacao">Alvará Regularização</option>
-              <option value="condominio">Condomínio</option>
-              <option value="redimensionamento">Redimensionamento</option>
-            </select>
-            <select onClick={handleSelectClick} className="custom-select">
-              <option value="alvaraProjeto">Alvará Projeto</option>
-              <option value="alvaraConstrucao">Alvará Construção</option>
-              <option value="alvaraRegularizacao">Alvará Regularização</option>
-              <option value="condominio">Condomínio</option>
-              <option value="redimensionamento">Redimensionamento</option>
-            </select>
-            <select onClick={handleSelectClick} className="custom-select">
-              <option value="usuarios">Usuários</option>
-              <option value="clientes">Clientes</option>
-            </select>
-          </div>
-        )}
+    <div className="menu" onClick={(e) => e.stopPropagation()}>
+      <div className="menu-item" onClick={toggleSubmenu}>
+        {title}
+        <div className="arrow">{showSubmenu ? "⌄" : "›"}</div>
       </div>
-    </header>
+      {showSubmenu && <Submenu items={items} />}
+    </div>
+  );
+};
+
+const SideBar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSideBar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <div className={`sidebar ${isOpen ? "open" : ""}`} onClick={toggleSideBar}>
+      <div className="toggle">
+        {!isOpen && <div className="toggle-icon">☰</div>}
+      </div>
+      <MenuItem
+        title="Cadastrar processo"
+        items={[
+          { label: "Alvará Construção", link: "../alvaraConstrucao" },
+          { label: "Alvará Regularização", link: "../alvaraRegularizacao" },
+          { label: "Condomínio", link: "../condominio" },
+          { label: "Redimensionamento", link: "../resizing" },
+        ]}
+      />
+      <MenuItem
+        title="Listar processos"
+        items={[
+          { label: "Alvará de Projeto", link: "/alvara-projeto" },
+          { label: "Alvará de construção", link: "/alvara-construcao" },
+          { label: "Alvará de Regularização", link: "/alvara-regularizacao" },
+          { label: "Condomínio", link: "/condominio" },
+          { label: "Redimensionamento", link: "/redimensionamento" },
+        ]}
+      />
+      <MenuItem
+        title="Listar usuários"
+        items={[
+          { label: "Coordenador", link: "" },
+          { label: "Fiscal", link: "" },
+          { label: "Analista", link: "" },
+          { label: "Administrador", link: "" },
+          { label: "clientes", link: "" },
+        ]}
+      />
+      <MenuItem
+        title="Listar clientes"
+        items={[
+          { label: "Engenheiro", link: "" },
+          { label: "Arquiteto", link: "" },
+          { label: "Técnico", link: "" },
+        ]}
+      />
+    </div>
   );
 };
 
