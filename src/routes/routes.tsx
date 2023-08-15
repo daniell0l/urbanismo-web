@@ -14,6 +14,7 @@ import CondominiumSituation from '../screens/condominiumSituation';
 import ResizingSituation from '../screens/resizingSituation';
 import ListUser from '../screens/listUser';
 import ListClients from '../screens/listClients';
+import Profile from '../screens/profile';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -34,6 +35,7 @@ const AppRoutes: React.FC = () => {
         <Route path='/ResizingSituation' element={< ResizingSituation/>} />
         <Route path='/ListUser' element={<ListUser  />} />
         <Route path='/ListClients' element={<ListClients  />} />
+        <Route path='/Profile' element={<Profile  />} />
       </Routes>
     </Router>
   );
