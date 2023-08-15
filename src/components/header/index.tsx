@@ -21,7 +21,9 @@ const Header: React.FC<HeaderProps> = ({}) => {
   return (
     <header>
       <div className="headerUrbanismo">
+        <a href="/principal">
         <img src={logoWide} alt="logoWide" />
+        </a>
         <div
           className="userIcon"
           onMouseEnter={showOptionsHandler}

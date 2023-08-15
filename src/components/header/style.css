@@ -1,93 +1,93 @@
 .headerUrbanismo {
-    width: 100%;
-    height: 60px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #3d83ce;
-    margin: 0;
-    z-index: 10;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #3d83ce;
+  margin: 0;
+  z-index: 10;
 }
 
-.headerUrbanismo img{
-    width: 150px;
-    height: 150px;
-    position: relative;
-    top: -45px;
-    object-fit: contain;
-    filter: brightness(100);
+.headerUrbanismo img {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  top: -45px;
+  object-fit: contain;
+  filter: brightness(100);
+  clip-path: inset(0 0 50px 0);
 }
 
 .userIcon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #3d83ce;
-    background: #fff;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #3d83ce;
+  background: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
 }
 
-.userIcon svg{
-    width: 22px;
-    height: 22px;
+.userIcon svg {
+  width: 22px;
+  height: 22px;
 }
 
-  .userIcon {
-    position: relative;
-    background: #fff;
-    float: right;
-    cursor: pointer;
-  }
+.userIcon {
+  position: relative;
+  background: #fff;
+  float: right;
+  cursor: pointer;
+}
 
-  .userIcon::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    bottom: -10px;
-    left: -10px;
-    right: -10px;
-    opacity: 0;
+.userIcon::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: -10px;
+  right: -10px;
+  opacity: 0;
 }
 
 .userIcon:hover::before {
-    opacity: 1;
+  opacity: 1;
 }
 
-  
-  .userSelector {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #fff;
-    border: none;
-    box-shadow: 0px 2px 4px rgba(1, 1, 2, 1);
-    padding: 10px;
-    margin-top: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .userSelector select{
-    border: none;
+.userSelector {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border: none;
+  box-shadow: 0px 2px 4px rgba(1, 1, 2, 1);
+  padding: 10px;
+  margin-top: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  cursor: pointer;
+}
+
+.userSelector select {
+  border: none;
 }
 
 .userSelector::before {
-    content: "";
-    position: absolute;
-    border: 15px solid transparent;
-    border-bottom-color: #fff;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
+  content: "";
+  position: absolute;
+  border: 15px solid transparent;
+  border-bottom-color: #fff;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
 }

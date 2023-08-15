@@ -55,38 +55,38 @@ const SideBar: React.FC = () => {
       <MenuItem
         title="Cadastrar processo"
         items={[
-          { label: "Alvará Construção", link: "../alvaraConstrucao" },
-          { label: "Alvará Regularização", link: "../alvaraRegularizacao" },
-          { label: "Condomínio", link: "../condominio" },
-          { label: "Redimensionamento", link: "../resizing" },
+          { label: "Alvará Construção", link: "/alvaraConstrucao" },
+          { label: "Alvará Regularização", link: "/alvaraRegularizacao" },
+          { label: "Condomínio", link: "/condominio" },
+          { label: "Redimensionamento", link: "/resizing" },
         ]}
       />
       <MenuItem
         title="Listar processos"
         items={[
-          { label: "Alvará de Projeto", link: "/alvara-projeto" },
-          { label: "Alvará de construção", link: "/alvara-construcao" },
-          { label: "Alvará de Regularização", link: "/alvara-regularizacao" },
-          { label: "Condomínio", link: "/condominio" },
-          { label: "Redimensionamento", link: "/redimensionamento" },
+          { label: "Alvará de Projeto", link: "/projectPermit" },
+          { label: "Alvará de construção", link: "/constructionPermit" },
+          { label: "Alvará de Regularização", link: "/regularizationPermit" },
+          { label: "Condomínio", link: "/condominiumSituation" },
+          { label: "Redimensionamento", link: "/resizingSituation" },
         ]}
       />
       <MenuItem
         title="Listar usuários"
         items={[
-          { label: "Coordenador", link: "" },
-          { label: "Fiscal", link: "" },
-          { label: "Analista", link: "" },
-          { label: "Administrador", link: "" },
-          { label: "clientes", link: "" },
+          { label: "Coordenador", link: "/listUser" },
+          { label: "Fiscal", link: "/listUser" },
+          { label: "Analista", link: "/listUser" },
+          { label: "Administrador", link: "/listUser" },
+          { label: "clientes", link: "/listUser" },
         ]}
       />
       <MenuItem
         title="Listar clientes"
         items={[
-          { label: "Engenheiro", link: "" },
-          { label: "Arquiteto", link: "" },
-          { label: "Técnico", link: "" },
+          { label: "Engenheiro", link: "/listClients" },
+          { label: "Arquiteto", link: "/listClients" },
+          { label: "Técnico", link: "/listClients" },
         ]}
       />
     </div>
