@@ -10,48 +10,30 @@ interface CadastroFormProps {
 interface CadastroFormData {
   name: string;
   email: string;
-  typePeople: "Física" | "Jurídica";
   cpfCnpj: string;
-  addOwn: boolean;
-  Own: {
-    name: string;
-    email: string;
-    cpfCnpj: string;
-  };
-  authorization: string;
-  creacau: string;
-  responsibleTechnical: "Engenheiro" | "Arquiteto";
   address: string;
   subdivision: string;
   block: string;
   lot: string;
   number: string;
-  purposeOfWork: string;
-  landArea: string;
+  phone: string;
+  officeFunction: string;
+  department: string;
 }
 
 const profile: React.FC<CadastroFormProps> = ({ onSubmit }) => {
   const [formData, setFormData] = useState<CadastroFormData>({
     name: "",
     email: "",
-    typePeople: "Física",
     cpfCnpj: "",
-    addOwn: false,
-    Own: {
-      name: "",
-      email: "",
-      cpfCnpj: "",
-    },
-    authorization: "",
-    creacau: "",
-    responsibleTechnical: "Engenheiro",
     address: "",
     subdivision: "",
     block: "",
     lot: "",
     number: "",
-    purposeOfWork: "",
-    landArea: "",
+    phone: "",
+    officeFunction: "",
+    department: ""
   });
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -59,26 +41,6 @@ const profile: React.FC<CadastroFormProps> = ({ onSubmit }) => {
     setFormData({
       ...formData,
       [name]: value,
-    });
-  };
-
-  const handleresponsibleTechnicalChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    const { value } = event.target;
-    setFormData({
-      ...formData,
-      responsibleTechnical: value as "Engenheiro" | "Arquiteto",
-    });
-  };
-
-  const handletypePeopleChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    const { value } = event.target;
-    setFormData({
-      ...formData,
-      typePeople: value as "Física" | "Jurídica",
     });
   };
 
@@ -90,12 +52,12 @@ const profile: React.FC<CadastroFormProps> = ({ onSubmit }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div id="container">
-      <div>
-      <Header title=""/>
-      <SideBar title=""/>
-      </div>
+        <div>
+          <Header title="" />
+          <SideBar title="" />
+        </div>
         <div className="ownerData">
-          <span className="line-with-name">Dados do Proprietário</span>
+          <span className="line-with-name">Dados pessoais</span>
           <div className="flex-container">
             <input
               type="text"
@@ -118,10 +80,31 @@ const profile: React.FC<CadastroFormProps> = ({ onSubmit }) => {
               value={formData.cpfCnpj}
               onChange={handleInputChange}
             />
+            <input
+              type="text"
+              placeholder="Telefone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleInputChange}
+            />
+            <input
+              type="text"
+              placeholder="Departamento"
+              name="department"
+              value={formData.department}
+              onChange={handleInputChange}
+            />
+            <input
+              type="text"
+              placeholder="Cargo/Função"
+              name="officeFunction"
+              value={formData.officeFunction}
+              onChange={handleInputChange}
+            />
           </div>
         </div>
         <div className="addresData">
-          <span className="line-with-name">Dados de endereço</span>
+          <span className="line-with-name">Dados de endereço/Contato</span>
           <input
             type="text"
             placeholder="Endereço"
@@ -163,7 +146,7 @@ const profile: React.FC<CadastroFormProps> = ({ onSubmit }) => {
           </div>
         </div>
         <button className="RegistrationProcessButton" type="submit">
-          Cadastrar processo
+          Salvar
         </button>
       </div>
     </form>
