@@ -10,6 +10,7 @@ import Resizing from '../screens/resizing'
 import ProjectPermit from '../screens/projectPermit'
 import ConstructionPermit from '../screens/constructionPermit';
 import RegularizationPermit from '../screens/regularizationPermit';
+import CondominiumSituation from '../screens/condominiumSituation';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -26,6 +27,7 @@ const AppRoutes: React.FC = () => {
         <Route path='/ProjectPermit' element={< ProjectPermit/>} />
         <Route path='/ConstructionPermit' element={< ConstructionPermit/>} />
         <Route path='/RegularizationPermit' element={< RegularizationPermit/>} />
+        <Route path='/CondominiumSituation' element={< CondominiumSituation/>} />
       </Routes>
     </Router>
   );
