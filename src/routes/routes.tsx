@@ -2,13 +2,14 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Home } from '../screens/home';
 import Login  from '../screens/login/'
 import  Register  from '../screens/register'
-import Principal from '../screens/principal/index'
-import AlvaraConstrucao from '../screens/alvaraConstrucao/index'
-import  AlvaraRegularizacao  from '../screens/alvaraRegularizacao/index'
-import  Condominio  from '../screens/condominio/index'
-import Resizing from '../screens/resizing/index'
-import ProjectPermit from '../screens/projectPermit/index'
-import ConstructionPermit from '../screens/constructionPermit/index';
+import Principal from '../screens/principal'
+import AlvaraConstrucao from '../screens/alvaraConstrucao'
+import  AlvaraRegularizacao  from '../screens/alvaraRegularizacao'
+import  Condominio  from '../screens/condominio'
+import Resizing from '../screens/resizing'
+import ProjectPermit from '../screens/projectPermit'
+import ConstructionPermit from '../screens/constructionPermit';
+import RegularizationPermit from '../screens/regularizationPermit';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const AppRoutes: React.FC = () => {
         <Route path='/Resizing' element={<Resizing />} />
         <Route path='/ProjectPermit' element={< ProjectPermit/>} />
         <Route path='/ConstructionPermit' element={< ConstructionPermit/>} />
+        <Route path='/RegularizationPermit' element={< RegularizationPermit/>} />
       </Routes>
     </Router>
   );
