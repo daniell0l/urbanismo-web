@@ -1,0 +1,137 @@
+html {
+    background: #fff;
+  }
+  
+  #process {
+    width: 100%;
+    height: 100vh;
+    border-radius: 10px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-left: 40px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  }
+  
+  
+  .navbar {
+    display: flex;
+    margin: 10px 30px;
+  }
+  
+  .procesSearch {
+    display: flex;
+  }
+  
+  .protocolAddres select {
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    background-color: #fff;
+    margin-left: 30px;
+  }
+  
+  .procesSituation select {
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    background-color: #fff;
+    margin-left: 30px;
+    width: 350px;
+  }
+  
+  .procesSituation select:hover,
+  .protocolAddres select:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .protocolAddres select {
+    width: 400px;
+  }
+  
+  .Search input {
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    background-color: #fff;
+    margin-right: 20px;
+    margin-left: 55px;
+  }
+  
+  .Search button {
+    padding: 10px 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .Search button:hover {
+    background-color: #4a9ef8;
+  }
+  
+  .Search-result {
+    height: 1000px;
+  }
+  
+  .Search-result table {
+    height: 1000px;
+    margin-top: 10px;
+    margin-left: 60px;
+    width: 90%;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+  }
+  
+  .Search-result tr {
+    background: #fff;
+    border-collapse: collapse;
+  }
+  
+  .Search-result table th {
+    color: #727272;
+    padding: 10px 0px 10px 0px;
+  }
+  
+  .Search-result table th:hover {
+    background: #f5f5f5;
+  }
+  
+  .link-temporario {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .procesSearch,
+    .procesSituation,
+    .protocolAddres {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .procesSituation select,
+    .protocolAddres select,
+    .Search input {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    
+    .Search-result table {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+  
