@@ -5,12 +5,12 @@ import Header from '../../components/header';
 import SideBar from "../../components/sideBar";
 
 interface Result {
-    id: number;
-    ir: string;
-    proprietors: string;
-    address: string;
-    district: string;
-    data: string;
+    name: string;
+    department: string;
+    positionFunction: string;
+    email: string;
+    date: string;
+    activateDeactivate: string;
 }
 
 const listUserSelect = [
@@ -46,17 +46,24 @@ const listUser: React.FC = () => {
     const handleSearch = () => {
         const filteredResults = results.filter(
             (result) =>
-                result.ir.toLowerCase().includes(formState.searchTerm.toLowerCase()) ||
-                result.proprietors
+                result.name
                     .toLowerCase()
                     .includes(formState.searchTerm.toLowerCase()) ||
-                result.address
+                result.department
                     .toLowerCase()
                     .includes(formState.searchTerm.toLowerCase()) ||
-                result.district
+                result.positionFunction
                     .toLowerCase()
                     .includes(formState.searchTerm.toLowerCase()) ||
-                result.data.toLowerCase().includes(formState.searchTerm.toLowerCase())
+                result.email
+                    .toLowerCase()
+                    .includes(formState.searchTerm.toLowerCase()) ||
+                result.date
+                    .toLowerCase()
+                    .includes(formState.searchTerm.toLowerCase()) ||
+                result.activateDeactivate
+                    .toLowerCase()
+                    .includes(formState.searchTerm.toLowerCase())
         );
 
         setResults(filteredResults);
@@ -74,7 +81,7 @@ const listUser: React.FC = () => {
                 <div className="procesSearch">
                     <div className="protocolAddres">
                         <select
-                            name="protocolAddres"
+                            name="listUser"
                             value={formState.listUser}
                             onChange={handleChange}
                         >
@@ -112,13 +119,13 @@ const listUser: React.FC = () => {
                     </thead>
                     <tbody>
                         {results.map((result) => (
-                            <tr key={result.id}>
-                                <td>{result.id}</td>
-                                <td>{result.ir}</td>
-                                <td>{result.proprietors}</td>
-                                <td>{result.address}</td>
-                                <td>{result.district}</td>
-                                <td>{result.data}</td>
+                            <tr key={result.name}>
+                                <td>{result.name}</td>
+                                <td>{result.department}</td>
+                                <td>{result.positionFunction}</td>
+                                <td>{result.email}</td>
+                                <td>{result.date}</td>
+                                <td>{result.activateDeactivate}</td>
                                 <td>Actions</td>
                             </tr>
                         ))}
