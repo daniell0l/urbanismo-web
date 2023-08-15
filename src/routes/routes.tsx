@@ -13,6 +13,7 @@ import RegularizationPermit from '../screens/regularizationPermit';
 import CondominiumSituation from '../screens/condominiumSituation';
 import ResizingSituation from '../screens/resizingSituation';
 import ListUser from '../screens/listUser';
+import ListClients from '../screens/listClients';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -32,6 +33,7 @@ const AppRoutes: React.FC = () => {
         <Route path='/CondominiumSituation' element={< CondominiumSituation/>} />
         <Route path='/ResizingSituation' element={< ResizingSituation/>} />
         <Route path='/ListUser' element={<ListUser  />} />
+        <Route path='/ListClients' element={<ListClients  />} />
       </Routes>
     </Router>
   );
