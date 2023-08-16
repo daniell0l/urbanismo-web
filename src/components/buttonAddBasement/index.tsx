@@ -9,7 +9,7 @@ const AdicionarPavimentoButton = () => {
 
   const handleRemoverPavimento = (index) => {
     if (pavimentos.length === 1) {
-      return; // Não remover o último pavimento
+      return;
     }
     const novosPavimentos = [...pavimentos];
     novosPavimentos.splice(index, 1);
