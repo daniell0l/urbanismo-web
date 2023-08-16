@@ -2,8 +2,7 @@ import "./style.css";
 import React, { useState } from "react";
 import logoRegister from "../../assets/imgs/logoWide.png";
 import { uf } from "../../utils/states";
-import { api } from "../../services/apiService";
-// import axios from "axios";
+import axios from "axios";
 // import * as yup from 'yup';
 
 const RegistrationPage: React.FC = () => {
@@ -22,7 +21,7 @@ const RegistrationPage: React.FC = () => {
   const [phone, setPhone] = useState("");
   const [complement, setComplement] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  // const apiUrl = "http://localhost:3000";
+  const apiUrl = "http://localhost:3000";
 
   const handleRegistration = async () => {
     const externalClientData = {
@@ -47,7 +46,7 @@ const RegistrationPage: React.FC = () => {
     };
 
     try {
-      const response = await api.post("/external-clients", {
+      const response = await axios.post( apiUrl + "/external-clients", {
         externalClient: externalClientData,
         address: addressData,
       });
@@ -56,7 +55,7 @@ const RegistrationPage: React.FC = () => {
     } catch (error) {
       console.error(error, "Erro ao cadastrar:");
       setErrorMessage(
-        "Erro ao cadastrar. Por favor, tente novamente mais tarde."
+        "Erro ao cadastrar. Por favor, verifique todos os campos."
       );
     }
   };
@@ -173,7 +172,7 @@ const RegistrationPage: React.FC = () => {
             required
             value={AddressNumber}
             onChange={(e) => setAddressNumber(e.target.value)}
-            placeholder="insira um número"
+            placeholder="insira o número da sua residencia"
           />
           <label htmlFor="AddresCep">Cep:</label>
           <input
