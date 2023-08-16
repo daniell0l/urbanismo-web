@@ -26,7 +26,7 @@ const protocolAddres = [
     "Proprietários",
 ];
 
-const resizingSituation: React.FC = () => {
+export const ResizingSituation: React.FC = () => {
     const [formState, setFormState] = useState<{
         procesSituation: string;
         protocolAddres: string;
@@ -74,7 +74,7 @@ const resizingSituation: React.FC = () => {
                 <Header title="" />
             </div>
             <div>
-                <SideBar title="" />
+                <SideBar></SideBar>
             </div>
             <div className="navbar">
                 <div className="procesSearch">
@@ -149,4 +149,3 @@ const resizingSituation: React.FC = () => {
     );
 };
 
-export default resizingSituation;

@@ -4,8 +4,6 @@ import AddOwnButton from "../../components/AddOwner";
 import AddTechinical from "../../components/AddTechinical";
 import Header from "../../components/header";
 import SideBar from "../../components/sideBar";
-import { FORMERR } from "dns";
-import { eventNames } from "process";
 
 interface CadastroFormProps {
   onSubmit: (data: CadastroFormData) => void;
@@ -39,7 +37,7 @@ interface CadastroFormData {
   phone: string;
 }
 
-const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
+export const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
   const [formData, setFormData] = useState<CadastroFormData>({
     name: "",
     email: "",
@@ -126,7 +124,7 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
       <div id="container">
         <div>
           <Header title="" />
-          <SideBar title="" />
+          <SideBar></SideBar>
         </div>
         <div className="ownerData">
           <span className="line-with-name">Dados do Proprietário</span>
@@ -313,4 +311,3 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
   );
 };
 
-export default CadastroForm;

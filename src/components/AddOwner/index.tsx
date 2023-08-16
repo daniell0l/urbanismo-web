@@ -6,7 +6,7 @@ interface Own {
   creacau: string;
 }
 
-const AddOwnButton: React.FC = () => {
+export const AddOwnButton: React.FC = () => {
   const [showInputs, setShowInputs] = useState(false);
   const [Own, setOwn] = useState<Own>({
     nome: '',

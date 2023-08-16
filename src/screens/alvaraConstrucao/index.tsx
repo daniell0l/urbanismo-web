@@ -155,7 +155,7 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
       <div id="container">
       <div>
       <Header title=""/>
-      <SideBar title=""/>
+      <SideBar></SideBar>
       </div>
         <div className="ownerData">
           <span className="line-with-name">Dados do Proprietário</span>

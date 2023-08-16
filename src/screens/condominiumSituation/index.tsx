@@ -12,6 +12,12 @@ interface Result {
     data: string;
 }
 
+interface resultCondominium {
+    procesSituation: string;
+    protocolAddres: string;
+    searchTerm: string;
+}
+
 const procesSituation = [
     "A ser analisado",
     "Em estado de análise",
@@ -26,12 +32,8 @@ const protocolAddres = [
     "Proprietários",
 ];
 
-const condominiumSituation: React.FC = () => {
-    const [formState, setFormState] = useState<{
-        procesSituation: string;
-        protocolAddres: string;
-        searchTerm: string;
-    }>({
+export const CondominiumSituation: React.FC = () => {
+    const [formState, setFormState] = useState<resultCondominium>({
         procesSituation: "",
         protocolAddres: "",
         searchTerm: "",
@@ -74,7 +76,7 @@ const condominiumSituation: React.FC = () => {
                 <Header title="" />
             </div>
             <div>
-                <SideBar title="" />
+            <SideBar></SideBar>
             </div>
             <div className="navbar">
                 <div className="procesSearch">
@@ -149,4 +151,3 @@ const condominiumSituation: React.FC = () => {
     );
 };
 
-export default condominiumSituation;

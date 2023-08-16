@@ -26,7 +26,7 @@ const protocolAddres = [
     "Proprietários",
 ];
 
-const projectPermit: React.FC = () => {
+export const ProjectPermit: React.FC = () => {
     const [formState, setFormState] = useState<{
         procesSituation: string;
         protocolAddres: string;
@@ -74,7 +74,7 @@ const projectPermit: React.FC = () => {
                 <Header title="" />
             </div>
             <div>
-                <SideBar title="" />
+                <SideBar></SideBar>
             </div>
             <div className="navbar">
                 <div className="procesSearch">
@@ -149,4 +149,3 @@ const projectPermit: React.FC = () => {
     );
 };
 
-export default projectPermit;

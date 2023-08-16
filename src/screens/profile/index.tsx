@@ -21,7 +21,7 @@ interface CadastroFormData {
   department: string;
 }
 
-const profile: React.FC<CadastroFormProps> = ({ onSubmit }) => {
+export const Profile: React.FC<CadastroFormProps> = ({ onSubmit }) => {
   const [formData, setFormData] = useState<CadastroFormData>({
     name: "",
     email: "",
@@ -54,7 +54,7 @@ const profile: React.FC<CadastroFormProps> = ({ onSubmit }) => {
       <div id="container">
         <div>
           <Header title="" />
-          <SideBar title="" />
+          <SideBar></SideBar>
         </div>
         <div className="ownerData">
           <span className="line-with-name">Dados pessoais</span>
@@ -153,4 +153,3 @@ const profile: React.FC<CadastroFormProps> = ({ onSubmit }) => {
   );
 };
 
-export default profile;

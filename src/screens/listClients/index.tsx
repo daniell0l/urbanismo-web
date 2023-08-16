@@ -19,7 +19,7 @@ const listClientsSelect = [
 ];
 
 
-const listClients: React.FC = () => {
+export const ListClients: React.FC = () => {
     const [formState, setFormState] = useState<{
         listclients: string;
         searchTerm: string;
@@ -69,7 +69,7 @@ const listClients: React.FC = () => {
                 <Header title="" />
             </div>
             <div>
-                <SideBar title="" />
+                <SideBar></SideBar>
             </div>
             <div className="navbar">
                 <div className="procesSearch">
@@ -126,5 +126,3 @@ const listClients: React.FC = () => {
         </div>
     );
 };
-
-export default listClients;

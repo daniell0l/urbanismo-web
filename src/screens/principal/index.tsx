@@ -28,7 +28,7 @@ const optionsProtocol = [
   "Proprietários",
 ];
 
-const TableComponent: React.FC = () => {
+export const TableComponent: React.FC = () => {
   const [formState, setFormState] = useState<{
     selectedConstruction: string;
     selectedProtocol: string;
@@ -76,7 +76,7 @@ const TableComponent: React.FC = () => {
       <Header title=""/>
       </div>
       <div>
-      <SideBar title="" />
+      <SideBar></SideBar>
       </div>
       <div className="navbar">
         <div className="construction-protocol">
@@ -151,4 +151,3 @@ const TableComponent: React.FC = () => {
   );
 };
 
-export default TableComponent;

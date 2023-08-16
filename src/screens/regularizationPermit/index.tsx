@@ -26,7 +26,7 @@ const protocolAddres = [
     "Proprietários",
 ];
 
-const regularizationPermit: React.FC = () => {
+export const RegularizationPermit: React.FC = () => {
     const [formState, setFormState] = useState<{
         procesSituation: string;
         protocolAddres: string;
@@ -74,7 +74,7 @@ const regularizationPermit: React.FC = () => {
                 <Header title="" />
             </div>
             <div>
-                <SideBar title="" />
+                <SideBar></SideBar>
             </div>
             <div className="navbar">
                 <div className="procesSearch">
@@ -149,4 +149,3 @@ const regularizationPermit: React.FC = () => {
     );
 };
 
-export default regularizationPermit;

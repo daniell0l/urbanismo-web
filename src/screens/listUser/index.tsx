@@ -22,7 +22,7 @@ const listUserSelect = [
 ];
 
 
-const listUser: React.FC = () => {
+export const ListUser: React.FC = () => {
     const [formState, setFormState] = useState<{
         listUser: string;
         searchTerm: string;
@@ -75,7 +75,7 @@ const listUser: React.FC = () => {
                 <Header title="" />
             </div>
             <div>
-                <SideBar title="" />
+                <SideBar></SideBar>
             </div>
             <div className="navbar">
                 <div className="procesSearch">
@@ -136,4 +136,3 @@ const listUser: React.FC = () => {
     );
 };
 
-export default listUser;
