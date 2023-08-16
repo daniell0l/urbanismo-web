@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
 
 const AdicionarPavimentoButton = () => {
   const [pavimentos, setPavimentos] = useState<string[]>(['']);
@@ -7,7 +7,7 @@ const AdicionarPavimentoButton = () => {
     setPavimentos([...pavimentos, '']);
   };
 
-  const handleRemoverPavimento = (index) => {
+  const handleRemoverPavimento = (index: number) => {
     if (pavimentos.length === 1) {
       return;
     }
@@ -16,7 +16,7 @@ const AdicionarPavimentoButton = () => {
     setPavimentos(novosPavimentos);
   };
 
-  const handleInputChange = (event, index) => {
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>, index: number) => {
     const novosPavimentos = [...pavimentos];
     novosPavimentos[index] = event.target.value;
     setPavimentos(novosPavimentos);
