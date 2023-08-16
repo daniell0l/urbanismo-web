@@ -1,19 +1,15 @@
 import React, { useState } from "react";
-import "./style.css"
+import "./style.css";
 
-interface PavementData {
+interface UnitData {
   areaConstruir: string;
   areaExistente: string;
   areaExclusiva: string;
   areaComum: string;
-}
-
-interface UnitData {
   loteamento: string;
   quadra: string;
   lote: string;
   numero: string;
-  pavements: PavementData[];
   processType: string;
 }
 
@@ -30,8 +26,11 @@ const AddUnitButton: React.FC = () => {
         quadra: "",
         lote: "",
         numero: "",
-        pavements: [],
         processType: "",
+        areaConstruir: "",
+        areaExistente: "",
+        areaExclusiva: "",
+        areaComum: "",
       },
     ]);
   };
@@ -41,19 +40,6 @@ const AddUnitButton: React.FC = () => {
       setUnitCount((prevCount) => prevCount - 1);
       setUnitData((prevData) => prevData.slice(0, prevData.length - 1));
     }
-  };
-
-  const handleAddPavement = (index: number) => {
-    setUnitData((prevData) => {
-      const newData = [...prevData];
-      newData[index].pavements.push({
-        areaConstruir: "",
-        areaExistente: "",
-        areaExclusiva: "",
-        areaComum: "",
-      });
-      return newData;
-    });
   };
 
   const handleChange = (
@@ -67,7 +53,6 @@ const AddUnitButton: React.FC = () => {
       return newData;
     });
   };
-
   return (
     <div>
       <button onClick={handleAddUnitClick}>+</button>
@@ -163,7 +148,7 @@ const AddUnitButton: React.FC = () => {
           </div>
           {unitData[index]?.processType && (
             <div>
-              <button onClick={() => handleAddPavement(index)}>
+              <button onClick={() => handleAddUnitClick()}>
                 Adicionar pavimento
               </button>
             </div>
