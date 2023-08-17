@@ -235,7 +235,7 @@ export const AlvaraConstrucao: React.FC = () => {
           />
           <input
             type="text"
-            placeholder="Taxa de Permeabilidade (%)"
+            placeholder="Àrea permeável (%)"
             name="permeabilityRate"
             value={formData.permeabilityRate}
             onChange={handleInputChange}

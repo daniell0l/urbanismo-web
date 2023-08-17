@@ -212,7 +212,6 @@ const CadastroForm: React.FC= () => {
               <option value="commercial">Comercial</option>
               <option value="mixed">Misto</option>
               <option value="institutional">Institucional</option>
-              <option value="shed">Galão</option>
               <option value="industrial">Industrial</option>
             </select>
           </div>
