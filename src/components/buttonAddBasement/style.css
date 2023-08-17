@@ -1,41 +1,28 @@
-
-.AddBasemente {
-    width: 100%;
-    height: auto;
-    padding: 10px;
-    box-sizing: border-box;
-    float: left;
-    /* border: 1px solid red; */
-    margin-left: 40px;
+.AddBasementeLabel {
+    margin-top: 20px;
+    position: relative;
 }
 
-.AddBasemente button {
-    width: 40px;
-    height: 30px;
-    background: #3a86ff;
-    border: none;
-    font-size: 1em;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 5px;
-    justify-content: center; 
-    align-items: center;
+.AddBasementeLabel label{
+    position: relative;
+    left: 50px;
 }
 
-.AddBasemente input{
-    width: 35%;
+.AddBasementeLabel button {
     padding: 12px;
-    margin-top: 5px;
     border-radius: 5px;
     margin-bottom: 10px;
     font-size: 1em;
-    border: 1px solid #ccc;
-    margin-left: 60px;
+    margin-left: 10px;
+    background: #3a86ff;
+    color: #fff;
+    border: none;
     position: relative;
-    right: 86px;
-  }
+    top: -55px;
+    left: 500px;
+}
 
-  .AddBasementeLabel {
-    margin-top: 10px;
-    margin-left: 25px;
-  }
+.AddBasementeLabel input{
+    position: relative;
+    left: -60px;
+}
