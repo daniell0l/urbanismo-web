@@ -5,6 +5,7 @@ import AddOwnButton from "../../components/AddOwner";
 import AddTechinical from "../../components/AddTechinical";
 import Header from '../../components/header';
 import SideBar from "../../components/sideBar";
+import AddGroundFloorButton from "../../components/buttonGroundFloor"
 
 
 interface CadastroFormData {
@@ -320,7 +321,7 @@ export const AlvaraConstrucao: React.FC = () => {
           />
           <label className="AddBasementeLabel">
             Área construir - Pavimento Térreo(m²)
-            <AdicionarPavimentoButton></AdicionarPavimentoButton>
+            <AddGroundFloorButton></AddGroundFloorButton>
           </label>
           <label className="AddBasementeLabel">
             Área Subsolo a Construir(m²)
