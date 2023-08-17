@@ -23,7 +23,7 @@ const AddGroundFloorButton = () => {
   };
 
   return (
-    <div>
+    <div className='AddBasemente'>
       {pavimentos.map((pavimento, index) => (
         <div key={index}>
           <input

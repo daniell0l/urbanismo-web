@@ -1,27 +1,16 @@
 import React, { useState } from "react";
-import "./style.css";
 import AdicionarPavimentoButton from "../../components/buttonAddBasement";
-import AddOwnButton from "../../components/AddOwner";
-import AddTechinical from "../../components/AddTechinical";
 import Header from '../../components/header';
 import SideBar from "../../components/sideBar";
 import AddGroundFloorButton from "../../components/buttonGroundFloor"
+import AddOwnButton from "../../components/AddOwner";
+
 
 
 interface CadastroFormData {
   name: string;
-  email: string;
-  typePeople: "Física" | "Jurídica";
   cpfCnpj: string;
-  addOwn: boolean;
-  Own: {
-    name: string;
-    email: string;
-    cpfCnpj: string;
-  };
-  authorization: string;
   creacau: string;
-  responsibleTechnical: "Engenheiro" | "Arquiteto";
   address: string;
   subdivision: string;
   block: string;
@@ -56,18 +45,8 @@ interface CadastroFormData {
 export const AlvaraConstrucao: React.FC = () => {
   const [formData, setFormData] = useState<CadastroFormData>({
     name: "",
-    email: "",
-    typePeople: "Física",
     cpfCnpj: "",
-    addOwn: false,
-    Own: {
-      name: "",
-      email: "",
-      cpfCnpj: "",
-    },
-    authorization: "",
     creacau: "",
-    responsibleTechnical: "Engenheiro",
     address: "",
     subdivision: "",
     block: "",
@@ -100,26 +79,6 @@ export const AlvaraConstrucao: React.FC = () => {
     });
   };
 
-  const handleresponsibleTechnicalChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    const { value } = event.target;
-    setFormData({
-      ...formData,
-      responsibleTechnical: value as "Engenheiro" | "Arquiteto",
-    });
-  };
-
-  const handletypePeopleChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    const { value } = event.target;
-    setFormData({
-      ...formData,
-      typePeople: value as "Física" | "Jurídica",
-    });
-  };
-
   const handlePurposeWork = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const { value } = event.target;
     setFormData({
@@ -146,10 +105,10 @@ export const AlvaraConstrucao: React.FC = () => {
   return (
     <form>
       <div id="container">
-      <div>
-      <Header title=""/>
-      <SideBar></SideBar>
-      </div>
+        <div>
+          <Header title="" />
+          <SideBar></SideBar>
+        </div>
         <div className="ownerData">
           <span className="line-with-name">Dados do Proprietário</span>
           <div className="flex-container">
@@ -158,35 +117,25 @@ export const AlvaraConstrucao: React.FC = () => {
               placeholder="Nome"
               name="name"
               value={formData.name}
-              onChange={handleInputChange}
+              readOnly
             />
             <input
-              type="email"
-              placeholder="Email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
+              type="creaCau"
+              placeholder="Crea/Cau"
+              name="creaCau"
+              value={formData.creacau}
+              readOnly
             />
+            <div className="addOwn">
             <input
-              type="text"
+              type="search"
               placeholder="CPF/CNPJ"
               name="cpfCnpj"
               value={formData.cpfCnpj}
               onChange={handleInputChange}
             />
-          </div>
-          <div className="SelecttypePeople">
-            <select
-              name="typePeople"
-              value={formData.typePeople}
-              onChange={handletypePeopleChange}
-            >
-              <option value="Física">Física</option>
-              <option value="Jurídica">Jurídica</option>
-            </select>
-          </div>
-          <div className="addOwn">
             <AddOwnButton></AddOwnButton>
+            </div>
           </div>
         </div>
         <div className="projectData">
@@ -200,25 +149,11 @@ export const AlvaraConstrucao: React.FC = () => {
               onChange={handleInputChange}
             />
             <input
-              type="text"
-              placeholder="CPF/CNPJ"
+              type="search"
+              placeholder="Pesquisar CPF/CNPJ"
               name="cpfCnpj"
               value={formData.cpfCnpj}
-              onChange={handleInputChange}
             />
-          </div>
-          <div className="SelectTechinical">
-            <select
-              name="responsibleTechnical"
-              value={formData.responsibleTechnical}
-              onChange={handleresponsibleTechnicalChange}
-            >
-              <option value="Física">Engenheiro</option>
-              <option value="Jurídica">Arquiteto</option>
-            </select>
-          </div>
-          <div className="addTechinical">
-            <AddTechinical></AddTechinical>
           </div>
         </div>
         <div className="addresData">
@@ -278,7 +213,6 @@ export const AlvaraConstrucao: React.FC = () => {
               <option value="commercial">Comercial</option>
               <option value="mixed">Misto</option>
               <option value="institutional">Institucional</option>
-              <option value="shed">Galão</option>
               <option value="industrial">Industrial</option>
             </select>
           </div>
@@ -319,22 +253,24 @@ export const AlvaraConstrucao: React.FC = () => {
             readOnly
             value={formData.calculateTotal}
           />
-          <label className="AddBasementeLabel">
-            Área construir - Pavimento Térreo(m²)
-            <AddGroundFloorButton></AddGroundFloorButton>
-          </label>
-          <label className="AddBasementeLabel">
-            Área Subsolo a Construir(m²)
-            <AdicionarPavimentoButton></AdicionarPavimentoButton>
-          </label>
-          <label className="AddBasementeLabel">
-            Área Subsolo Existente(m²)
-            <AdicionarPavimentoButton></AdicionarPavimentoButton>
-          </label>
-          <label className="AddBasementeLabel">
-            Área Deck ou Piscina
-            <AdicionarPavimentoButton></AdicionarPavimentoButton>
-          </label>
+          <div className="AddBasementeLabel">
+            <label className="AddBasementeLabel">
+              Área construir - Pavimento Térreo(m²)
+              <AddGroundFloorButton></AddGroundFloorButton>
+            </label>
+            <label className="AddBasementeLabel">
+              Área Subsolo a Construir(m²)
+              <AdicionarPavimentoButton></AdicionarPavimentoButton>
+            </label>
+            <label className="AddBasementeLabel">
+              Área Subsolo Existente(m²)
+              <AdicionarPavimentoButton></AdicionarPavimentoButton>
+            </label>
+            <label className="AddBasementeLabel">
+              Área Deck ou Piscina
+              <AdicionarPavimentoButton></AdicionarPavimentoButton>
+            </label>
+          </div>
         </div>
         <button className="RegistrationProcessButton" type="submit">
           Cadastrar processo

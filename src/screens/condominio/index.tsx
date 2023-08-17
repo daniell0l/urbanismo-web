@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./style.css";
 import AddOwnButton from "../../components/AddOwner";
 import AddTechinical from "../../components/AddTechinical";
 import AddUnity from "../../components/AddUnity";
