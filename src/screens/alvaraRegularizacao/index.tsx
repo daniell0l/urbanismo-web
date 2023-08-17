@@ -6,9 +6,6 @@ import AddTechinical from "../../components/AddTechinical";
 import Header from "../../components/header";
 import SideBar from "../../components/sideBar";
 
-interface CadastroFormProps {
-  onSubmit: (data: CadastroFormData) => void;
-}
 
 interface CadastroFormData {
   name: string;
@@ -55,7 +52,7 @@ interface CadastroFormData {
   areaToBuildGroundFloors: string[];
 }
 
-const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
+const CadastroForm: React.FC = () => {
   const [formData, setFormData] = useState<CadastroFormData>({
     name: "",
     email: "",
@@ -145,13 +142,8 @@ const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
     });
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    onSubmit(formData);
-  };
-
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <div id="container">
         <div>
           <div>

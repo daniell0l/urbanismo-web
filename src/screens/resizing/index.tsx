@@ -5,10 +5,6 @@ import AddTechinical from "../../components/AddTechinical";
 import Header from "../../components/header";
 import SideBar from "../../components/sideBar";
 
-interface CadastroFormProps {
-  onSubmit: (data: CadastroFormData) => void;
-}
-
 interface CadastroFormData {
   name: string;
   email: string;
@@ -37,7 +33,7 @@ interface CadastroFormData {
   phone: string;
 }
 
-export const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
+export const Resizing: React.FC = () => {
   const [formData, setFormData] = useState<CadastroFormData>({
     name: "",
     email: "",
@@ -104,23 +100,18 @@ export const CadastroForm: React.FC<CadastroFormProps> = ({ onSubmit }) => {
     });
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    onSubmit(formData);
-  };
+
 
   const handleTotallandArea = (event: React.FormEvent) => {
     event.preventDefault();
-    onSubmit(formData);
   };
 
   const handleNumberofLots = (event: React.FormEvent) => {
     event.preventDefault();
-    onSubmit(formData);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <div id="container">
         <div>
           <Header title="" />

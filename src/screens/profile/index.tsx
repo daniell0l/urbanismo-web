@@ -3,10 +3,6 @@ import "../alvaraConstrucao/style.css";
 import Header from '../../components/header';
 import SideBar from "../../components/sideBar";
 
-interface CadastroFormProps {
-  onSubmit: (data: CadastroFormData) => void;
-}
-
 interface CadastroFormData {
   name: string;
   email: string;
@@ -21,7 +17,7 @@ interface CadastroFormData {
   department: string;
 }
 
-export const Profile: React.FC<CadastroFormProps> = ({ onSubmit }) => {
+export const Profile: React.FC = () => {
   const [formData, setFormData] = useState<CadastroFormData>({
     name: "",
     email: "",
@@ -44,13 +40,8 @@ export const Profile: React.FC<CadastroFormProps> = ({ onSubmit }) => {
     });
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    onSubmit(formData);
-  };
-
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <div id="container">
         <div>
           <Header title="" />

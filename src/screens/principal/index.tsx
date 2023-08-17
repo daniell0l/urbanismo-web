@@ -28,7 +28,7 @@ const optionsProtocol = [
   "Proprietários",
 ];
 
-export const TableComponent: React.FC = () => {
+export const Principal: React.FC = () => {
   const [formState, setFormState] = useState<{
     selectedConstruction: string;
     selectedProtocol: string;
