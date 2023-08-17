@@ -34,7 +34,7 @@ const AdicionarPavimentoButton = () => {
           />
         </div>
       ))}
-      <button onClick={handleAdicionarPavimento}>+</button>
+      <button type="button" onClick={handleAdicionarPavimento}>+</button>
       {pavimentos.length > 1 && (
         <button onClick={() => handleRemoverPavimento(pavimentos.length - 1)}>-</button>
       )}
