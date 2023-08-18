@@ -1,7 +1,6 @@
 import { useState, ChangeEvent } from 'react';
-import "./style.css";
 
-const AdicionarPavimentoButton = () => {
+const AddGroundFloorButton = () => {
   const [pavimentos, setPavimentos] = useState<string[]>(['']);
 
   const handleAdicionarPavimento = () => {
@@ -29,7 +28,7 @@ const AdicionarPavimentoButton = () => {
         <div key={index}>
           <input
             type="text"
-            placeholder={`${index + 1}º Pavimento`}
+            placeholder={`${index + 1}º Térreo`}
             value={pavimento}
             onChange={(event) => handleInputChange(event, index)}
           />
@@ -37,10 +36,10 @@ const AdicionarPavimentoButton = () => {
       ))}
       <button type="button" onClick={handleAdicionarPavimento}>+</button>
       {pavimentos.length > 1 && (
-        <button type="button" onClick={() => handleRemoverPavimento(pavimentos.length - 1)}>-</button>
+        <button onClick={() => handleRemoverPavimento(pavimentos.length - 1)}>-</button>
       )}
     </div>
   );
 };
 
-export default AdicionarPavimentoButton;
+export default AddGroundFloorButton;

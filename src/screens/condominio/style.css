@@ -1,10 +1,18 @@
 #container {
-  max-width: 1200px;
   width: 100%;
-  height: auto;
+  height: 100vh;
+  border-radius: 10px;
   background: #fff;
+  margin-top: 100px;
+  margin-left: 50px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  "Lucida Sans", Arial, sans-serif;
+}
+
+select {
+  background: #fff;
+  color: #696969;
+  border: 1px solid #ccc;
 }
 
 .ownerData,
@@ -14,6 +22,7 @@
   height: auto;
   padding: 10px;
   box-sizing: border-box;
+  margin-left: 40px;
 }
 
 .ownerData .flex-container,
@@ -30,6 +39,7 @@
   font-size: 1em;
   border: 1px solid #ccc;
   margin-left: 20px;
+  margin-bottom: 15px;
   position: relative;
   right: 12px;
 }
@@ -49,26 +59,22 @@
 }
 
 .addresData input {
-  width: 25%;
+  width: 35%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 5px;
   margin-bottom: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
   margin-left: 20px;
+  position: relative;
+  right: 12px;
 }
 
 .addOwn {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-}
-
-.addOwn input {
-  width: 40%;
-  padding: 12px;
-  margin-top: -50px;
-  border-radius: 5px;
-  margin-bottom: 30px;
-  font-size: 1em;
-  border: 1px solid hsl(0, 0%, 80%);
-  margin-left: 20px;
 }
 
 .propertyData input {
@@ -79,7 +85,7 @@
   margin-bottom: 10px;
   font-size: 1em;
   border: 1px solid #ccc;
-  margin-left: 20px;
+  margin-left: 60px;
   position: relative;
   right: 12px;
 }
@@ -123,8 +129,8 @@
   width: 35%;
   padding: 12px;
   margin-top: 20px;
-  margin-left: 20px;
-  right: 12px;
+  margin-left: 60px;
+  right: 14px;
   position: relative;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -143,7 +149,7 @@
   width: 35%;
   padding: 12px;
   top: -55px;
-  left: 450px;
+  left: 440px;
   border-radius: 5px;
   margin-bottom: 10px;
   font-size: 1em;
@@ -156,6 +162,7 @@
 .projectData .SelectTechinical select {
   width: 35%;
   padding: 12px;
+  top: 0px;
   left: -11px;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -187,7 +194,8 @@ select {
   border-radius: 5px;
   margin-bottom: 10px;
   margin-top: 50px;
-  float: left;
+  position: relative;
+  left: 500px;
 }
 
 .RegistrationProcessButton:hover,
@@ -216,4 +224,10 @@ select {
   .addresData select {
     margin-right: 0;
   }
+}
+
+.minAddressData {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
 }

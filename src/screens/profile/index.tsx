@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../alvaraConstrucao/style.css";
+import "../condominio/style.css";
 import Header from '../../components/header';
 import SideBar from "../../components/sideBar";
 

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./style.css";
 import AddOwnButton from "../../components/AddOwner";
 import AddTechinical from "../../components/AddTechinical";
 import AddUnity from "../../components/AddUnity";
@@ -213,7 +212,6 @@ const CadastroForm: React.FC= () => {
               <option value="commercial">Comercial</option>
               <option value="mixed">Misto</option>
               <option value="institutional">Institucional</option>
-              <option value="shed">Galão</option>
               <option value="industrial">Industrial</option>
             </select>
           </div>

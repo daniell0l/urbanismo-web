@@ -1,0 +1,28 @@
+.AddBasementeLabel {
+    margin-top: 20px;
+    position: relative;
+}
+
+.AddBasementeLabel label{
+    position: relative;
+    left: 50px;
+}
+
+.AddBasementeLabel button {
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    margin-left: 10px;
+    background: #3a86ff;
+    color: #fff;
+    border: none;
+    position: relative;
+    top: -55px;
+    left: 500px;
+}
+
+.AddBasementeLabel input{
+    position: relative;
+    left: -60px;
+}
