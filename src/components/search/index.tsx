@@ -1,6 +1,4 @@
-import React from 'react';
-
-export const SearchPrincipal: React.FC = () => {
+export const SearchPrincipal = () => {
   return (
             <div>
               <input
