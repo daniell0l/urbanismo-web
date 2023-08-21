@@ -2,15 +2,8 @@ import React, { useState } from "react";
 import "./style.css";
 import Header from '../../components/header';
 import SideBar from "../../components/sideBar";
+import {SearchPrincipal} from "../../components/search"
 
-interface Result {
-  id: number;
-  ir: string;
-  proprietors: string;
-  address: string;
-  district: string;
-  data: string;
-}
 
 const optionsConstruction = [
   "Alvará de construção",
@@ -39,7 +32,6 @@ export const Principal: React.FC = () => {
     searchTerm: "",
   });
 
-  const [results, setResults] = useState<Result[]>([]);
 
   const handleChange = (
     event: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>
@@ -49,25 +41,6 @@ export const Principal: React.FC = () => {
       ...prevState,
       [name]: value,
     }));
-  };
-
-  const handleSearch = () => {
-    const filteredResults = results.filter(
-      (result) =>
-        result.ir.toLowerCase().includes(formState.searchTerm.toLowerCase()) ||
-        result.proprietors
-          .toLowerCase()
-          .includes(formState.searchTerm.toLowerCase()) ||
-        result.address
-          .toLowerCase()
-          .includes(formState.searchTerm.toLowerCase()) ||
-        result.district
-          .toLowerCase()
-          .includes(formState.searchTerm.toLowerCase()) ||
-        result.data.toLowerCase().includes(formState.searchTerm.toLowerCase())
-    );
-
-    setResults(filteredResults);
   };
 
   return (
@@ -109,14 +82,7 @@ export const Principal: React.FC = () => {
             </select>
           </div>
           <div className="Search">
-            <input
-              type="text"
-              name="searchTerm"
-              value={formState.searchTerm}
-              onChange={handleChange}
-              placeholder="Pesquisar..."
-            />
-            <button onClick={handleSearch}>Procurar</button>
+          <SearchPrincipal></SearchPrincipal>
           </div>
         </div>
       </div>
@@ -132,19 +98,6 @@ export const Principal: React.FC = () => {
               <th>Ações</th>
             </tr>
           </thead>
-          <tbody>
-            {results.map((result) => (
-              <tr key={result.id}>
-                <td>{result.id}</td>
-                <td>{result.ir}</td>
-                <td>{result.proprietors}</td>
-                <td>{result.address}</td>
-                <td>{result.district}</td>
-                <td>{result.data}</td>
-                <td>Actions</td>
-              </tr>
-            ))}
-          </tbody>
         </table>
       </div>
     </div>
