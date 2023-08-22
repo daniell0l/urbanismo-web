@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = () => {
         </div>
         {showOptions && (
           <div
-            className="absolute right-0 mt-0 bg-white border border-gray-300 shadow-md p-2 rounded-md"
+            className="absolute right-0 mt-0 bg-white shadow-md p-2 rounded-md"
             onMouseEnter={showOptionsHandler}
             onMouseLeave={hideOptionsHandler}
           >
