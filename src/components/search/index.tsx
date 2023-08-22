@@ -1,14 +1,13 @@
+import {FaSearch} from "react-icons/fa";
+import "./style.css"
+
 export const SearchPrincipal = () => {
   return (
-            <div>
-              <input
-                type="text"
-                placeholder="Pesquisar..."
-              />
-              <button>
-                Pesquisar
-              </button>
-            </div>
+    <div className="principalSearch">
+            <input type="text" placeholder="Pesquisar..." />
+            <button type="submit">
+              <FaSearch />
+            </button>
+          </div>
   );
 };
-

@@ -1,7 +1,7 @@
 .sidebar {
   width: 210px;
   height: 100vh;
-  background: #ffffff;
+  background: #fff;
   position: fixed;
   left: -150px;
   top: 60px;
@@ -16,6 +16,7 @@
 
 .sidebar.open {
   left: 0;
+  box-shadow: 1px 0px 20px 1px #b1b1b1;
 }
 
 .toggle {
@@ -34,8 +35,8 @@
   z-index: 2;
   padding: 50px 10px 1000px 50px;
   position: relative;
-  left: -20px;
-  top: 490px;
+  left: -30px;
+  top: 460px;
 }
 
 .arrow {
@@ -50,7 +51,7 @@
   width: 100%;
   position: relative;
   right: 5px;
-  top: -60px;
+  top: -100px;
 }
 
 .menu:hover {

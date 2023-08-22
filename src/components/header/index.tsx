@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import logoWide from "../../assets/imgs/logoWide.png";
-import "./style.css";
-import { FaUser } from "react-icons/fa";
+import { NavLink } from 'react-router-dom';
+import { FaUser } from 'react-icons/fa';
+import logoWide from '../../assets/imgs/logoWide.png';
+import './style.css';
 
 interface HeaderProps {
   title: string;
@@ -21,27 +22,25 @@ const Header: React.FC<HeaderProps> = () => {
   return (
     <header>
       <div className="headerUrbanismo">
-        <a href="/principal">
-        <img src={logoWide} alt="logoWide" />
-        </a>
+        <NavLink to="/principal">
+          <img src={logoWide} alt="logoWide" />
+        </NavLink>
         <div
           className="userIcon"
           onMouseEnter={showOptionsHandler}
           onMouseLeave={hideOptionsHandler}
         >
-          <div className="iconWrapper">
-            <FaUser className="customUserIcon" />
-          </div>
+          <FaUser className="customUserIcon" />
           {showOptions && (
             <div
               className="userSelector"
               onMouseEnter={showOptionsHandler}
               onMouseLeave={hideOptionsHandler}
             >
-              <select>
-                <option value="">Perfil</option>
-                <option value="">Sair</option>
-              </select>
+              <div className="relative">
+                <a href="/profile">Perfil</a>
+                <a href="#">Sair</a>
+              </div>
             </div>
           )}
         </div>
