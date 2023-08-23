@@ -1,4 +1,4 @@
-import "./style.css";
+// import "./style.css";
 import {
   FaUser,
   FaSearch,
@@ -19,7 +19,7 @@ export function Home() {
       <header>
         <nav id="navbar">
           <div className="logo">
-            <img src={logoWide} alt="lem urbanismo" />
+            <img className="w-50 h-40 mb:w-50 mb:h-40 object-contain flex" src={logoWide} alt="lem urbanismo" />
           </div>
           <ul id="navbar_lateral">
             <li>
