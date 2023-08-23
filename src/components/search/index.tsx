@@ -1,5 +1,4 @@
 import {FaSearch} from "react-icons/fa";
-import "./style.css"
 
 export const SearchPrincipal = () => {
   return (
