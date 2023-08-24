@@ -17,42 +17,40 @@ export function Home() {
   return (
     <div>
       <header>
-        <nav id="navbar">
+        <nav className="container mx-auto px-4 py-2 flex items-center justify-between">
           <div className="logo">
-            <img className="w-50 h-40 mb:w-50 mb:h-40 object-contain flex" src={logoWide} alt="lem urbanismo" />
+            <img className="w-50 h-40 mb:w-50 object-contain" src={logoWide} alt="lem urbanismo" />
           </div>
-          <ul id="navbar_lateral">
+          <ul className="flex space-x-4 border border-sky-500 rounded-full p-2">
             <li>
-              <a href="/">home</a>
+              <a className="p-2 font-bold text-blue-600 hover:text-blue-500 " href="/">Home</a>
             </li>
             <li>
-              <a href="#info_down_cad">informativo</a>
+              <a className="p-2 font-bold text-blue-600 hover:text-blue-500" href="#info_down_cad">Informativo</a>
             </li>
             <li>
-              <a href="/">downloads</a>
+              <a className="p-2 font-bold text-blue-600 hover:text-blue-500" href="/">Downloads</a>
             </li>
             <li>
-              <a href="../register">cadastro</a>
+              <a className="p-2 font-bold text-blue-600 hover:text-blue-500" href="../register">Cadastro</a>
             </li>
           </ul>
-          <div className="search-bar">
-            <input type="text" placeholder="Pesquisar..." />
-            <button type="submit">
+          <div className="search-bar flex items-center space-x-2">
+            <input className="rounded px-2 py-1 text-lg font-semibold bg-slate-300" type="text" placeholder="Pesquisar..." />
+            <button className="text-green-400 rounded-r-full">
               <FaSearch />
             </button>
           </div>
-
           <Link to="../Login" style={{ textDecoration: "none" }}>
-            <div id="login">
-              <div className="circle">
-                <FaUser size={25} color="3a28a" />
+            <div id="login" className="flex relative items-center space-x-2 h-14 p-2  bg-gradient-to-r from-blue-500 to-green-500 rounded-full">
+              <div className="circle bg-white p-1 rounded-full">
+                <FaUser size={25} className="text-green-400 rounded-b-full" />
               </div>
-              <span>Login</span>
+              <span className="font-bold text-white">Login</span>
             </div>
           </Link>
         </nav>
       </header>
-
       <main>
         <div className="conteudo">
           <section className="paragrafo">
