@@ -21,7 +21,7 @@ export function Home() {
           <div className="logo">
             <img className="w-50 h-40 mb:w-50 object-contain" src={logoWide} alt="lem urbanismo" />
           </div>
-          <ul className="flex space-x-4 border border-sky-500 rounded-full p-2">
+          <ul className="flex border border-sky-500 rounded-full p-2">
             <li>
               <a className="p-2 font-bold text-blue-600 hover:text-blue-500 " href="/">Home</a>
             </li>
@@ -35,14 +35,14 @@ export function Home() {
               <a className="p-2 font-bold text-blue-600 hover:text-blue-500" href="../register">Cadastro</a>
             </li>
           </ul>
-          <div className="search-bar flex items-center space-x-2">
-            <input className="rounded px-2 py-1 text-lg font-semibold bg-slate-300" type="text" placeholder="Pesquisar..." />
-            <button className="text-green-400 rounded-r-full">
+          <div className="search-bar flex items-center relative">
+            <input className="rounded-full px-2 py-1 text-lg font-semibold bg-slate-300" type="text" placeholder="Pesquisar..." />
+            <button className="text-green-400 rounded-r-full absolute flex end-4">
               <FaSearch />
             </button>
           </div>
           <Link to="../Login" style={{ textDecoration: "none" }}>
-            <div id="login" className="flex relative items-center space-x-2 h-14 p-2  bg-gradient-to-r from-blue-500 to-green-500 rounded-full">
+            <div id="login" className="flex relative items-center h-14 p-2  bg-gradient-to-r from-blue-500 to-green-500 rounded-full">
               <div className="circle bg-white p-1 rounded-full">
                 <FaUser size={25} className="text-green-400 rounded-b-full" />
               </div>
