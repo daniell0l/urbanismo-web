@@ -61,7 +61,7 @@ export function Home() {
             </li>
             <div className="search-bar flex items-center relative">
               <input
-                className="hidden sm:flex sm:h-10 rounded-full indent-4 relative left-4 text-lg bottom-1 font-semibold bg-gradient-to-r from-slate-50 to-slate-200 h-12"
+                className="hidden sm:flex sm:h-10 rounded-full indent-2 relative left-12 text-lg top-2 font-semibold bg-gradient-to-r from-slate-50 to-slate-200 h-12"
                 type="text"
                 placeholder="Pesquisar..."
               />
