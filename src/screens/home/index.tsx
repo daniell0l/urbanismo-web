@@ -7,6 +7,7 @@ import {
   FaInfoCircle,
   FaBriefcase,
   FaUsers,
+  FaBars,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logoWide from "../../assets/imgs/logoWide.png";
@@ -17,36 +18,74 @@ export function Home() {
   return (
     <div>
       <header>
-        <nav className="container mx-auto px-4 py-2 flex items-center justify-between">
+        <nav className="container flex items-center justify-between relative">
           <div className="logo">
-            <img className="w-50 h-40 mb:w-50 object-contain" src={logoWide} alt="lem urbanismo" />
+            <img
+              className="hidden sm:flex w-40 h-auto object-contain"
+              src={logoWide}
+              alt="lem urbanismo"
+            />
           </div>
-          <ul className="flex border border-sky-500 rounded-full p-2">
+          <ul className="hidden sm:flex sm:h-10 h-12 border border-slate-300 rounded-full px-2 pt-2 hover:border-slate-400">
             <li>
-              <a className="p-2 font-bold text-blue-600 hover:text-blue-500 " href="/">Home</a>
+              <a
+                className="p-2 font-bold text-blue-600 hover:text-blue-500 "
+                href="/"
+              >
+                Home
+              </a>
             </li>
             <li>
-              <a className="p-2 font-bold text-blue-600 hover:text-blue-500" href="#info_down_cad">Informativo</a>
+              <a
+                className="p-2 font-bold text-blue-600 hover:text-blue-500"
+                href="#info_down_cad"
+              >
+                Informativo
+              </a>
             </li>
             <li>
-              <a className="p-2 font-bold text-blue-600 hover:text-blue-500" href="/">Downloads</a>
+              <a
+                className="p-2 font-bold text-blue-600 hover:text-blue-500"
+                href="/"
+              >
+                Downloads
+              </a>
             </li>
             <li>
-              <a className="p-2 font-bold text-blue-600 hover:text-blue-500" href="../register">Cadastro</a>
+              <a
+                className="p-2 font-bold text-blue-600 hover:text-blue-500"
+                href="../register"
+              >
+                Cadastro
+              </a>
             </li>
+            <div className="search-bar flex items-center relative">
+              <input
+                className="hidden sm:flex sm:h-10 rounded-full indent-4 relative left-4 text-lg bottom-1 font-semibold bg-gradient-to-r from-slate-50 to-slate-200 h-12"
+                type="text"
+                placeholder="Pesquisar..."
+              />
+              <button className="text-blue-600 rounded-r-full absolute flex end-0 top-1 text-xl hover:text-blue-500">
+                <FaSearch />
+              </button>
+            </div>
           </ul>
-          <div className="search-bar flex items-center relative">
-            <input className="rounded-full px-2 py-1 text-lg font-semibold bg-slate-300" type="text" placeholder="Pesquisar..." />
-            <button className="text-green-400 rounded-r-full absolute flex end-4">
-              <FaSearch />
+          <div className="md:hidden flex items-center">
+            <button className="text-blue-600 relative right-12 text-2xl">
+              <FaBars />
             </button>
           </div>
           <Link to="../Login" style={{ textDecoration: "none" }}>
-            <div id="login" className="flex relative items-center h-14 p-2  bg-gradient-to-r from-blue-500 to-green-500 rounded-full">
-              <div className="circle bg-white p-1 rounded-full">
-                <FaUser size={25} className="text-green-400 rounded-b-full" />
+            <div
+              id="login"
+              className="relative left-20 flex items-center h-14 p-2 pr-20 bg-gradient-to-r from-blue-500 to-green-500 rounded-l-full hover:pr-24 ease-in duration-200 sm:w-full"
+            >
+              <div className="bg-white p-2 mr-4 rounded-full flex">
+                <FaUser size={25} className="text-green-500 rounded-b-full" />
               </div>
-              <span className="font-bold text-white">Login</span>
+              <span className="font-semibold font-serif text-2xl text-white">
+                Login
+              </span>
             </div>
           </Link>
         </nav>
