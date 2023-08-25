@@ -1,4 +1,4 @@
-// import "./style.css";
+import "./style.css";
 import {
   FaUser,
   FaSearch,
@@ -19,7 +19,7 @@ export function Home() {
     <div>
       <header>
         <nav className="container flex items-center justify-between relative">
-          <div className="logo">
+          <div>
             <img
               className="hidden sm:flex w-40 h-auto object-contain"
               src={logoWide}
